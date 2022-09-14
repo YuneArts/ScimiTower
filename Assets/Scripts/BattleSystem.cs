@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -10,6 +11,9 @@ public class BattleSystem : MonoBehaviour
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
+
+    [SerializeField]
+    private Text battleText;
 
     [SerializeField]
     private GameObject playerPrefab, enemyPrefab;
@@ -35,7 +39,7 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
@@ -69,6 +73,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         //Indication of attack, animation, text, w/e
+        battleText.text = "Enemy Turn";
 
         yield return new WaitForSeconds(1f);
 
@@ -94,16 +99,18 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             //Weapon selection screen
+            battleText.text = "Battle Won!";
         }
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
+            battleText.text = "Battle Lost!";
         }
     }
 
     void PlayerTurn()
     {
-
+        battleText.text = "Player Turn";
     }
 
     public void OnAttackButton()
