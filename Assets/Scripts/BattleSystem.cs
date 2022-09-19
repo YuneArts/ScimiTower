@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -100,6 +101,7 @@ public class BattleSystem : MonoBehaviour
         {
             //Weapon selection screen
             battleText.text = "Battle Won!";
+            SceneManager.LoadScene(1);
         }
         else if (state == BattleState.LOST)
         {
