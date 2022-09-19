@@ -24,10 +24,14 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
+    public WeaponHolderScript weaponHolder;
+    public int inven;
+
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+        weaponHolder.currentInventory = inven;
     }
 
     IEnumerator SetupBattle()
@@ -101,7 +105,7 @@ public class BattleSystem : MonoBehaviour
         {
             //Weapon selection screen
             battleText.text = "Battle Won!";
-            SceneManager.LoadScene(1);
+            StartCoroutine(AddInventory());
         }
         else if (state == BattleState.LOST)
         {
@@ -121,5 +125,15 @@ public class BattleSystem : MonoBehaviour
             return;
         
         StartCoroutine(PlayerAttack());
+    }
+
+    IEnumerator AddInventory()
+    {
+        inven = weaponHolder.currentInventory;
+        if(inven < 4)
+        {
+            inven++;
+        }
+        yield return null;
     }
 }
