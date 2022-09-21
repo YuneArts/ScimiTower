@@ -18,7 +18,6 @@ public class WeaponHolderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentInventory = battleSystem.inven;
         if (currentInventory == 1)
         {
             slots[1].SetActive(false);

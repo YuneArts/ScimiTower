@@ -25,13 +25,11 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
 
     public WeaponHolderScript weaponHolder;
-    public int inven;
 
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
-        weaponHolder.currentInventory = inven;
     }
 
     IEnumerator SetupBattle()
@@ -54,6 +52,10 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN)
         {
+            //Get attack value from scriptable object attached to button
+            
+            //Reduce weapon durability
+
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
             enemyHUD.SetHP(enemyUnit.currentHP);
@@ -129,10 +131,10 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator AddInventory()
     {
-        inven = weaponHolder.currentInventory;
-        if(inven < 4)
+        //inven = weaponHolder.GetComponent<WeaponHolderScript>();
+        if (weaponHolder.currentInventory < 4)
         {
-            inven++;
+            weaponHolder.currentInventory++;
         }
         yield return null;
     }
