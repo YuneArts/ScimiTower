@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponDisplay : MonoBehaviour
+public class ButtonHUD : MonoBehaviour
 {
-    public WeaponDataSO weapon;
+    public WeaponData weapon;
 
     public Text nameText;
     public Text damageText;
