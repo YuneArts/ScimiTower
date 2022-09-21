@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="WeaponData")]
-public class WeaponDataSO : ScriptableObject
+[CreateAssetMenu(menuName ="Weapon")]
+public class WeaponData : ScriptableObject
 {
-    public string name;
+    public string weaponName;
 
     public int attack;
     public int durability;

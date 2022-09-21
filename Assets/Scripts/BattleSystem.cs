@@ -50,8 +50,8 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.PLAYERTURN)
         {
             //Damage the Enemy
-            bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
-            enemyHUD.SetHP(enemyUnit.currentHP);
+            bool isDead = enemyUnit.TakeDamage(playerUnit.cDamage);
+            enemyHUD.SetHP(enemyUnit.cCurrentHP);
             
             yield return new WaitForSeconds(0.1f);
 
@@ -77,9 +77,9 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        bool isDead = playerUnit.TakeDamage(enemyUnit.cDamage);
 
-        playerHUD.SetHP(playerUnit.currentHP);
+        playerHUD.SetHP(playerUnit.cCurrentHP);
 
         yield return new WaitForSeconds(1f);
 
