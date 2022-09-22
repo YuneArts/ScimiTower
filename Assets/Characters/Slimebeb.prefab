@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5241078336709348561}
   - component: {fileID: 4444647540005568474}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Slimebeb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84d6423c7c314849838c356378cf89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Test Enemy
-  damage: 2
-  maxHP: 10
-  currentHP: 10
+  unitName: Slimebeb
+  damage: 3
+  maxHP: 20
+  currentHP: 20

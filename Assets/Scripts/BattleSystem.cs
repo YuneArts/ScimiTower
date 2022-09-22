@@ -27,6 +27,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject weaponSelect;
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
+    public ButtonScript booton;
 
     void Start()
     {
@@ -76,12 +77,12 @@ public class BattleSystem : MonoBehaviour
         PlayerTurn();
     }
 
-    IEnumerator PlayerAttack()
+    public IEnumerator PlayerAttack()
     {
         if (state == BattleState.PLAYERTURN)
         {
             //Damage the Enemy
-            bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+            bool isDead = enemyUnit.TakeDamage(booton.wDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
             yield return new WaitForSeconds(0.1f);

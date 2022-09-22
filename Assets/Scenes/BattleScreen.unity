@@ -806,9 +806,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070435592}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
+      - m_Target: {fileID: 399460805}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SlotAttack1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1163,6 +1163,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSlots: {fileID: 1061683059}
   option: {fileID: 1704664659}
+  inventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
+  bSystem: {fileID: 2070435592}
+  wDamage: 0
+  wDurability: 0
 --- !u!114 &399460806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2090,9 +2094,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070435592}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
+      - m_Target: {fileID: 399460805}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SlotAttack3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2757,6 +2761,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSlots: {fileID: 0}
   option: {fileID: 0}
+  inventory: {fileID: 0}
+  bSystem: {fileID: 0}
+  wDamage: 0
+  wDurability: 0
 --- !u!1 &936346140
 GameObject:
   m_ObjectHideFlags: 0
@@ -5152,9 +5160,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070435592}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
+      - m_Target: {fileID: 399460805}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SlotAttack4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5275,9 +5283,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070435592}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
+      - m_Target: {fileID: 399460805}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: SlotAttack2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5664,6 +5672,7 @@ MonoBehaviour:
   - {fileID: 849666540}
   - {fileID: 688988956}
   - {fileID: 1818904338}
+  booton: {fileID: 399460805}
 --- !u!4 &2070435593
 Transform:
   m_ObjectHideFlags: 0
