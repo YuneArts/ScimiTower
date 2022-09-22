@@ -24,12 +24,40 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
-    public WeaponHolderScript weaponHolder;
+    public GameObject weaponSelect;
+    public InventoryScript inventory;
+    public List<WeaponDisplay> weaponDisplay;
 
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+    }
+
+    private void Update()
+    {
+        if (inventory.Container.Count == 1)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+        }
+        else if (inventory.Container.Count == 2)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+        }
+        else if (inventory.Container.Count == 3)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+            weaponDisplay[2].weapon = inventory.Container[2];
+        }
+        else if (inventory.Container.Count == 4)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+            weaponDisplay[2].weapon = inventory.Container[2];
+            weaponDisplay[3].weapon = inventory.Container[3];
+        }
     }
 
     IEnumerator SetupBattle()
@@ -52,14 +80,10 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN)
         {
-            //Get attack value from scriptable object attached to button
-            
-            //Reduce weapon durability
-
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
             enemyHUD.SetHP(enemyUnit.currentHP);
-            
+
             yield return new WaitForSeconds(0.1f);
 
             if (isDead)
@@ -72,7 +96,7 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
-            
+
             yield return new WaitForSeconds(2f);
         }
     }
@@ -90,7 +114,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if(isDead)
+        if (isDead)
         {
             state = BattleState.LOST;
         }
@@ -107,7 +131,7 @@ public class BattleSystem : MonoBehaviour
         {
             //Weapon selection screen
             battleText.text = "Battle Won!";
-            StartCoroutine(AddInventory());
+            weaponSelect.SetActive(true);
         }
         else if (state == BattleState.LOST)
         {
@@ -125,17 +149,7 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYERTURN)
             return;
-        
-        StartCoroutine(PlayerAttack());
-    }
 
-    IEnumerator AddInventory()
-    {
-        //inven = weaponHolder.GetComponent<WeaponHolderScript>();
-        if (weaponHolder.currentInventory < 4)
-        {
-            weaponHolder.currentInventory++;
-        }
-        yield return null;
+        StartCoroutine(PlayerAttack());
     }
 }
