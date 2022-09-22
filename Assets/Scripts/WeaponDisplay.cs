@@ -12,7 +12,6 @@ public class WeaponDisplay : MonoBehaviour
     public Text durabilityText;
 
     public Image weaponArt;
-
     void Start()
     {
         nameText.text = weapon.name;
