@@ -149,11 +149,6 @@ public class BattleSystem : MonoBehaviour
     {
         if (state != BattleState.PLAYERTURN)
             return;
-<<<<<<< Updated upstream
-
-=======
-        
->>>>>>> Stashed changes
         StartCoroutine(PlayerAttack());
     }
 }
