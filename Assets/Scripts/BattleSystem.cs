@@ -87,6 +87,8 @@ public class BattleSystem : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
 
+            //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
+
             if (isDead)
             {
                 state = BattleState.WON;

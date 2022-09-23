@@ -6,8 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryScript : ScriptableObject
 {
-    public List<WeaponDataSO> Container = new List<WeaponDataSO>();
-    public void AddWeapon(WeaponDataSO weapon)
+    public List<WeaponData> Container = new List<WeaponData>();
+    public void AddWeapon(WeaponData weapon)
     {
         int inventorySpace = 4;
         int currentInventory = 1;

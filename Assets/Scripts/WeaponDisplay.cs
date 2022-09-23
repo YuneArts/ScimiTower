@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponDisplay : MonoBehaviour
 {
-    public WeaponDataSO weapon;
+    public WeaponData weapon;
 
     public Text nameText;
     public Text damageText;
@@ -18,5 +18,10 @@ public class WeaponDisplay : MonoBehaviour
         damageText.text = weapon.attack.ToString();
         durabilityText.text = weapon.durability.ToString();
         weaponArt.sprite = weapon.art;
+    }
+
+    void Update()
+    {
+        durabilityText.text = weapon.durability.ToString();
     }
 }

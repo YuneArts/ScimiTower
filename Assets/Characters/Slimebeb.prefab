@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84d6423c7c314849838c356378cf89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Slimebeb
+  cName: 
+  unitInfo: {fileID: 11400000, guid: cf5c0db2a76374642947fefe75df0a92, type: 2}
   damage: 3
   maxHP: 20
   currentHP: 20

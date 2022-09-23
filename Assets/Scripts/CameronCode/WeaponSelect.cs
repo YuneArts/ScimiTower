@@ -8,7 +8,7 @@ public class WeaponSelect : MonoBehaviour
     public BattleSystem battleSystem;
     public InventoryScript randomWeapon;
     public InventoryScript playerInventory;
-    public WeaponDataSO theWeapon;
+    public WeaponData theWeapon;
     public GameObject[] slots;
     // Start is called before the first frame update
     void Start()

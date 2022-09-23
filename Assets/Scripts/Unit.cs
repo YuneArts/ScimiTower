@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public string unitName;
+    public string cName;
+
+    public UnitData unitInfo;
   
     public int damage;
     
@@ -19,5 +21,14 @@ public class Unit : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    void Awake()
+    {
+        cName = unitInfo.unitName;
+        damage = unitInfo.uDamage;
+
+        maxHP = unitInfo.uMaxHP;
+        currentHP = unitInfo.uCurrentHP;
     }
 }
