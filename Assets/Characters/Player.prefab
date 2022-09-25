@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84d6423c7c314849838c356378cf89e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Player
-  damage: 3
-  maxHP: 20
-  currentHP: 20
+  cName: 
+  unitInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
+  damage: 0
+  maxHP: 0
+  currentHP: 0

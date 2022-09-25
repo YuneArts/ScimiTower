@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
@@ -12,6 +14,9 @@ public class BattleSystem : MonoBehaviour
     public BattleHUD enemyHUD;
 
     [SerializeField]
+    private Text battleText;
+
+    [SerializeField]
     private GameObject playerPrefab, enemyPrefab;
     [SerializeField]
     private Transform playerBattleStation, enemyBattleStation;
@@ -19,10 +24,41 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
+    public GameObject weaponSelect;
+    public InventoryScript inventory;
+    public List<WeaponDisplay> weaponDisplay;
+    public ButtonScript booton;
+
     void Start()
     {
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+    }
+
+    private void Update()
+    {
+        if (inventory.Container.Count == 1)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+        }
+        else if (inventory.Container.Count == 2)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+        }
+        else if (inventory.Container.Count == 3)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+            weaponDisplay[2].weapon = inventory.Container[2];
+        }
+        else if (inventory.Container.Count == 4)
+        {
+            weaponDisplay[0].weapon = inventory.Container[0];
+            weaponDisplay[1].weapon = inventory.Container[1];
+            weaponDisplay[2].weapon = inventory.Container[2];
+            weaponDisplay[3].weapon = inventory.Container[3];
+        }
     }
 
     IEnumerator SetupBattle()
@@ -35,21 +71,23 @@ public class BattleSystem : MonoBehaviour
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
 
-    IEnumerator PlayerAttack()
+    public IEnumerator PlayerAttack()
     {
         if (state == BattleState.PLAYERTURN)
         {
             //Damage the Enemy
-            bool isDead = enemyUnit.TakeDamage(playerUnit.damage);
+            bool isDead = enemyUnit.TakeDamage(booton.wDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
-            
+
             yield return new WaitForSeconds(0.1f);
+
+            //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
 
             if (isDead)
             {
@@ -61,7 +99,7 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
-            
+
             yield return new WaitForSeconds(2f);
         }
     }
@@ -69,6 +107,7 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyTurn()
     {
         //Indication of attack, animation, text, w/e
+        battleText.text = "Enemy Turn";
 
         yield return new WaitForSeconds(1f);
 
@@ -78,7 +117,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if(isDead)
+        if (isDead)
         {
             state = BattleState.LOST;
         }
@@ -94,23 +133,25 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.WON)
         {
             //Weapon selection screen
+            battleText.text = "Battle Won!";
+            weaponSelect.SetActive(true);
         }
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
+            battleText.text = "Battle Lost!";
         }
     }
 
     void PlayerTurn()
     {
-
+        battleText.text = "Player Turn";
     }
 
     public void OnAttackButton()
     {
         if (state != BattleState.PLAYERTURN)
             return;
-        
         StartCoroutine(PlayerAttack());
     }
 }
