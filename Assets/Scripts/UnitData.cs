@@ -6,9 +6,20 @@ using UnityEngine;
 public class UnitData : ScriptableObject
 {
     public string unitName;
+    public Element uElement;
 
     public int uDamage;
 
     public int uMaxHP;
     public int uCurrentHP;
+}
+
+public enum Element
+{
+    None,
+    Fire,
+    Water,
+    Grass,
+    Light,
+    Dark
 }

@@ -5664,7 +5664,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1640736232}
   battleText: {fileID: 329512675}
   playerPrefab: {fileID: 7626667351939884094, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
-  enemyPrefab: {fileID: 4283696875775711549, guid: 63f8edfb32057074585815158c425f7c, type: 3}
+  enemyPrefab: {fileID: 7245360951765118472, guid: 0e0d04d8274de1d4294694ee45474428, type: 3}
   playerBattleStation: {fileID: 644594181}
   enemyBattleStation: {fileID: 1037073571}
   weaponSelect: {fileID: 1354704835}

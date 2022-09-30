@@ -43,7 +43,7 @@ public class MapMovement : MonoBehaviour
         arrayIndex = Mathf.Clamp(arrayIndex, 0, spaces);
         DataHolder.Instance.currentIndex = arrayIndex;
         yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("BattleScreen");
         yield return null;
     }
 }

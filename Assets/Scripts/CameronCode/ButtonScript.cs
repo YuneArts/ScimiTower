@@ -19,7 +19,7 @@ public class ButtonScript : MonoBehaviour
     
     public void ToMap()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapScene");
         
     }
 

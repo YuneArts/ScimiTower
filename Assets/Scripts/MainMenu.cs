@@ -16,6 +16,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame() 
     {
-      SceneManager.LoadScene("MapScene");
+      SceneManager.LoadScene("BattleScreen");
     }
 }

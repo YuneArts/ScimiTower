@@ -63,25 +63,25 @@ public class WeaponSelect : MonoBehaviour
     public void SlotOne()
     {
         playerInventory.Container[0] = theWeapon;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapScene");
         
     }
     public void SlotTwo()
     {
         playerInventory.Container[1] = theWeapon;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapScene");
 
     }
     public void SlotThree()
     {
         playerInventory.Container[2] = theWeapon;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapScene");
 
     }
     public void SlotFour()
     {
         playerInventory.Container[3] = theWeapon;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MapScene");
 
     }
 }

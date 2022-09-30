@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   unitName: Warrior
+  uElement: 0
   uDamage: 0
   uMaxHP: 30
   uCurrentHP: 30
