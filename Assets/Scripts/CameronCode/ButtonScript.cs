@@ -15,6 +15,7 @@ public class ButtonScript : MonoBehaviour
 
     public int wDamage;
     public int wDurability;
+    public WeaponElement wElement;
 
     
     public void ToMap()
@@ -33,30 +34,46 @@ public class ButtonScript : MonoBehaviour
     called in battle system. */
     public void SlotAttack1()
     {
-        wDamage = inventory.Container[0].attack;
-        inventory.Container[0].durability -= 1;
-        bSystem.OnAttackButton();
+        if (inventory.Container[0].durability > 0)
+        {
+            wDamage = inventory.Container[0].attack;
+            wElement = inventory.Container[0].element;
+            inventory.Container[0].durability -= 1;
+            bSystem.OnAttackButton();
+        }
     }
 
     public void SlotAttack2()
     {
-        wDamage = inventory.Container[1].attack;
-        inventory.Container[1].durability -= 1;
-        bSystem.OnAttackButton();
+        if (inventory.Container[1].durability > 0)
+        {
+            wDamage = inventory.Container[1].attack;
+            wElement = inventory.Container[1].element;
+            inventory.Container[1].durability -= 1;
+            bSystem.OnAttackButton();
+        }
     }
 
     public void SlotAttack3()
     {
-        wDamage = inventory.Container[2].attack;
-        inventory.Container[2].durability -= 1;
-        bSystem.OnAttackButton();
+        if (inventory.Container[2].durability > 0)
+        {
+            wDamage = inventory.Container[2].attack;
+            wElement = inventory.Container[2].element;
+            inventory.Container[2].durability -= 1;
+            bSystem.OnAttackButton();
+        }
     }
 
     public void SlotAttack4()
     {
-        wDamage = inventory.Container[3].attack;
-        inventory.Container[3].durability -= 1;
-        bSystem.OnAttackButton();
+        if (inventory.Container[3].durability > 0)
+        {
+            wDamage = inventory.Container[3].attack;
+            wElement = inventory.Container[3].element;
+            inventory.Container[3].durability -= 1;
+            bSystem.OnAttackButton();
+        }
     }
 
     public void WeaponBreak()

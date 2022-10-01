@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitData : ScriptableObject
 {
     public string unitName;
-    public Element uElement;
+    public UnitElement uElement;
 
     public int uDamage;
 
@@ -14,7 +14,7 @@ public class UnitData : ScriptableObject
     public int uCurrentHP;
 }
 
-public enum Element
+public enum UnitElement
 {
     None,
     Fire,
