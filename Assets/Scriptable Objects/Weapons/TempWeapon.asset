@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
   m_Name: TempWeapon
   m_EditorClassIdentifier: 
-  name: Temp1
+  weaponName: 
   attack: 6
   durability: 2
   art: {fileID: 21300000, guid: a852523089109444a94153aa4240dac2, type: 3}
+  element: 1

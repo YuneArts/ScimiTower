@@ -29,6 +29,8 @@ public class BattleSystem : MonoBehaviour
     public List<WeaponDisplay> weaponDisplay;
     public ButtonScript booton;
 
+    private int finalDamage;
+
     void Start()
     {
         state = BattleState.START;
@@ -81,8 +83,13 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN)
         {
+            //Calculate damage past resistances and weaknesses
+            CalculateDamage(booton.wDamage, booton.wElement);
+
+            yield return new WaitForSeconds(0.1f);
+
             //Damage the Enemy
-            bool isDead = enemyUnit.TakeDamage(booton.wDamage);
+            bool isDead = enemyUnit.TakeDamage(finalDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
             yield return new WaitForSeconds(0.1f);
@@ -154,4 +161,89 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerAttack());
     }
+
+    
+    void CalculateDamage(int rawDmg, WeaponElement attackElement)
+    {
+        float superEffective = 1.5f;
+        float notEffective = 0.5f;
+        float ldSuperEffective = 2f;
+
+        switch (booton.wElement)
+        {
+            case WeaponElement.Fire:
+                if (enemyUnit.cElement == UnitElement.Grass)
+                {
+                    finalDamage = (int)(rawDmg * superEffective);
+                    Debug.Log("It's super effective!");
+                    return;
+                }
+                else if (enemyUnit.cElement == UnitElement.Water || enemyUnit.cElement == UnitElement.Fire)
+                {
+                    finalDamage = (int)(rawDmg * notEffective);
+                    Debug.Log("It's not very effective...");
+                }
+                break;
+            case WeaponElement.Water:
+                if (enemyUnit.cElement == UnitElement.Fire)
+                {
+                    finalDamage = (int)(rawDmg * superEffective);
+                    Debug.Log("It's super effective!");
+                    return;
+                }
+                else if (enemyUnit.cElement == UnitElement.Grass || enemyUnit.cElement == UnitElement.Water)
+                {
+                    finalDamage = (int)(rawDmg * notEffective);
+                    Debug.Log("It's not very effective...");
+                    return;
+                }
+                break;
+            case WeaponElement.Grass:
+                if (enemyUnit.cElement == UnitElement.Water)
+                {
+                    finalDamage = (int)(rawDmg * superEffective);
+                    Debug.Log("It's super effective!");
+                    return;
+                }
+                else if (enemyUnit.cElement == UnitElement.Fire || enemyUnit.cElement == UnitElement.Grass)
+                {
+                    finalDamage = (int)(rawDmg * notEffective);
+                    Debug.Log("It's not very effective...");
+                    return;
+                }
+                break;
+            case WeaponElement.Light:
+                if (enemyUnit.cElement == UnitElement.Dark)
+                {
+                    finalDamage = (int)(rawDmg * ldSuperEffective);
+                    Debug.Log("It's super effective!");
+                    return;
+                }
+                else if (enemyUnit.cElement == UnitElement.Light)
+                {
+                    finalDamage = (int)(rawDmg * notEffective);
+                    Debug.Log("It's not very effective...");
+                    return;
+                }
+                break;
+            case WeaponElement.Dark:
+                if (enemyUnit.cElement == UnitElement.Dark)
+                {
+                    finalDamage = (int)(rawDmg * ldSuperEffective);
+                    Debug.Log("It's super effective!");
+                    return;
+                }
+                else if (enemyUnit.cElement == UnitElement.Light)
+                {
+                    finalDamage = (int)(rawDmg * notEffective);
+                    Debug.Log("It's not very effective...");
+                    return;
+                }
+                break;
+            default:
+                finalDamage = rawDmg;
+                return;
+        }
+    }
+    
 }

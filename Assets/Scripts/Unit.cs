@@ -8,8 +8,7 @@ public class Unit : MonoBehaviour
 
     public UnitData unitInfo;
 
-    [SerializeField]
-    private Element cElement;
+    public UnitElement cElement;
     public int damage;
     
     public int maxHP;
