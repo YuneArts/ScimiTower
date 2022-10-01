@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Basic Slime
   m_EditorClassIdentifier: 
-  unitName: Slimebeb
+  unitName: Basic Slime
   uElement: 0
   uDamage: 1
   uMaxHP: 10
   uCurrentHP: 10
+  uSprite: {fileID: 21300000, guid: 3cfb3658cbc3eb74ba3c527fa43c15ed, type: 3}

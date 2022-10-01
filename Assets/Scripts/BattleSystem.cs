@@ -8,7 +8,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-    public BattleState state;
+    private BattleState state;
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
@@ -23,6 +23,8 @@ public class BattleSystem : MonoBehaviour
 
     Unit playerUnit;
     Unit enemyUnit;
+
+    public static UnitData enemyData;
 
     public GameObject weaponSelect;
     public InventoryScript inventory;
@@ -65,10 +67,19 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<Unit>();
+        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerUnit = playerPrefab.GetComponent<Unit>();
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+
+        yield return new WaitForSeconds(0.05f);
+
+        //if (DataHolder.Instance.currentIndex > 0)
+        //{
+            enemyUnit.unitInfo = enemyData;
+        //}
+
+        enemyUnit.UpdateEnemySprite();
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);

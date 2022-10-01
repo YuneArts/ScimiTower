@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 19923905}
   - component: {fileID: 19923906}
+  - component: {fileID: 19923907}
   m_Layer: 0
-  m_Name: Circle (2)
+  m_Name: Node 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +208,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &19923907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19923904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPool: {fileID: 11400000, guid: 31af926ac857f1c4ba1a906409466ad4, type: 2}
 --- !u!1 &424950323
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +280,7 @@ MonoBehaviour:
   bSystem: {fileID: 0}
   wDamage: 0
   wDurability: 0
+  wElement: 0
 --- !u!114 &424950326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +386,7 @@ GameObject:
   - component: {fileID: 834816797}
   - component: {fileID: 834816798}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Start/Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -467,8 +482,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969511276}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5719376, y: -1.7669902, z: -0.06854546}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5719604, y: -1.7669983, z: -0.06854546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -724,8 +739,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1360570898}
   - component: {fileID: 1360570899}
+  - component: {fileID: 1360570900}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: Node 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,6 +814,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1360570900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360570897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPool: {fileID: 11400000, guid: 3305827cc3af97b42ad6ef1dba0abbf9, type: 2}
 --- !u!1 &1367783804
 GameObject:
   m_ObjectHideFlags: 0

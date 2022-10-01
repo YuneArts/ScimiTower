@@ -14,6 +14,9 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public Sprite cSprite;
+    public SpriteRenderer characterSprite;
+
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
@@ -33,6 +36,13 @@ public class Unit : MonoBehaviour
         maxHP = unitInfo.uMaxHP;
         currentHP = unitInfo.uCurrentHP;
 
+        cSprite = unitInfo.uSprite;
+
         Debug.Log("Element = " + cElement);
+    }
+
+    public void UpdateEnemySprite()
+    {
+        characterSprite.sprite = cSprite;
     }
 }

@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
-  m_Name: Water Slime
+  m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
+  m_Name: Tutorial Stage 2
   m_EditorClassIdentifier: 
-  unitName: Water Slime
-  uElement: 2
-  uDamage: 3
-  uMaxHP: 20
-  uCurrentHP: 20
-  uSprite: {fileID: 21300000, guid: 8c626c8e4412b4c44b08fbb2a96b251a, type: 3}
+  Container:
+  - {fileID: 11400000, guid: cf5c0db2a76374642947fefe75df0a92, type: 2}
