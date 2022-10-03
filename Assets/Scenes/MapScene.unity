@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 219485229}
   - component: {fileID: 219485228}
   - component: {fileID: 219485227}
+  - component: {fileID: 219485230}
   m_Layer: 0
   m_Name: node 2
   m_TagString: Untagged
@@ -178,6 +179,7 @@ MonoBehaviour:
   arrayIndex: 0
   spaces: 2
   inTransition: 0
+  mapSpawnScript: {fileID: 219485230}
 --- !u!58 &219485228
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -246,6 +248,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &219485230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219485225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
+  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
 --- !u!1 &424950323
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &424950324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -426,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 3305827cc3af97b42ad6ef1dba0abbf9, type: 2}
+  weaponPool: {fileID: 0}
 --- !u!1 &834816796
 GameObject:
   m_ObjectHideFlags: 0
@@ -533,6 +550,7 @@ MonoBehaviour:
   arrayIndex: 0
   spaces: 2
   inTransition: 0
+  mapSpawnScript: {fileID: 0}
 --- !u!58 &834816800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -860,6 +878,7 @@ MonoBehaviour:
   arrayIndex: 0
   spaces: 2
   inTransition: 0
+  mapSpawnScript: {fileID: 0}
 --- !u!114 &1367783806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1102,7 @@ GameObject:
   - component: {fileID: 1631031430}
   - component: {fileID: 1631031429}
   - component: {fileID: 1631031428}
+  - component: {fileID: 1631031432}
   m_Layer: 0
   m_Name: node 1
   m_TagString: Untagged
@@ -1111,6 +1131,7 @@ MonoBehaviour:
   arrayIndex: 0
   spaces: 2
   inTransition: 0
+  mapSpawnScript: {fileID: 1631031432}
 --- !u!58 &1631031429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1194,6 +1215,20 @@ Transform:
   m_Father: {fileID: 969511277}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1631031432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631031427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPool: {fileID: 11400000, guid: 3305827cc3af97b42ad6ef1dba0abbf9, type: 2}
+  weaponPool: {fileID: 11400000, guid: ca4824f683e4def489e0549bb92179f6, type: 2}
 --- !u!1 &1925157627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,5 +1409,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
-  mapTileUnit: {fileID: 11400000, guid: cf5c0db2a76374642947fefe75df0a92, type: 2}
+  mapEnemySpawn: {fileID: 0}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
+  mapWeaponSpawn: {fileID: 0}

@@ -7,8 +7,10 @@ public class DataHolder : MonoBehaviour
     public static DataHolder Instance;
     public int currentIndex = 0; 
 
-    public UnitData mapTileUnit;
+    public UnitData mapEnemySpawn;
     public InventoryScript playerInventory;
+    public WeaponData mapWeaponSpawn;
+    
     private void Awake()
     {
         if (Instance == null)

@@ -4470,8 +4470,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
-  mapTileUnit: {fileID: 11400000, guid: dbaf0c4788d86e847b68f489344a1c62, type: 2}
+  mapEnemySpawn: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
+  mapWeaponSpawn: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
 --- !u!4 &1574359284
 Transform:
   m_ObjectHideFlags: 0

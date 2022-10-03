@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
-  m_Name: Scimitar
+  m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
+  m_Name: Ghost
   m_EditorClassIdentifier: 
-  weaponName: 
-  attack: 10
-  durability: 5
-  art: {fileID: 21300000, guid: df181bf22c3b3314181daa68067349b3, type: 3}
-  element: 0
+  unitName: Ghost
+  uElement: 0
+  uDamage: 0
+  uMaxHP: 10
+  uCurrentHP: 10
+  uSprite: {fileID: 21300000, guid: b232aebcd957e454391332acf534040a, type: 3}

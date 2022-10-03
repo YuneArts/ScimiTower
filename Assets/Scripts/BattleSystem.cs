@@ -76,7 +76,7 @@ public class BattleSystem : MonoBehaviour
 
         //if (DataHolder.Instance.currentIndex > 0)
         //{
-            enemyUnit.unitInfo = DataHolder.Instance.mapTileUnit;
+            enemyUnit.unitInfo = DataHolder.Instance.mapEnemySpawn;
         //}
 
         yield return new WaitForSeconds(0.01f);
@@ -103,13 +103,13 @@ public class BattleSystem : MonoBehaviour
             //Calculate damage past resistances and weaknesses
             CalculateDamage(booton.wDamage, booton.wElement);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
 
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(finalDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
 
             //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
 
