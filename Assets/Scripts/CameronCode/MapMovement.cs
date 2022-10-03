@@ -28,6 +28,15 @@ public class MapMovement : MonoBehaviour
         }
     }
 
+    private void OnMouseDown()
+    {
+        if (!inTransition)
+        {
+            StartCoroutine(SceneManagerAndMovement());
+            inTransition = true;
+        }
+    }
+
     public void playerMoveTo()
     {
         if(!inTransition)
