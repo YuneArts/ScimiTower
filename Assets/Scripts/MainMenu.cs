@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
       audio.Play();
     }
 
+    public void quitButton()
+    {
+        Application.Quit();
+    }
+
     public void StartGame() 
     {
       SceneManager.LoadScene("BattleScreen");
