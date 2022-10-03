@@ -20,6 +20,7 @@ public class Unit : MonoBehaviour
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
+        //unitInfo.uCurrentHP -= dmg;
 
         if (currentHP <= 0)
             return true;
@@ -27,7 +28,26 @@ public class Unit : MonoBehaviour
             return false;
     }
 
+    public void SetPlayerHP()
+    {
+        unitInfo.uCurrentHP = currentHP;
+    }
+
     void Awake()
+    {
+        cName = unitInfo.unitName;
+        cElement = unitInfo.uElement;
+        damage = unitInfo.uDamage;
+
+        maxHP = unitInfo.uMaxHP;
+        currentHP = unitInfo.uCurrentHP;
+
+        cSprite = unitInfo.uSprite;
+
+        Debug.Log("Element = " + cElement);
+    }
+
+    public void UpdateEnemyInfo()
     {
         cName = unitInfo.unitName;
         cElement = unitInfo.uElement;

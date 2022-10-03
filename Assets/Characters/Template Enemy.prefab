@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cName: 
-  unitInfo: {fileID: 11400000, guid: dbaf0c4788d86e847b68f489344a1c62, type: 2}
+  unitInfo: {fileID: 0}
   cElement: 0
   damage: 0
   maxHP: 0

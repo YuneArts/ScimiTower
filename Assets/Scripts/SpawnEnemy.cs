@@ -15,19 +15,19 @@ public class SpawnEnemy : MonoBehaviour
         switch (randomIndex)
         {
             case 1:
-                BattleSystem.enemyData = enemyPool.Container[0];
+                DataHolder.Instance.mapTileUnit = enemyPool.Container[0];
                 break;
             case 2:
-                BattleSystem.enemyData = enemyPool.Container[1];
+                DataHolder.Instance.mapTileUnit = enemyPool.Container[1];
                 break;
             case 3:
-                BattleSystem.enemyData = enemyPool.Container[2];
+                DataHolder.Instance.mapTileUnit = enemyPool.Container[2];
                 break;
             case 4:
-                BattleSystem.enemyData = enemyPool.Container[3];
+                DataHolder.Instance.mapTileUnit = enemyPool.Container[3];
                 break;
             default:
-                BattleSystem.enemyData = enemyPool.Container[0];
+                DataHolder.Instance.mapTileUnit = enemyPool.Container[0];
                 break;
         }
     }

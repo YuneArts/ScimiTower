@@ -4470,6 +4470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
+  mapTileUnit: {fileID: 11400000, guid: dbaf0c4788d86e847b68f489344a1c62, type: 2}
 --- !u!4 &1574359284
 Transform:
   m_ObjectHideFlags: 0
@@ -5777,7 +5778,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5840340062946173892, guid: f1a0a62ed6f1ecb4ebac98d4f47c1b68, type: 3}
   playerBattleStation: {fileID: 644594181}
   enemyBattleStation: {fileID: 1037073571}
-  enemyData: {fileID: 11400000, guid: dbaf0c4788d86e847b68f489344a1c62, type: 2}
   weaponSelect: {fileID: 1354704835}
   inventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
   weaponDisplay:

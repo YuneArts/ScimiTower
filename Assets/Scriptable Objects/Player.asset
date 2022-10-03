@@ -17,3 +17,4 @@ MonoBehaviour:
   uDamage: 0
   uMaxHP: 30
   uCurrentHP: 30
+  uSprite: {fileID: 0}

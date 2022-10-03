@@ -7,6 +7,8 @@ public class DataHolder : MonoBehaviour
     public static DataHolder Instance;
     public int currentIndex = 0; 
 
+    public UnitData mapTileUnit;
+
     private void Awake()
     {
         if (Instance == null)

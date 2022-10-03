@@ -24,7 +24,7 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
-    public static UnitData enemyData;
+    //public static UnitData enemyData;
 
     public GameObject weaponSelect;
     public InventoryScript inventory;
@@ -72,12 +72,18 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.01f);
 
         //if (DataHolder.Instance.currentIndex > 0)
         //{
-            enemyUnit.unitInfo = enemyData;
+            enemyUnit.unitInfo = DataHolder.Instance.mapTileUnit;
         //}
+
+        yield return new WaitForSeconds(0.01f);
+
+        enemyUnit.UpdateEnemyInfo();
+
+        yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
 
@@ -130,6 +136,10 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+
+        yield return new WaitForSeconds(0.01f);
+
+        playerUnit.SetPlayerHP();
 
         playerHUD.SetHP(playerUnit.currentHP);
 
