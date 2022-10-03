@@ -1168,6 +1168,7 @@ MonoBehaviour:
   wDamage: 0
   wDurability: 0
   wElement: 0
+  battleSystem: {fileID: 0}
 --- !u!114 &399460806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3179,6 +3180,7 @@ MonoBehaviour:
   wDamage: 0
   wDurability: 0
   wElement: 0
+  battleSystem: {fileID: 0}
 --- !u!1 &936346140
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,7 +4167,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1116611429
 Transform:
   m_ObjectHideFlags: 0
@@ -6717,6 +6719,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5840340062946173892, guid: f1a0a62ed6f1ecb4ebac98d4f47c1b68, type: 3}
   playerBattleStation: {fileID: 644594181}
   enemyBattleStation: {fileID: 1037073571}
+  canAttack: 0
   weaponSelect: {fileID: 1354704835}
   inventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
   weaponDisplay:

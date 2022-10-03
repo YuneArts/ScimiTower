@@ -24,6 +24,8 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
+    public bool canAttack;
+
     //public static UnitData enemyData;
 
     public GameObject weaponSelect;
@@ -35,6 +37,7 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
+        canAttack = true;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -152,6 +155,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             state = BattleState.PLAYERTURN;
+            canAttack = true;
             PlayerTurn();
         }
     }
