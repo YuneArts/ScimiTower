@@ -8,7 +8,7 @@ public class DataHolder : MonoBehaviour
     public int currentIndex = 0; 
 
     public UnitData mapTileUnit;
-
+    public InventoryScript playerInventory;
     private void Awake()
     {
         if (Instance == null)

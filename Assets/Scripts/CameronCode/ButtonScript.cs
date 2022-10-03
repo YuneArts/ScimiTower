@@ -80,7 +80,7 @@ public class ButtonScript : MonoBehaviour
     {
         if (inventory.Container[0].durability == 0)
         {
-            //Disable the slot that the weapon broke on.
+            inventory.Container.Remove(inventory.Container[0]);
         }
 
         /*Do this for all four weapon slots. This is example code/idea for how to do it. 
