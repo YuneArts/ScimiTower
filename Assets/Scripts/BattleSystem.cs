@@ -32,6 +32,7 @@ public class BattleSystem : MonoBehaviour
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
     public ButtonScript booton;
+    public WeaponSelectImage weaponSelectArt;
 
     private int finalDamage;
 
@@ -167,6 +168,7 @@ public class BattleSystem : MonoBehaviour
             //Weapon selection screen
             battleText.text = "Battle Won!";
             weaponSelect.SetActive(true);
+            weaponSelectArt.ChangeWeaponSelectImage();
         }
         else if (state == BattleState.LOST)
         {
@@ -208,6 +210,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                 }
+                else if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Water:
                 if (enemyUnit.cElement == UnitElement.Fire)
@@ -221,6 +227,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                     return;
+                }
+                else if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
                 }
                 break;
             case WeaponElement.Grass:
@@ -236,6 +246,10 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
+                else if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Light:
                 if (enemyUnit.cElement == UnitElement.Dark)
@@ -250,6 +264,10 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
+                else if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Dark:
                 if (enemyUnit.cElement == UnitElement.Dark)
@@ -263,6 +281,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                     return;
+                }
+                else if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
                 }
                 break;
             default:
