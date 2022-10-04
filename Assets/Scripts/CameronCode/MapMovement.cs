@@ -9,7 +9,7 @@ public class MapMovement : MonoBehaviour
     public Vector2 mapLocation;
     public GameObject[] locations;
     public int arrayIndex = 0;
-    public int spaces = 2;
+    public int spaces = 3;
     public bool inTransition = false;
     public MapSpawn mapSpawnScript;
 

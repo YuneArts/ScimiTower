@@ -5,7 +5,7 @@ using UnityEngine;
 public class DataHolder : MonoBehaviour
 {
     public static DataHolder Instance;
-    public int currentIndex = 0; 
+    public int currentIndex = 0;
 
     public UnitData mapEnemySpawn;
     public InventoryScript playerInventory;
