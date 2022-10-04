@@ -210,7 +210,7 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                 }
-                else if (enemyUnit.cElement == UnitElement.None)
+                else //if (enemyUnit.cElement == UnitElement.None)
                 {
                     finalDamage = rawDmg;
                 }
@@ -228,7 +228,7 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.None)
+                else //if (enemyUnit.cElement == UnitElement.None)
                 {
                     finalDamage = rawDmg;
                 }
@@ -246,7 +246,7 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.None)
+                else //if (enemyUnit.cElement == UnitElement.None)
                 {
                     finalDamage = rawDmg;
                 }
@@ -264,7 +264,7 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.None)
+                else //if (enemyUnit.cElement == UnitElement.None)
                 {
                     finalDamage = rawDmg;
                 }
@@ -282,7 +282,7 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.None)
+                else //if (enemyUnit.cElement == UnitElement.None)
                 {
                     finalDamage = rawDmg;
                 }
