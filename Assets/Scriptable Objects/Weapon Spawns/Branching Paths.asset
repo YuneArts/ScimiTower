@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7f5cab94879d349be3552bba888e3b, type: 3}
+  m_Name: Branching Paths
+  m_EditorClassIdentifier: 
+  Container:
+  - {fileID: 11400000, guid: 0edab88c5412dd446b04ca9b6e0a5230, type: 2}
+  - {fileID: 11400000, guid: 6d9b5bf9b5679824b956d993b2b5ea2a, type: 2}
+  - {fileID: 11400000, guid: 083ec9dd81135894883a085479793839, type: 2}
+  - {fileID: 11400000, guid: 896585d4309f68e49be5a46656adfbe1, type: 2}

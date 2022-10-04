@@ -31,9 +31,10 @@ public class Unit : MonoBehaviour
     public void SetPlayerHP()
     {
         unitInfo.uCurrentHP = currentHP;
+        DataHolder.Instance.playerHealthInfo.uCurrentHP = currentHP;
     }
 
-    void Awake()
+    void Start()
     {
         cName = unitInfo.unitName;
         cElement = unitInfo.uElement;

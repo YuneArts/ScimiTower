@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Slime Boss
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Slime Boss
   uElement: 0
   uDamage: 10
   uMaxHP: 80

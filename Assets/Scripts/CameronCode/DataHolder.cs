@@ -10,6 +10,7 @@ public class DataHolder : MonoBehaviour
     public UnitData mapEnemySpawn;
     public InventoryScript playerInventory;
     public WeaponData mapWeaponSpawn;
+    public UnitData playerHealthInfo;
     
     private void Awake()
     {

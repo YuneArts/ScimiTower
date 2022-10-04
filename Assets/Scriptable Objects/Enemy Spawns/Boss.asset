@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
-  m_Name: Steel Sword
+  m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
+  m_Name: Boss
   m_EditorClassIdentifier: 
-  weaponName: 
-  attack: 5
-  durability: 255
-  art: {fileID: 21300000, guid: 9756329fb7ef8bf4384a5188721ff401, type: 3}
-  element: 0
+  Container:
+  - {fileID: 11400000, guid: c65278b3f99dde940936bd7ea227837c, type: 2}

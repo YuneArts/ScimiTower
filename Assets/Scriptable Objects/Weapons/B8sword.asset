@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
-  m_Name: Steel Sword
+  m_Name: B8sword
   m_EditorClassIdentifier: 
   weaponName: 
-  attack: 5
-  durability: 255
-  art: {fileID: 21300000, guid: 9756329fb7ef8bf4384a5188721ff401, type: 3}
-  element: 0
+  attack: 10
+  durability: 8
+  art: {fileID: 21300000, guid: b8d8769eae0e13b4584c5ed07a971708, type: 3}
+  element: 2

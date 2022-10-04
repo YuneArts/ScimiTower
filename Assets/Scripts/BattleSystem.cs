@@ -38,7 +38,7 @@ public class BattleSystem : MonoBehaviour
 
     void Start()
     {
-        canAttack = true;
+        canAttack = false;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -98,6 +98,7 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
+        canAttack = true;
     }
 
     public IEnumerator PlayerAttack()
@@ -174,6 +175,7 @@ public class BattleSystem : MonoBehaviour
         {
             //Lose screen/game over, menu that leads to main menu
             battleText.text = "Battle Lost!";
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
