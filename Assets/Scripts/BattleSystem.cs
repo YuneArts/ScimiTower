@@ -8,7 +8,7 @@ public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-    public BattleState state;
+    private BattleState state;
 
     public BattleHUD playerHUD;
     public BattleHUD enemyHUD;
@@ -24,15 +24,21 @@ public class BattleSystem : MonoBehaviour
     Unit playerUnit;
     Unit enemyUnit;
 
+    public bool canAttack;
+
+    //public static UnitData enemyData;
+
     public GameObject weaponSelect;
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
     public ButtonScript booton;
+    public WeaponSelectImage weaponSelectArt;
 
     private int finalDamage;
 
     void Start()
     {
+        canAttack = false;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
@@ -65,10 +71,25 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<Unit>();
+        //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
+        playerUnit = playerPrefab.GetComponent<Unit>();
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+
+        yield return new WaitForSeconds(0.01f);
+
+        //if (DataHolder.Instance.currentIndex > 0)
+        //{
+            enemyUnit.unitInfo = DataHolder.Instance.mapEnemySpawn;
+        //}
+
+        yield return new WaitForSeconds(0.01f);
+
+        enemyUnit.UpdateEnemyInfo();
+
+        yield return new WaitForSeconds(0.01f);
+
+        enemyUnit.UpdateEnemySprite();
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -77,6 +98,7 @@ public class BattleSystem : MonoBehaviour
 
         state = BattleState.PLAYERTURN;
         PlayerTurn();
+        canAttack = true;
     }
 
     public IEnumerator PlayerAttack()
@@ -86,13 +108,13 @@ public class BattleSystem : MonoBehaviour
             //Calculate damage past resistances and weaknesses
             CalculateDamage(booton.wDamage, booton.wElement);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
 
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(finalDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
 
             //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
 
@@ -120,6 +142,10 @@ public class BattleSystem : MonoBehaviour
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
 
+        yield return new WaitForSeconds(0.01f);
+
+        playerUnit.SetPlayerHP();
+
         playerHUD.SetHP(playerUnit.currentHP);
 
         yield return new WaitForSeconds(1f);
@@ -131,6 +157,7 @@ public class BattleSystem : MonoBehaviour
         else
         {
             state = BattleState.PLAYERTURN;
+            canAttack = true;
             PlayerTurn();
         }
     }
@@ -142,11 +169,13 @@ public class BattleSystem : MonoBehaviour
             //Weapon selection screen
             battleText.text = "Battle Won!";
             weaponSelect.SetActive(true);
+            weaponSelectArt.ChangeWeaponSelectImage();
         }
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
             battleText.text = "Battle Lost!";
+            SceneManager.LoadScene("MainMenu");
         }
     }
 
@@ -183,6 +212,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                 }
+                else //if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Water:
                 if (enemyUnit.cElement == UnitElement.Fire)
@@ -196,6 +229,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                     return;
+                }
+                else //if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
                 }
                 break;
             case WeaponElement.Grass:
@@ -211,6 +248,10 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
+                else //if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Light:
                 if (enemyUnit.cElement == UnitElement.Dark)
@@ -225,6 +266,10 @@ public class BattleSystem : MonoBehaviour
                     Debug.Log("It's not very effective...");
                     return;
                 }
+                else //if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
+                }
                 break;
             case WeaponElement.Dark:
                 if (enemyUnit.cElement == UnitElement.Dark)
@@ -238,6 +283,10 @@ public class BattleSystem : MonoBehaviour
                     finalDamage = (int)(rawDmg * notEffective);
                     Debug.Log("It's not very effective...");
                     return;
+                }
+                else //if (enemyUnit.cElement == UnitElement.None)
+                {
+                    finalDamage = rawDmg;
                 }
                 break;
             default:

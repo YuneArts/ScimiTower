@@ -9,8 +9,9 @@ public class MapMovement : MonoBehaviour
     public Vector2 mapLocation;
     public GameObject[] locations;
     public int arrayIndex = 0;
-    public int spaces = 2;
+    public int spaces = 3;
     public bool inTransition = false;
+    public MapSpawn mapSpawnScript;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,18 @@ public class MapMovement : MonoBehaviour
         {
             Application.Quit();
         }
+    }
+
+    private void OnMouseDown()
+    {
+        if (!inTransition)
+        {
+            StartCoroutine(SceneManagerAndMovement());
+            inTransition = true;
+        }
+
+        mapSpawnScript.PickEnemy();
+        mapSpawnScript.PickWeapon();
     }
 
     public void playerMoveTo()

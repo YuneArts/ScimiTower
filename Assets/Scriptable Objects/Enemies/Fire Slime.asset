@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Fire Slime
   uElement: 1
-  uDamage: 3
-  uMaxHP: 20
-  uCurrentHP: 20
+  uDamage: 5
+  uMaxHP: 40
+  uCurrentHP: 40
+  uSprite: {fileID: 21300000, guid: 97bab3cd57814514ea098cde3ab65f76, type: 3}

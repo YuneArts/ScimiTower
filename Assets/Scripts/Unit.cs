@@ -14,9 +14,13 @@ public class Unit : MonoBehaviour
     public int maxHP;
     public int currentHP;
 
+    public Sprite cSprite;
+    public SpriteRenderer characterSprite;
+
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
+        //unitInfo.uCurrentHP -= dmg;
 
         if (currentHP <= 0)
             return true;
@@ -24,7 +28,13 @@ public class Unit : MonoBehaviour
             return false;
     }
 
-    void Awake()
+    public void SetPlayerHP()
+    {
+        unitInfo.uCurrentHP = currentHP;
+        DataHolder.Instance.playerHealthInfo.uCurrentHP = currentHP;
+    }
+
+    void Start()
     {
         cName = unitInfo.unitName;
         cElement = unitInfo.uElement;
@@ -33,6 +43,27 @@ public class Unit : MonoBehaviour
         maxHP = unitInfo.uMaxHP;
         currentHP = unitInfo.uCurrentHP;
 
+        cSprite = unitInfo.uSprite;
+
         Debug.Log("Element = " + cElement);
+    }
+
+    public void UpdateEnemyInfo()
+    {
+        cName = unitInfo.unitName;
+        cElement = unitInfo.uElement;
+        damage = unitInfo.uDamage;
+
+        maxHP = unitInfo.uMaxHP;
+        currentHP = unitInfo.uCurrentHP;
+
+        cSprite = unitInfo.uSprite;
+
+        Debug.Log("Element = " + cElement);
+    }
+
+    public void UpdateEnemySprite()
+    {
+        characterSprite.sprite = cSprite;
     }
 }

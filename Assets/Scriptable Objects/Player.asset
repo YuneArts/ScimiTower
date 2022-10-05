@@ -15,5 +15,6 @@ MonoBehaviour:
   unitName: Warrior
   uElement: 0
   uDamage: 0
-  uMaxHP: 30
-  uCurrentHP: 30
+  uMaxHP: 80
+  uCurrentHP: 80
+  uSprite: {fileID: 0}

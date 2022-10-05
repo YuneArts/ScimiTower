@@ -18,6 +18,7 @@ public class WeaponSelect : MonoBehaviour
 
     void Pick()
     {
+        /*
         int randomIndex = Random.Range(1, randomWeapon.Container.Count);
         Debug.Log($"{randomIndex}");
 
@@ -37,6 +38,8 @@ public class WeaponSelect : MonoBehaviour
         {
             theWeapon = randomWeapon.Container[3];
         }
+        */
+        theWeapon = DataHolder.Instance.mapWeaponSpawn;
     }
 
     // Update is called once per frame

@@ -16,7 +16,7 @@ public class ButtonScript : MonoBehaviour
     public int wDamage;
     public int wDurability;
     public WeaponElement wElement;
-
+    public BattleSystem battleSystem;
     
     public void ToMap()
     {
@@ -34,45 +34,49 @@ public class ButtonScript : MonoBehaviour
     called in battle system. */
     public void SlotAttack1()
     {
-        if (inventory.Container[0].durability > 0)
+        if (inventory.Container[0].durability > 0 && battleSystem.canAttack == true)
         {
             wDamage = inventory.Container[0].attack;
             wElement = inventory.Container[0].element;
             inventory.Container[0].durability -= 1;
             bSystem.OnAttackButton();
+            battleSystem.canAttack = false;
         }
     }
 
     public void SlotAttack2()
     {
-        if (inventory.Container[1].durability > 0)
+        if (inventory.Container[1].durability > 0 && battleSystem.canAttack == true)
         {
             wDamage = inventory.Container[1].attack;
             wElement = inventory.Container[1].element;
             inventory.Container[1].durability -= 1;
             bSystem.OnAttackButton();
+            battleSystem.canAttack = false;
         }
     }
 
     public void SlotAttack3()
     {
-        if (inventory.Container[2].durability > 0)
+        if (inventory.Container[2].durability > 0 && battleSystem.canAttack == true)
         {
             wDamage = inventory.Container[2].attack;
             wElement = inventory.Container[2].element;
             inventory.Container[2].durability -= 1;
             bSystem.OnAttackButton();
+            battleSystem.canAttack = false;
         }
     }
 
     public void SlotAttack4()
     {
-        if (inventory.Container[3].durability > 0)
+        if (inventory.Container[3].durability > 0 && battleSystem.canAttack == true)
         {
             wDamage = inventory.Container[3].attack;
             wElement = inventory.Container[3].element;
             inventory.Container[3].durability -= 1;
             bSystem.OnAttackButton();
+            battleSystem.canAttack = false;
         }
     }
 
@@ -80,7 +84,7 @@ public class ButtonScript : MonoBehaviour
     {
         if (inventory.Container[0].durability == 0)
         {
-            //Disable the slot that the weapon broke on.
+            inventory.Container.Remove(inventory.Container[0]);
         }
 
         /*Do this for all four weapon slots. This is example code/idea for how to do it. 

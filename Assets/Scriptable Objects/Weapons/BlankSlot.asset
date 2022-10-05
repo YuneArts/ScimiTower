@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
   m_Name: BlankSlot
   m_EditorClassIdentifier: 
-  name: Blank
+  weaponName: 
   attack: 0
   durability: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: 336f9c5aba75d484cbd8d315c94a6138, type: 3}
+  element: 0
