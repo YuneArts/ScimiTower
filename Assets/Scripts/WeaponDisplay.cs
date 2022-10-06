@@ -22,6 +22,6 @@ public class WeaponDisplay : MonoBehaviour
 
     void Update()
     {
-        durabilityText.text = weapon.durability.ToString();
+        durabilityText.text = weapon.durability.ToString() + "/" + weapon.maxDurability.ToString();
     }
 }
