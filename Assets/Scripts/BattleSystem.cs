@@ -127,6 +127,7 @@ public class BattleSystem : MonoBehaviour
 
             if (isDead)
             {
+                yield return new WaitForSeconds(1f);
                 state = BattleState.WON;
                 EndBattle();
             }
