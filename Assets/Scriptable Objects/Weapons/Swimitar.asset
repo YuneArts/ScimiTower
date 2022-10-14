@@ -15,5 +15,7 @@ MonoBehaviour:
   weaponName: 
   attack: 17
   durability: 5
+  maxDurability: 5
+  healingValue: 0
   art: {fileID: 21300000, guid: 8c5d9f027c0c2914d89ddc41bf5ce444, type: 3}
   element: 2

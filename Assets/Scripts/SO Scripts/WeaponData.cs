@@ -9,6 +9,9 @@ public class WeaponData : ScriptableObject
 
     public int attack;
     public int durability;
+    public int maxDurability;
+
+    public int healingValue;
 
     public Sprite art;
 

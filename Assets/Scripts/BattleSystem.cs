@@ -36,6 +36,11 @@ public class BattleSystem : MonoBehaviour
 
     private int finalDamage;
 
+    [SerializeField]
+    private Transform playerDamageText, enemyDamageText;
+    [SerializeField]
+    private GameObject damageTextPrefab;
+
     void Start()
     {
         canAttack = false;
@@ -114,12 +119,15 @@ public class BattleSystem : MonoBehaviour
             bool isDead = enemyUnit.TakeDamage(finalDamage);
             enemyHUD.SetHP(enemyUnit.currentHP);
 
+            DamageText.Create(damageTextPrefab, enemyDamageText, finalDamage);
+
             yield return new WaitForSeconds(0.01f);
 
             //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
 
             if (isDead)
             {
+                yield return new WaitForSeconds(1f);
                 state = BattleState.WON;
                 EndBattle();
             }
@@ -141,6 +149,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
 
         yield return new WaitForSeconds(0.01f);
 
