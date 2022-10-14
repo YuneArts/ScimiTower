@@ -15,6 +15,7 @@ public class ButtonScript : MonoBehaviour
 
     public int wDamage;
     public int wDurability;
+    public int wHealing;
     public WeaponElement wElement;
     public BattleSystem battleSystem;
     
@@ -38,6 +39,7 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[0].attack;
             wElement = inventory.Container[0].element;
+            wHealing = inventory.Container[0].healingValue;
             inventory.Container[0].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
@@ -50,6 +52,7 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[1].attack;
             wElement = inventory.Container[1].element;
+            wHealing = inventory.Container[1].healingValue;
             inventory.Container[1].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
@@ -62,6 +65,7 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[2].attack;
             wElement = inventory.Container[2].element;
+            wHealing = inventory.Container[2].healingValue;
             inventory.Container[2].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
@@ -74,6 +78,7 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[3].attack;
             wElement = inventory.Container[3].element;
+            wHealing = inventory.Container[3].healingValue;
             inventory.Container[3].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;

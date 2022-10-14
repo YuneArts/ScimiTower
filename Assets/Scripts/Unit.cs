@@ -28,6 +28,16 @@ public class Unit : MonoBehaviour
             return false;
     }
 
+    public void Heal(int healAmount)
+    {
+        currentHP += healAmount;
+
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
+    }
+
     public void SetPlayerHP()
     {
         unitInfo.uCurrentHP = currentHP;
