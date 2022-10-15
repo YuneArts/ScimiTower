@@ -14,13 +14,25 @@ public class MainMenu : MonoBehaviour
       audio.Play();
     }
 
-    public void quitButton()
+     void quitButton()
     {
         Application.Quit();
+        Debug.Log("Game Closed");
     }
 
     public void StartGame() 
     {
       SceneManager.LoadScene("BattleScreen");
     }
+
+    public void Credits()
+    {
+      SceneManager.LoadScene("Credits");
+    }
+    
+    public void Back()
+    {
+      SceneManager.LoadScene("MainMenu");
+    }
+    
 }
