@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class DamageText : MonoBehaviour
+public class HealText : MonoBehaviour
 {
 
-    public static DamageText Create(GameObject dmgTextSpawn, Transform spot, int damageAmount)
+    public static HealText Create(GameObject healTextSpawn, Transform spot, int healAmount)
     {
-        GameObject damagePopup = Instantiate(dmgTextSpawn, spot);
+        GameObject healPopup = Instantiate(healTextSpawn, spot);
 
-        DamageText damageTextPopup = damagePopup.GetComponent<DamageText>();
-        damageTextPopup.Setup(damageAmount);
+        HealText healTextPopup = healPopup.GetComponent<HealText>();
+        healTextPopup.Setup(healAmount);
 
-        return damageTextPopup;
+        return healTextPopup;
     }
     private TextMeshPro textMesh;
     private float disappearTimer;
-    private Color textColor = new Color(0.8f, 0.2f, 0.05f, 1f);
+    private Color textColor = new Color(0.1f, 0.9f, 0.15f, 1f);
 
     private void Awake()
     {
         textMesh = transform.GetComponent<TextMeshPro>();
-        textMesh.color = textColor;
         //textColor = textMesh.color;
+        textMesh.color = textColor;
         disappearTimer = 0.5f;
     }
 
@@ -43,8 +43,8 @@ public class DamageText : MonoBehaviour
         }
     }
 
-    public void Setup(int damageAmount)
+    public void Setup(int healAmount)
     {
-        textMesh.SetText(damageAmount.ToString());
+        textMesh.SetText(healAmount.ToString());
     }
 }

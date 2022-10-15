@@ -1282,6 +1282,7 @@ MonoBehaviour:
   bSystem: {fileID: 2070435592}
   wDamage: 0
   wDurability: 0
+  wHealing: 0
   wElement: 0
   battleSystem: {fileID: 2070435592}
 --- !u!114 &399460806
@@ -1418,6 +1419,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &418615491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418615492}
+  m_Layer: 0
+  m_Name: PlayerHealText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418615492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418615491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &436028161
 GameObject:
   m_ObjectHideFlags: 0
@@ -3308,6 +3340,7 @@ MonoBehaviour:
   bSystem: {fileID: 0}
   wDamage: 0
   wDurability: 0
+  wHealing: 0
   wElement: 0
   battleSystem: {fileID: 0}
 --- !u!1 &936346140
@@ -5399,6 +5432,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635708632}
   m_CullTransparentMesh: 1
+--- !u!1 &1637528170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637528171}
+  m_Layer: 0
+  m_Name: EnemyHealText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637528171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637528170}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1640736230
 GameObject:
   m_ObjectHideFlags: 0
@@ -6892,7 +6956,10 @@ MonoBehaviour:
   weaponSelectArt: {fileID: 916304126}
   playerDamageText: {fileID: 1078801968}
   enemyDamageText: {fileID: 182045970}
+  playerHealText: {fileID: 418615492}
+  enemyHealText: {fileID: 1637528171}
   damageTextPrefab: {fileID: 1597934223317903658, guid: ce4b71d55b3f8604fa7c789dbecbd43d, type: 3}
+  healTextPrefab: {fileID: 237005762171030480, guid: 1ee30ce8e4af1f747adac241607059a6, type: 3}
 --- !u!4 &2070435593
 Transform:
   m_ObjectHideFlags: 0

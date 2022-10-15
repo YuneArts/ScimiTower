@@ -26,8 +26,6 @@ public class BattleSystem : MonoBehaviour
 
     public bool canAttack;
 
-    //public static UnitData enemyData;
-
     public GameObject weaponSelect;
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
@@ -37,9 +35,9 @@ public class BattleSystem : MonoBehaviour
     private int finalDamage;
 
     [SerializeField]
-    private Transform playerDamageText, enemyDamageText;
+    private Transform playerDamageText, enemyDamageText, playerHealText, enemyHealText;
     [SerializeField]
-    private GameObject damageTextPrefab;
+    private GameObject damageTextPrefab, healTextPrefab;
 
     void Start()
     {
@@ -83,10 +81,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(0.01f);
 
-        //if (DataHolder.Instance.currentIndex > 0)
-        //{
-            enemyUnit.unitInfo = DataHolder.Instance.mapEnemySpawn;
-        //}
+        enemyUnit.unitInfo = DataHolder.Instance.mapEnemySpawn;
 
         yield return new WaitForSeconds(0.01f);
 
@@ -112,18 +107,23 @@ public class BattleSystem : MonoBehaviour
         {
             //Calculate damage past resistances and weaknesses
             CalculateDamage(booton.wDamage, booton.wElement);
+            //Start healing if weapon action has healing
+            if (booton.wHealing > 0)
+            {
+                playerUnit.Heal(booton.wHealing);
+                HealText.Create(healTextPrefab, playerHealText, booton.wHealing);
+            }
 
             yield return new WaitForSeconds(0.01f);
 
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(finalDamage);
+            playerHUD.SetHP(playerUnit.currentHP);
             enemyHUD.SetHP(enemyUnit.currentHP);
-
+            //Creates the damage numbers next to the enemy.
             DamageText.Create(damageTextPrefab, enemyDamageText, finalDamage);
 
             yield return new WaitForSeconds(0.01f);
-
-            //Break weapon if durability reaches 0. Function is elsewhere, within ButtonScript or Weapon Holder.
 
             if (isDead)
             {
@@ -136,7 +136,6 @@ public class BattleSystem : MonoBehaviour
                 state = BattleState.ENEMYTURN;
                 StartCoroutine(EnemyTurn());
             }
-
             yield return new WaitForSeconds(2f);
         }
     }
@@ -149,6 +148,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        //Creates the damage numbers next to the player.
         DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
 
         yield return new WaitForSeconds(0.01f);
@@ -161,7 +161,9 @@ public class BattleSystem : MonoBehaviour
 
         if (isDead)
         {
+            yield return new WaitForSeconds(1f);
             state = BattleState.LOST;
+            EndBattle();
         }
         else
         {
@@ -179,12 +181,16 @@ public class BattleSystem : MonoBehaviour
             battleText.text = "Battle Won!";
             weaponSelect.SetActive(true);
             weaponSelectArt.ChangeWeaponSelectImage();
+            //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
+            //Victory();
         }
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
             battleText.text = "Battle Lost!";
             SceneManager.LoadScene("MainMenu");
+            //Pull up a hidden Game Over screen. Have stats of the run and button that leads to main menu.
+            //GameOver(); 
         }
     }
 
@@ -200,7 +206,20 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    
+    /*
+    void Victory()
+    {
+        winScreen.SetActive(true);
+    }
+    */
+
+    /*
+    void GameOver()
+    {
+        loseScreen.SetActive(true);
+    }
+    */
+
     void CalculateDamage(int rawDmg, WeaponElement attackElement)
     {
         float superEffective = 1.5f;
