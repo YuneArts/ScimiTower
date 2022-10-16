@@ -25,6 +25,8 @@ public class BattleSystem : MonoBehaviour
     Unit enemyUnit;
 
     public bool canAttack;
+    [SerializeField]
+    private bool finalBoss;
 
     public GameObject weaponSelect;
     public InventoryScript inventory;
@@ -38,6 +40,8 @@ public class BattleSystem : MonoBehaviour
     private Transform playerDamageText, enemyDamageText, playerHealText, enemyHealText;
     [SerializeField]
     private GameObject damageTextPrefab, healTextPrefab;
+    [SerializeField]
+    private ResultsScreen winloseScreen;
 
     void Start()
     {
@@ -90,6 +94,15 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
+
+        if (enemyUnit.bossUnit == true)
+        {
+            finalBoss = true;
+        }
+        else 
+        {
+            finalBoss = false;
+        }
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
@@ -177,12 +190,20 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.WON)
         {
-            //Weapon selection screen
-            battleText.text = "Battle Won!";
-            weaponSelect.SetActive(true);
-            weaponSelectArt.ChangeWeaponSelectImage();
-            //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
-            //Victory();
+            if (finalBoss)
+            {
+                //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
+                winloseScreen.WinScreen();
+            }
+            else
+            {
+                //Weapon selection screen
+                battleText.text = "Battle Won!";
+                weaponSelect.SetActive(true);
+                weaponSelectArt.ChangeWeaponSelectImage();
+            }
+            
+
         }
         else if (state == BattleState.LOST)
         {
@@ -190,7 +211,7 @@ public class BattleSystem : MonoBehaviour
             battleText.text = "Battle Lost!";
             SceneManager.LoadScene("MainMenu");
             //Pull up a hidden Game Over screen. Have stats of the run and button that leads to main menu.
-            //GameOver(); 
+            winloseScreen.LoseScreen();
         }
     }
 
@@ -205,20 +226,6 @@ public class BattleSystem : MonoBehaviour
             return;
         StartCoroutine(PlayerAttack());
     }
-
-    /*
-    void Victory()
-    {
-        winScreen.SetActive(true);
-    }
-    */
-
-    /*
-    void GameOver()
-    {
-        loseScreen.SetActive(true);
-    }
-    */
 
     void CalculateDamage(int rawDmg, WeaponElement attackElement)
     {

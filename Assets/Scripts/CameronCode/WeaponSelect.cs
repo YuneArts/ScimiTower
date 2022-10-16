@@ -10,6 +10,10 @@ public class WeaponSelect : MonoBehaviour
     public InventoryScript playerInventory;
     public WeaponData theWeapon;
     public GameObject[] slots;
+
+    [SerializeField]
+    private TransitionScript sceneTransition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,25 +70,25 @@ public class WeaponSelect : MonoBehaviour
     public void SlotOne()
     {
         playerInventory.Container[0] = theWeapon;
-        SceneManager.LoadScene("MapScene");
+        sceneTransition.BattleToMapTransition();
         
     }
     public void SlotTwo()
     {
         playerInventory.Container[1] = theWeapon;
-        SceneManager.LoadScene("MapScene");
+        sceneTransition.BattleToMapTransition();
 
     }
     public void SlotThree()
     {
         playerInventory.Container[2] = theWeapon;
-        SceneManager.LoadScene("MapScene");
+        sceneTransition.BattleToMapTransition();
 
     }
     public void SlotFour()
     {
         playerInventory.Container[3] = theWeapon;
-        SceneManager.LoadScene("MapScene");
+        sceneTransition.BattleToMapTransition();
 
     }
 }

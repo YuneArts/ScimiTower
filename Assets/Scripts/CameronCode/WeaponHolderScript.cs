@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponHolderScript : MonoBehaviour
 {
-    private int maxInventory = 4;
+    //private int maxInventory = 4;
     public int currentInventory;
     public GameObject[] slots;
     public BattleSystem battleSystem;

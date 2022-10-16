@@ -13,6 +13,7 @@ public class Unit : MonoBehaviour
     
     public int maxHP;
     public int currentHP;
+    public bool bossUnit;
 
     public Sprite cSprite;
     public SpriteRenderer characterSprite;
@@ -68,6 +69,8 @@ public class Unit : MonoBehaviour
         currentHP = unitInfo.uCurrentHP;
 
         cSprite = unitInfo.uSprite;
+
+        bossUnit = unitInfo.isBoss;
 
         Debug.Log("Element = " + cElement);
     }
