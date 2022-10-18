@@ -20,11 +20,12 @@ public class ButtonScript : MonoBehaviour
     public WeaponType wType;
     public WeaponAlignment wAlignment;
     public BattleSystem battleSystem;
+    [SerializeField]
+    private TransitionScript transitionScript;
     
     public void ToMap()
     {
-        SceneManager.LoadScene("MapScene");
-        
+        transitionScript.BattleToMapTransition();
     }
 
     public void SlotSelect()

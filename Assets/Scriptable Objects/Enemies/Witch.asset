@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
-  m_Name: Player
+  m_Name: Witch
   m_EditorClassIdentifier: 
-  unitName: Warrior
+  unitName: Witch
   uElement: 0
   uAlignment: 0
   uResistBPS: 0
   uWeakBPS: 0
-  uDamage: 0
-  uMaxHP: 80
-  uCurrentHP: 40
-  isBoss: 0
-  uSprite: {fileID: 0}
+  uDamage: 15
+  uMaxHP: 150
+  uCurrentHP: 150
+  isBoss: 1
+  uSprite: {fileID: 21300000, guid: d7bcbd8b48ce1e54e87230a67aca33bb, type: 3}

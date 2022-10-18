@@ -20,13 +20,15 @@ public class BattleSystem : MonoBehaviour
     private GameObject playerPrefab, enemyPrefab;
     [SerializeField]
     private Transform playerBattleStation, enemyBattleStation;
+    [SerializeField]
+    private GameObject bedroom, hallway1, hallway2, bottomFloor;
 
     Unit playerUnit;
     Unit enemyUnit;
 
     public bool canAttack;
     [SerializeField]
-    private bool finalBoss;
+    private bool finalBoss, enemyAbsorb;
 
     public GameObject weaponSelect;
     public InventoryScript inventory;
@@ -36,7 +38,7 @@ public class BattleSystem : MonoBehaviour
 
     private int finalDamage;
     [SerializeField]
-    private float veryEffective, notEffective, ldSuperEffective;
+    private float elementSuperEffective, alignmentSuperEffective, alignmentNotEffective, bpsSuperEffective, bpsNotEffective;
     private float neutralDamage = 1f;
     private float elementMultiplier, alignmentMultiplier, bpsMultiplier;
 
@@ -110,6 +112,9 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
+        yield return new WaitForSeconds(0.01f);
+
+        ChangeBackground();
 
         yield return new WaitForSeconds(1f);
 
@@ -139,8 +144,15 @@ public class BattleSystem : MonoBehaviour
             enemyHUD.SetHP(enemyUnit.currentHP);
             //Creates the damage numbers next to the enemy.
             DamageText.Create(damageTextPrefab, enemyDamageText, finalDamage);
+            //If elemental typing match up, enemy drains attack and gains a damage boost from it.
+            if (enemyAbsorb)
+            {
+                ElementBoost(3);
+            }
 
             yield return new WaitForSeconds(0.01f);
+
+            enemyAbsorb = false;
 
             if (isDead)
             {
@@ -254,13 +266,13 @@ public class BattleSystem : MonoBehaviour
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
                     elementMultiplier = 0f;
-                    //ElementBoost(int);
+                    enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
                 else if (enemyUnit.cElement == UnitElement.Grass)
                 {
-                    elementMultiplier = veryEffective;
+                    elementMultiplier = elementSuperEffective;
                     Debug.Log("It's very effective!");
                     return;
                 }
@@ -274,13 +286,13 @@ public class BattleSystem : MonoBehaviour
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
                     elementMultiplier = 0f;
-                    //ElementBoost(int);
+                    enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
                 else if (enemyUnit.cElement == UnitElement.Fire)
                 {
-                    elementMultiplier = veryEffective;
+                    elementMultiplier = elementSuperEffective;
                     Debug.Log("It's very effective!");
                     return;
                 }
@@ -294,13 +306,13 @@ public class BattleSystem : MonoBehaviour
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
                     elementMultiplier = 0f;
-                    //ElementBoost(int);
+                    enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
                 else if (enemyUnit.cElement == UnitElement.Water)
                 {
-                    elementMultiplier = veryEffective;
+                    elementMultiplier = elementSuperEffective;
                     Debug.Log("It's very effective!");
                     return;
                 }
@@ -322,12 +334,12 @@ public class BattleSystem : MonoBehaviour
             case WeaponAlignment.Light:
                 if (enemyUnit.cAlignment == UnitAlignment.Dark)
                 {
-                    alignmentMultiplier = ldSuperEffective;
+                    alignmentMultiplier = alignmentSuperEffective;
                     return;
                 }
                 else if (enemyUnit.cAlignment == UnitAlignment.Light)
                 {
-                    alignmentMultiplier = notEffective;
+                    alignmentMultiplier = alignmentNotEffective;
                     return;
                 }
                 else
@@ -338,12 +350,12 @@ public class BattleSystem : MonoBehaviour
             case WeaponAlignment.Dark:
                 if (enemyUnit.cAlignment == UnitAlignment.Light)
                 {
-                    alignmentMultiplier = ldSuperEffective;
+                    alignmentMultiplier = alignmentSuperEffective;
                     return;
                 }
                 else if (enemyUnit.cAlignment == UnitAlignment.Dark)
                 {
-                    alignmentMultiplier = notEffective;
+                    alignmentMultiplier = alignmentNotEffective;
                     return;
                 }
                 else
@@ -364,12 +376,12 @@ public class BattleSystem : MonoBehaviour
             case WeaponType.Bludgeon:
                 if (enemyUnit.cResistBPS == UnitWeaponResistance.Bludgeon)
                 {
-                    bpsMultiplier = notEffective;
+                    bpsMultiplier = bpsNotEffective;
                     return;
                 }
                 else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Bludgeon)
                 {
-                    bpsMultiplier = veryEffective;
+                    bpsMultiplier = bpsSuperEffective;
                     return;
                 }
                 else
@@ -380,12 +392,12 @@ public class BattleSystem : MonoBehaviour
             case WeaponType.Pierce:
                 if (enemyUnit.cResistBPS == UnitWeaponResistance.Pierce)
                 {
-                    bpsMultiplier = notEffective;
+                    bpsMultiplier = bpsNotEffective;
                     return;
                 }
                 else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Pierce)
                 {
-                    bpsMultiplier = veryEffective;
+                    bpsMultiplier = bpsSuperEffective;
                     return;
                 }
                 else
@@ -396,12 +408,12 @@ public class BattleSystem : MonoBehaviour
             case WeaponType.Slash:
                 if (enemyUnit.cResistBPS == UnitWeaponResistance.Slash)
                 {
-                    bpsMultiplier = notEffective;
+                    bpsMultiplier = bpsNotEffective;
                     return;
                 }
                 else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Slash)
                 {
-                    bpsMultiplier = veryEffective;
+                    bpsMultiplier = bpsSuperEffective;
                     return;
                 }
                 else
@@ -414,5 +426,44 @@ public class BattleSystem : MonoBehaviour
                 return;
         }
     }
-    
+
+    private void ElementBoost(int amount)
+    {
+        if (enemyAbsorb)
+        {
+            enemyUnit.damage += amount;
+        }
+    }
+
+    private void ChangeBackground()
+    {
+        if (DataHolder.Instance.currentIndex == 0)
+        {
+            bedroom.SetActive(true);
+            hallway1.SetActive(false);
+            hallway2.SetActive(false);
+            bottomFloor.SetActive(false);
+        }
+        if (DataHolder.Instance.currentIndex == 1 || DataHolder.Instance.currentIndex == 2)
+        {
+            bedroom.SetActive(false);
+            hallway1.SetActive(true);
+            hallway2.SetActive(false);
+            bottomFloor.SetActive(false);
+        }
+        if (DataHolder.Instance.currentIndex == 3)
+        {
+            bedroom.SetActive(false);
+            hallway1.SetActive(false);
+            hallway2.SetActive(true);
+            bottomFloor.SetActive(false);
+        }
+        if (finalBoss)
+        {
+            bedroom.SetActive(false);
+            hallway1.SetActive(false);
+            hallway2.SetActive(false);
+            bottomFloor.SetActive(true);
+        }
+    }
 }
