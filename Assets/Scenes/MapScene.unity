@@ -560,6 +560,8 @@ MonoBehaviour:
   wDurability: 0
   wHealing: 0
   wElement: 0
+  wType: 0
+  wAlignment: 0
   battleSystem: {fileID: 0}
 --- !u!114 &424950326
 MonoBehaviour:
@@ -3218,6 +3220,6 @@ MonoBehaviour:
   mapEnemySpawn: {fileID: 0}
   mapWeaponSpawn: {fileID: 0}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
-  playerHealthInfo: {fileID: 0}
+  playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0

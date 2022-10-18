@@ -7,6 +7,9 @@ public class UnitData : ScriptableObject
 {
     public string unitName;
     public UnitElement uElement;
+    public UnitAlignment uAlignment;
+    public UnitWeaponResistance uResistBPS;
+    public UnitWeaponWeakness uWeakBPS;
 
     public int uDamage;
 
@@ -25,4 +28,27 @@ public enum UnitElement
     Grass,
     Light,
     Dark
+}
+
+public enum UnitAlignment
+{
+    None,
+    Light,
+    Dark
+}
+
+public enum UnitWeaponResistance
+{
+    None,
+    Bludgeon,
+    Pierce,
+    Slash
+}
+
+public enum UnitWeaponWeakness
+{
+    None,
+    Bludgeon,
+    Pierce,
+    Slash
 }

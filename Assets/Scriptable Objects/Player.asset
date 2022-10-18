@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Warrior
   uElement: 0
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 0
   uDamage: 0
   uMaxHP: 80
   uCurrentHP: 80
+  isBoss: 0
   uSprite: {fileID: 0}

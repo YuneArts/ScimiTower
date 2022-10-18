@@ -9,6 +9,9 @@ public class Unit : MonoBehaviour
     public UnitData unitInfo;
 
     public UnitElement cElement;
+    public UnitAlignment cAlignment;
+    public UnitWeaponResistance cResistBPS;
+    public UnitWeaponWeakness cWeakBPS;
     public int damage;
     
     public int maxHP;
@@ -63,6 +66,9 @@ public class Unit : MonoBehaviour
     {
         cName = unitInfo.unitName;
         cElement = unitInfo.uElement;
+        cAlignment = unitInfo.uAlignment;
+        cResistBPS = unitInfo.uResistBPS;
+        cWeakBPS = unitInfo.uWeakBPS;
         damage = unitInfo.uDamage;
 
         maxHP = unitInfo.uMaxHP;

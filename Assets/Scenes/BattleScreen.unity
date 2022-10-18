@@ -1333,6 +1333,8 @@ MonoBehaviour:
   wDurability: 0
   wHealing: 0
   wElement: 0
+  wType: 0
+  wAlignment: 0
   battleSystem: {fileID: 2070435592}
 --- !u!114 &399460806
 MonoBehaviour:
@@ -3563,6 +3565,8 @@ MonoBehaviour:
   wDurability: 0
   wHealing: 0
   wElement: 0
+  wType: 0
+  wAlignment: 0
   battleSystem: {fileID: 0}
 --- !u!1 &936346140
 GameObject:
@@ -8121,6 +8125,9 @@ MonoBehaviour:
   - {fileID: 1818904338}
   booton: {fileID: 399460805}
   weaponSelectArt: {fileID: 916304126}
+  veryEffective: 1.5
+  notEffective: 0.5
+  ldSuperEffective: 2
   playerDamageText: {fileID: 1078801968}
   enemyDamageText: {fileID: 182045970}
   playerHealText: {fileID: 418615492}

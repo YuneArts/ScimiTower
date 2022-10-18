@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Water Slime
   uElement: 2
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 2
   uDamage: 5
   uMaxHP: 40
   uCurrentHP: 40
+  isBoss: 0
   uSprite: {fileID: 21300000, guid: 8c626c8e4412b4c44b08fbb2a96b251a, type: 3}

@@ -35,6 +35,10 @@ public class BattleSystem : MonoBehaviour
     public WeaponSelectImage weaponSelectArt;
 
     private int finalDamage;
+    [SerializeField]
+    private float veryEffective, notEffective, ldSuperEffective;
+    private float neutralDamage = 1f;
+    private float elementMultiplier, alignmentMultiplier, bpsMultiplier;
 
     [SerializeField]
     private Transform playerDamageText, enemyDamageText, playerHealText, enemyHealText;
@@ -119,7 +123,7 @@ public class BattleSystem : MonoBehaviour
         if (state == BattleState.PLAYERTURN)
         {
             //Calculate damage past resistances and weaknesses
-            CalculateDamage(booton.wDamage, booton.wElement);
+            StartCoroutine(CalculateDamage(booton.wDamage, booton.wElement, booton.wAlignment, booton.wType));
             //Start healing if weapon action has healing
             if (booton.wHealing > 0)
             {
@@ -127,7 +131,7 @@ public class BattleSystem : MonoBehaviour
                 HealText.Create(healTextPrefab, playerHealText, booton.wHealing);
             }
 
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.05f);
 
             //Damage the Enemy
             bool isDead = enemyUnit.TakeDamage(finalDamage);
@@ -227,105 +231,186 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    void CalculateDamage(int rawDmg, WeaponElement attackElement)
+    IEnumerator CalculateDamage(int rawDmg, WeaponElement attackElement, WeaponAlignment attackAlignment, WeaponType attackBPS)
     {
-        float superEffective = 1.5f;
-        float notEffective = 0.5f;
-        float ldSuperEffective = 2f;
+        ElementCheck(attackElement);
+        AlignmentCheck(attackAlignment);
+        BPSCheck(attackBPS);
 
+        yield return new WaitForSeconds(0.01f);
+
+        finalDamage = (int)(rawDmg * elementMultiplier * alignmentMultiplier * bpsMultiplier);
+
+        Debug.Log("Base Damage: " + rawDmg.ToString() + ", Elemental Multiplier: " + elementMultiplier.ToString() + ", Alignment Multiplier: " + 
+        alignmentMultiplier.ToString() + ", Weapon Type Multiplier: " + bpsMultiplier.ToString());
+    }
+
+    private void ElementCheck(WeaponElement checkElement)
+    {
         switch (booton.wElement)
         {
             case WeaponElement.Fire:
-                if (enemyUnit.cElement == UnitElement.Grass)
+                if (enemyUnit.cElement == UnitElement.Fire)
                 {
-                    finalDamage = (int)(rawDmg * superEffective);
-                    Debug.Log("It's super effective!");
+                    //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
+                    elementMultiplier = 0f;
+                    //ElementBoost(int);
+                    Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.Water || enemyUnit.cElement == UnitElement.Fire)
+                else if (enemyUnit.cElement == UnitElement.Grass)
                 {
-                    finalDamage = (int)(rawDmg * notEffective);
-                    Debug.Log("It's not very effective...");
+                    elementMultiplier = veryEffective;
+                    Debug.Log("It's very effective!");
+                    return;
                 }
-                else //if (enemyUnit.cElement == UnitElement.None)
+                else
                 {
-                    finalDamage = rawDmg;
+                    elementMultiplier = neutralDamage;
                 }
                 break;
             case WeaponElement.Water:
-                if (enemyUnit.cElement == UnitElement.Fire)
+                if (enemyUnit.cElement == UnitElement.Water)
                 {
-                    finalDamage = (int)(rawDmg * superEffective);
-                    Debug.Log("It's super effective!");
+                    //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
+                    elementMultiplier = 0f;
+                    //ElementBoost(int);
+                    Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.Grass || enemyUnit.cElement == UnitElement.Water)
+                else if (enemyUnit.cElement == UnitElement.Fire)
                 {
-                    finalDamage = (int)(rawDmg * notEffective);
-                    Debug.Log("It's not very effective...");
+                    elementMultiplier = veryEffective;
+                    Debug.Log("It's very effective!");
                     return;
                 }
-                else //if (enemyUnit.cElement == UnitElement.None)
+                else
                 {
-                    finalDamage = rawDmg;
+                    elementMultiplier = neutralDamage;
                 }
                 break;
             case WeaponElement.Grass:
-                if (enemyUnit.cElement == UnitElement.Water)
+                if (enemyUnit.cElement == UnitElement.Grass)
                 {
-                    finalDamage = (int)(rawDmg * superEffective);
-                    Debug.Log("It's super effective!");
+                    //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
+                    elementMultiplier = 0f;
+                    //ElementBoost(int);
+                    Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
                 }
-                else if (enemyUnit.cElement == UnitElement.Fire || enemyUnit.cElement == UnitElement.Grass)
+                else if (enemyUnit.cElement == UnitElement.Water)
                 {
-                    finalDamage = (int)(rawDmg * notEffective);
-                    Debug.Log("It's not very effective...");
+                    elementMultiplier = veryEffective;
+                    Debug.Log("It's very effective!");
                     return;
                 }
-                else //if (enemyUnit.cElement == UnitElement.None)
+                else
                 {
-                    finalDamage = rawDmg;
-                }
-                break;
-            case WeaponElement.Light:
-                if (enemyUnit.cElement == UnitElement.Dark)
-                {
-                    finalDamage = (int)(rawDmg * ldSuperEffective);
-                    Debug.Log("It's super effective!");
-                    return;
-                }
-                else if (enemyUnit.cElement == UnitElement.Light)
-                {
-                    finalDamage = (int)(rawDmg * notEffective);
-                    Debug.Log("It's not very effective...");
-                    return;
-                }
-                else //if (enemyUnit.cElement == UnitElement.None)
-                {
-                    finalDamage = rawDmg;
-                }
-                break;
-            case WeaponElement.Dark:
-                if (enemyUnit.cElement == UnitElement.Dark)
-                {
-                    finalDamage = (int)(rawDmg * ldSuperEffective);
-                    Debug.Log("It's super effective!");
-                    return;
-                }
-                else if (enemyUnit.cElement == UnitElement.Light)
-                {
-                    finalDamage = (int)(rawDmg * notEffective);
-                    Debug.Log("It's not very effective...");
-                    return;
-                }
-                else //if (enemyUnit.cElement == UnitElement.None)
-                {
-                    finalDamage = rawDmg;
+                    elementMultiplier = neutralDamage;
                 }
                 break;
             default:
-                finalDamage = rawDmg;
+                elementMultiplier = neutralDamage;
+                return;
+        }
+    }
+
+    private void AlignmentCheck(WeaponAlignment checkAlignment)
+    {
+        switch (booton.wAlignment)
+        {
+            case WeaponAlignment.Light:
+                if (enemyUnit.cAlignment == UnitAlignment.Dark)
+                {
+                    alignmentMultiplier = ldSuperEffective;
+                    return;
+                }
+                else if (enemyUnit.cAlignment == UnitAlignment.Light)
+                {
+                    alignmentMultiplier = notEffective;
+                    return;
+                }
+                else
+                {
+                    alignmentMultiplier = neutralDamage;
+                }
+                break;
+            case WeaponAlignment.Dark:
+                if (enemyUnit.cAlignment == UnitAlignment.Light)
+                {
+                    alignmentMultiplier = ldSuperEffective;
+                    return;
+                }
+                else if (enemyUnit.cAlignment == UnitAlignment.Dark)
+                {
+                    alignmentMultiplier = notEffective;
+                    return;
+                }
+                else
+                {
+                    alignmentMultiplier = neutralDamage;
+                }
+                break;  
+            default:
+                alignmentMultiplier = neutralDamage;
+                return;
+        }
+    }
+
+    private void BPSCheck(WeaponType checkBPS)
+    {
+        switch (booton.wType)
+        {
+            case WeaponType.Bludgeon:
+                if (enemyUnit.cResistBPS == UnitWeaponResistance.Bludgeon)
+                {
+                    bpsMultiplier = notEffective;
+                    return;
+                }
+                else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Bludgeon)
+                {
+                    bpsMultiplier = veryEffective;
+                    return;
+                }
+                else
+                {
+                    bpsMultiplier = neutralDamage;
+                }
+                break;
+            case WeaponType.Pierce:
+                if (enemyUnit.cResistBPS == UnitWeaponResistance.Pierce)
+                {
+                    bpsMultiplier = notEffective;
+                    return;
+                }
+                else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Pierce)
+                {
+                    bpsMultiplier = veryEffective;
+                    return;
+                }
+                else
+                {
+                    bpsMultiplier = neutralDamage;
+                }
+                break;
+            case WeaponType.Slash:
+                if (enemyUnit.cResistBPS == UnitWeaponResistance.Slash)
+                {
+                    bpsMultiplier = notEffective;
+                    return;
+                }
+                else if (enemyUnit.cWeakBPS == UnitWeaponWeakness.Slash)
+                {
+                    bpsMultiplier = veryEffective;
+                    return;
+                }
+                else
+                {
+                    bpsMultiplier = neutralDamage;
+                }
+                break;
+            default:
+                bpsMultiplier = neutralDamage;
                 return;
         }
     }
