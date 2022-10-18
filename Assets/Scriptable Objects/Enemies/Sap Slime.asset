@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Grass Slime
   uElement: 3
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 3
   uDamage: 5
   uMaxHP: 40
   uCurrentHP: 40
+  isBoss: 0
   uSprite: {fileID: 21300000, guid: 18c3f7c725bdd984a9223ff2e377317c, type: 3}

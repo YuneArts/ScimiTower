@@ -13,6 +13,9 @@ public class MapMovement : MonoBehaviour
     public bool inTransition = false;
     public MapSpawn mapSpawnScript;
 
+    [SerializeField]
+    private TransitionScript sceneTransitionMap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,7 +59,7 @@ public class MapMovement : MonoBehaviour
         arrayIndex = Mathf.Clamp(arrayIndex, 0, spaces);
         DataHolder.Instance.currentIndex = arrayIndex;
         yield return new WaitForSeconds(.5f);
-        SceneManager.LoadScene("BattleScreen");
+        sceneTransitionMap.MapToBattleTransition();
         yield return null;
     }
 }

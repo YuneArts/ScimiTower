@@ -15,7 +15,9 @@ public class WeaponData : ScriptableObject
 
     public Sprite art;
 
+    public WeaponType weaponBPS;
     public WeaponElement element;
+    public WeaponAlignment alignment;
 }
 
 public enum WeaponElement
@@ -24,6 +26,21 @@ public enum WeaponElement
     Fire,
     Water,
     Grass,
+    Light,
+    Dark
+}
+
+public enum WeaponType
+{
+    None,
+    Bludgeon,
+    Pierce,
+    Slash
+}
+
+public enum WeaponAlignment
+{
+    None,
     Light,
     Dark
 }

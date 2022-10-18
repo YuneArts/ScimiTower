@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
-  m_Name: Slime
+  m_Name: Witch
   m_EditorClassIdentifier: 
-  unitName: Slime
+  unitName: Witch
   uElement: 0
   uAlignment: 0
   uResistBPS: 0
-  uWeakBPS: 3
-  uDamage: 5
-  uMaxHP: 40
-  uCurrentHP: 40
-  isBoss: 0
-  uSprite: {fileID: 21300000, guid: 3cfb3658cbc3eb74ba3c527fa43c15ed, type: 3}
+  uWeakBPS: 0
+  uDamage: 15
+  uMaxHP: 150
+  uCurrentHP: 150
+  isBoss: 1
+  uSprite: {fileID: 21300000, guid: d7bcbd8b48ce1e54e87230a67aca33bb, type: 3}

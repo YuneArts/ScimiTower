@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: 
   attack: 10
-  durability: 7
+  durability: 5
   maxDurability: 8
   healingValue: 0
   art: {fileID: 21300000, guid: 8401a158a961b2a4a8a02b2e9a38a837, type: 3}
+  weaponBPS: 3
   element: 0
+  alignment: 0

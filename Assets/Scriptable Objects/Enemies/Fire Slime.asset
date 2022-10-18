@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Fire Slime
   uElement: 1
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 1
   uDamage: 5
   uMaxHP: 40
   uCurrentHP: 40
+  isBoss: 0
   uSprite: {fileID: 21300000, guid: 97bab3cd57814514ea098cde3ab65f76, type: 3}

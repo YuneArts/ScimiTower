@@ -17,12 +17,15 @@ public class ButtonScript : MonoBehaviour
     public int wDurability;
     public int wHealing;
     public WeaponElement wElement;
+    public WeaponType wType;
+    public WeaponAlignment wAlignment;
     public BattleSystem battleSystem;
+    [SerializeField]
+    private TransitionScript transitionScript;
     
     public void ToMap()
     {
-        SceneManager.LoadScene("MapScene");
-        
+        transitionScript.BattleToMapTransition();
     }
 
     public void SlotSelect()
@@ -39,6 +42,8 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[0].attack;
             wElement = inventory.Container[0].element;
+            wAlignment = inventory.Container[0].alignment;
+            wType = inventory.Container[0].weaponBPS;
             wHealing = inventory.Container[0].healingValue;
             inventory.Container[0].durability -= 1;
             bSystem.OnAttackButton();
@@ -52,6 +57,8 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[1].attack;
             wElement = inventory.Container[1].element;
+            wAlignment = inventory.Container[1].alignment;
+            wType = inventory.Container[1].weaponBPS;
             wHealing = inventory.Container[1].healingValue;
             inventory.Container[1].durability -= 1;
             bSystem.OnAttackButton();
@@ -65,6 +72,8 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[2].attack;
             wElement = inventory.Container[2].element;
+            wAlignment = inventory.Container[2].alignment;
+            wType = inventory.Container[2].weaponBPS;
             wHealing = inventory.Container[2].healingValue;
             inventory.Container[2].durability -= 1;
             bSystem.OnAttackButton();
@@ -78,6 +87,8 @@ public class ButtonScript : MonoBehaviour
         {
             wDamage = inventory.Container[3].attack;
             wElement = inventory.Container[3].element;
+            wAlignment = inventory.Container[3].alignment;
+            wType = inventory.Container[3].weaponBPS;
             wHealing = inventory.Container[3].healingValue;
             inventory.Container[3].durability -= 1;
             bSystem.OnAttackButton();
