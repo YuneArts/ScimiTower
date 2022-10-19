@@ -241,8 +241,6 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
-            battleText.text = "Battle Lost!";
-            SceneManager.LoadScene("MainMenu");
             //Pull up a hidden Game Over screen. Have stats of the run and button that leads to main menu.
             winloseScreen.LoseScreen();
         }

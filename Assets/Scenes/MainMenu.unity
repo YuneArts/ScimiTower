@@ -992,6 +992,7 @@ MonoBehaviour:
   newGameInventory: {fileID: 11400000, guid: d11a24d34fa2b1142ad360c2c8213b27, type: 2}
   startingEnemy: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   startingWeapon: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
+  steelSword: {fileID: 11400000, guid: 247a71bcf5f2ada4abe1958bab13272a, type: 2}
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0

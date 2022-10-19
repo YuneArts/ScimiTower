@@ -16,7 +16,7 @@ public class DataHolder : MonoBehaviour
     [SerializeField]
     private UnitData startingEnemy;
     [SerializeField]
-    private WeaponData startingWeapon;
+    private WeaponData startingWeapon, steelSword;
 
     public UnitData playerHealthInfo;
 
@@ -39,7 +39,7 @@ public class DataHolder : MonoBehaviour
 
     public void StartNewGame()
     {
-        playerInventory.Container[0] = newGameInventory.Container[0];
+        playerInventory.Container[0] = Instantiate(steelSword);
         playerInventory.Container[1] = newGameInventory.Container[1];
         playerInventory.Container[2] = newGameInventory.Container[2];
         playerInventory.Container[3] = newGameInventory.Container[3];

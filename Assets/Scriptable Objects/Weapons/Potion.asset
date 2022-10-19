@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
   m_Name: Potion
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Potion
   attack: 1
   durability: 1
   maxDurability: 1
   healingValue: 10
   art: {fileID: 7482667652216324306, guid: 947db28e2fd35554f8912405974678d3, type: 3}
+  weaponBPS: 0
   element: 0
+  alignment: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
   m_Name: Tri-Dent
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Tri-Dent
   attack: 28
   durability: 3
   maxDurability: 3
