@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Slim
   m_EditorClassIdentifier: 
-  unitName: Slimebeb
+  unitName: Slim
   uElement: 0
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 3
   uDamage: 2
   uMaxHP: 20
   uCurrentHP: 20
+  isBoss: 0
   uSprite: {fileID: 21300000, guid: 7d2f55d24eee4a24cb62459ec7eb19c2, type: 3}

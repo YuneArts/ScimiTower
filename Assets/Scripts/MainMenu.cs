@@ -9,11 +9,11 @@ public class MainMenu : MonoBehaviour
 {
     public int gameStart;
 
-    public AudioSource audio;
+    public AudioSource mainmenuAudio;
 
     public void playButton()
     {
-      audio.Play();
+      mainmenuAudio.Play();
     }
 
      void quitButton()

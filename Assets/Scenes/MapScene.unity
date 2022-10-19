@@ -123,6 +123,65 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &23951897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3409438711619390137, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_Name
+      value: TransitionHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409438711619390143, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
 --- !u!1 &83058607
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +255,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 83058609}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &83058611
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -355,6 +415,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 219485230}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &219485228
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -497,7 +558,10 @@ MonoBehaviour:
   bSystem: {fileID: 0}
   wDamage: 0
   wDurability: 0
+  wHealing: 0
   wElement: 0
+  wType: 0
+  wAlignment: 0
   battleSystem: {fileID: 0}
 --- !u!114 &424950326
 MonoBehaviour:
@@ -754,6 +818,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650752048}
   m_CullTransparentMesh: 1
+--- !u!114 &697709214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3409438711619390142, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+  m_PrefabInstance: {fileID: 23951897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c175d3527973a4aa2b489bded6140d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &834816796
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +939,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 0}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &834816800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1057,6 +1133,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 890961160}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &890961162
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1654,6 +1731,7 @@ MonoBehaviour:
   spaces: 2
   inTransition: 0
   mapSpawnScript: {fileID: 0}
+  sceneTransitionMap: {fileID: 0}
 --- !u!114 &1367783806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,6 +2256,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 1631031432}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1631031429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2417,6 +2496,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 1818164238}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1818164240
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2754,6 +2834,7 @@ MonoBehaviour:
   spaces: 4
   inTransition: 0
   mapSpawnScript: {fileID: 1968866034}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1968866036
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3137,6 +3218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentIndex: 0
   mapEnemySpawn: {fileID: 0}
-  playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
   mapWeaponSpawn: {fileID: 0}
-  playerHealthInfo: {fileID: 0}
+  playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
+  playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
+  weaponCountStat: 0
+  enemyCountStat: 0

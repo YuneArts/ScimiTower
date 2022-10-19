@@ -9,10 +9,15 @@ public class Unit : MonoBehaviour
     public UnitData unitInfo;
 
     public UnitElement cElement;
+    public UnitAlignment cAlignment;
+    public UnitWeaponResistance cResistBPS;
+    public UnitWeaponWeakness cWeakBPS;
     public int damage;
     
     public int maxHP;
     public int currentHP;
+    public bool midBossUnit;
+    public bool finalBossUnit;
 
     public Sprite cSprite;
     public SpriteRenderer characterSprite;
@@ -62,12 +67,18 @@ public class Unit : MonoBehaviour
     {
         cName = unitInfo.unitName;
         cElement = unitInfo.uElement;
+        cAlignment = unitInfo.uAlignment;
+        cResistBPS = unitInfo.uResistBPS;
+        cWeakBPS = unitInfo.uWeakBPS;
         damage = unitInfo.uDamage;
 
         maxHP = unitInfo.uMaxHP;
         currentHP = unitInfo.uCurrentHP;
 
         cSprite = unitInfo.uSprite;
+
+        midBossUnit = unitInfo.isMidBoss;
+        finalBossUnit = unitInfo.isFinalBoss;
 
         Debug.Log("Element = " + cElement);
     }

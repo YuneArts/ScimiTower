@@ -8,9 +8,14 @@ public class DataHolder : MonoBehaviour
     public int currentIndex = 0;
 
     public UnitData mapEnemySpawn;
-    public InventoryScript playerInventory;
     public WeaponData mapWeaponSpawn;
+
+    public InventoryScript playerInventory;
+
     public UnitData playerHealthInfo;
+
+    public int weaponCountStat;
+    public int enemyCountStat;
     
     private void Awake()
     {
