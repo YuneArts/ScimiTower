@@ -28,7 +28,7 @@ public class BattleSystem : MonoBehaviour
 
     public bool canAttack;
     [SerializeField]
-    private bool finalBoss, enemyAbsorb;
+    private bool midBoss, finalBoss, enemyAbsorb;
 
     public GameObject weaponSelect;
     public InventoryScript inventory;
@@ -38,7 +38,9 @@ public class BattleSystem : MonoBehaviour
 
     private int finalDamage;
     [SerializeField]
-    private float elementSuperEffective, alignmentSuperEffective, alignmentNotEffective, bpsSuperEffective, bpsNotEffective;
+    private float elementSuperEffective, elementNotEffective, alignmentSuperEffective, alignmentNotEffective, bpsSuperEffective, bpsNotEffective;
+    [SerializeField]
+    private int elementAbsorbBuff, postBossHeal;
     private float neutralDamage = 1f;
     private float elementMultiplier, alignmentMultiplier, bpsMultiplier;
 
@@ -101,12 +103,17 @@ public class BattleSystem : MonoBehaviour
 
         enemyUnit.UpdateEnemySprite();
 
-        if (enemyUnit.bossUnit == true)
+        if (enemyUnit.finalBossUnit == true)
         {
             finalBoss = true;
         }
-        else 
+        else if (enemyUnit.midBossUnit == true)
         {
+            midBoss = true;
+        }
+        else
+        {
+            midBoss = false;
             finalBoss = false;
         }
 
@@ -147,7 +154,7 @@ public class BattleSystem : MonoBehaviour
             //If elemental typing match up, enemy drains attack and gains a damage boost from it.
             if (enemyAbsorb)
             {
-                ElementBoost(3);
+                ElementBoost(elementAbsorbBuff);
             }
 
             yield return new WaitForSeconds(0.01f);
@@ -157,9 +164,19 @@ public class BattleSystem : MonoBehaviour
             if (isDead)
             {
                 yield return new WaitForSeconds(1f);
+
+                if (midBoss)
+                {
+                    playerUnit.Heal(postBossHeal);
+                    playerHUD.SetHP(playerUnit.currentHP);
+                    HealText.Create(healTextPrefab, playerHealText, postBossHeal);
+                    yield return new WaitForSeconds(1f);
+                }
+                
                 state = BattleState.WON;
                 EndBattle();
             }
+
             else
             {
                 state = BattleState.ENEMYTURN;
@@ -265,7 +282,7 @@ public class BattleSystem : MonoBehaviour
                 if (enemyUnit.cElement == UnitElement.Fire)
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
-                    elementMultiplier = 0f;
+                    elementMultiplier = elementNotEffective;
                     enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
@@ -285,7 +302,7 @@ public class BattleSystem : MonoBehaviour
                 if (enemyUnit.cElement == UnitElement.Water)
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
-                    elementMultiplier = 0f;
+                    elementMultiplier = elementNotEffective;
                     enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;
@@ -305,7 +322,7 @@ public class BattleSystem : MonoBehaviour
                 if (enemyUnit.cElement == UnitElement.Grass)
                 {
                     //Have enemies absorb elemental attacks that nulls the damage and benefits them (heal, damage boost, etc.)
-                    elementMultiplier = 0f;
+                    elementMultiplier = elementNotEffective;
                     enemyAbsorb = true;
                     Debug.Log("It's not effective. The enemy absorbed the elemental attack!");
                     return;

@@ -8408,6 +8408,7 @@ MonoBehaviour:
   hallway2: {fileID: 1966955287}
   bottomFloor: {fileID: 123758540}
   canAttack: 0
+  midBoss: 0
   finalBoss: 0
   enemyAbsorb: 0
   weaponSelect: {fileID: 1354704835}
@@ -8420,10 +8421,13 @@ MonoBehaviour:
   booton: {fileID: 399460805}
   weaponSelectArt: {fileID: 916304126}
   elementSuperEffective: 1.5
+  elementNotEffective: 0.5
   alignmentSuperEffective: 2
   alignmentNotEffective: 0.5
-  bpsSuperEffective: 1.5
-  bpsNotEffective: 0.5
+  bpsSuperEffective: 1.2
+  bpsNotEffective: 0.8
+  elementAbsorbBuff: 3
+  postBossHeal: 30
   playerDamageText: {fileID: 1078801968}
   enemyDamageText: {fileID: 182045970}
   playerHealText: {fileID: 418615492}

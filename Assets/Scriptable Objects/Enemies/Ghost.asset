@@ -20,5 +20,6 @@ MonoBehaviour:
   uDamage: 0
   uMaxHP: 10
   uCurrentHP: 10
-  isBoss: 0
+  isMidBoss: 0
+  isFinalBoss: 0
   uSprite: {fileID: 21300000, guid: b232aebcd957e454391332acf534040a, type: 3}

@@ -18,6 +18,11 @@ public class WeaponData : ScriptableObject
     public WeaponType weaponBPS;
     public WeaponElement element;
     public WeaponAlignment alignment;
+
+    void OnEnable()
+    {
+        durability = maxDurability;
+    }
 }
 
 public enum WeaponElement

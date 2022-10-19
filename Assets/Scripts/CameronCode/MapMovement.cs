@@ -14,6 +14,9 @@ public class MapMovement : MonoBehaviour
     public MapSpawn mapSpawnScript;
 
     [SerializeField]
+    private Transform startingPoint;
+
+    [SerializeField]
     private TransitionScript sceneTransitionMap;
 
     // Start is called before the first frame update

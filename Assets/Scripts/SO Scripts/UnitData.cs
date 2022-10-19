@@ -15,7 +15,8 @@ public class UnitData : ScriptableObject
 
     public int uMaxHP;
     public int uCurrentHP;
-    public bool isBoss;
+    public bool isMidBoss;
+    public bool isFinalBoss;
 
     public Sprite uSprite;
 }
