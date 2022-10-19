@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 95899bf098937f34885255e8d30e30b5
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: a9aa339925e96af47ad9226d1b1f9b63
   m_configObjects: {}
