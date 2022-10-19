@@ -11,9 +11,16 @@ public class DataHolder : MonoBehaviour
     public WeaponData mapWeaponSpawn;
 
     public InventoryScript playerInventory;
+    [SerializeField]
+    private InventoryScript newGameInventory;
+    [SerializeField]
+    private UnitData startingEnemy;
+    [SerializeField]
+    private WeaponData startingWeapon;
 
     public UnitData playerHealthInfo;
 
+    //Stats for the end game results screen.
     public int weaponCountStat;
     public int enemyCountStat;
     
@@ -28,5 +35,17 @@ public class DataHolder : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void StartNewGame()
+    {
+        playerInventory.Container[0] = newGameInventory.Container[0];
+        playerInventory.Container[1] = newGameInventory.Container[1];
+        playerInventory.Container[2] = newGameInventory.Container[2];
+        playerInventory.Container[3] = newGameInventory.Container[3];
+        playerHealthInfo.uCurrentHP = playerHealthInfo.uMaxHP;
+        currentIndex = 0;
+        mapEnemySpawn = startingEnemy;
+        mapWeaponSpawn = startingWeapon;
     }
 }

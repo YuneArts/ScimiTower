@@ -8,21 +8,21 @@ public class SettimgsMenu : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
 
-    
+    /*
     // Start is called before the first frame update
     void Start()
     {
       if(!PlayerPrefs.HasKey("musicVolume"))
       {
-        PlayerPrefs.SetFloat("musicVolume" , 1);
+        PlayerPrefs.SetFloat("musicVolume" , 0.5f);
         Load();
       }
-      
       else
       {
         Load();
       }
     }
+    */
 
    public void ChangeVolume()
    {
@@ -30,12 +30,12 @@ public class SettimgsMenu : MonoBehaviour
      Save();
    }
 
-   private void Load()
+   public void Load()
    {
      volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
    }
 
-   private void Save()
+   public void Save()
    {
     PlayerPrefs.SetFloat("musicVolume" , volumeSlider.value);
    }

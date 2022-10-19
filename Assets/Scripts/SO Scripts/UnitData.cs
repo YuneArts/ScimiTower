@@ -19,6 +19,11 @@ public class UnitData : ScriptableObject
     public bool isFinalBoss;
 
     public Sprite uSprite;
+
+    void OnEnable()
+    {
+        uCurrentHP = uMaxHP;
+    }
 }
 
 public enum UnitElement

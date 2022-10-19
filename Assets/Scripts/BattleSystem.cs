@@ -91,15 +91,15 @@ public class BattleSystem : MonoBehaviour
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
 
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.unitInfo = DataHolder.Instance.mapEnemySpawn;
 
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemyInfo();
 
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
 
@@ -119,7 +119,7 @@ public class BattleSystem : MonoBehaviour
 
         playerHUD.SetHUD(playerUnit);
         enemyHUD.SetHUD(enemyUnit);
-        yield return new WaitForSeconds(0.01f);
+        //yield return new WaitForSeconds(0.01f);
 
         ChangeBackground();
 

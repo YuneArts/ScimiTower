@@ -9,10 +9,9 @@ public class MainMenu : MonoBehaviour
 
 
 {
-  [SerializeField] GameObject mainMenu, settings, credits;
+  [SerializeField] 
+  private GameObject mainMenu, settings, credits, startGameOptions;
   
-  
-
     public int gameStart;
 
     public AudioSource mainmenuAudio;
@@ -30,13 +29,14 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame() 
     {
-      SceneManager.LoadScene("BattleScreen");
+      startGameOptions.SetActive(true);
     }
 
     public void Credits()
     {
       mainMenu.SetActive(false);
       credits.SetActive(true);
+      startGameOptions.SetActive(false);
     }
     
     public void Back()
@@ -44,6 +44,7 @@ public class MainMenu : MonoBehaviour
       mainMenu.SetActive(true);
       credits.SetActive(false);
       settings.SetActive(false);
+      startGameOptions.SetActive(false);
 
     }
     
@@ -51,5 +52,21 @@ public class MainMenu : MonoBehaviour
     {
       mainMenu.SetActive(false);
       settings.SetActive(true);
+      startGameOptions.SetActive(false);
+    }
+
+    public void NewGame()
+    {
+      SceneManager.LoadScene("BattleScreen");
+      //Reference the blank slate/new run information that the player should be starting out with upon starting a new run.
+      DataHolder.Instance.StartNewGame();
+    }
+
+    public void ContinueGame()
+    {
+      if (DataHolder.Instance.currentIndex > 0)
+      {
+        SceneManager.LoadScene("BattleScreen");
+      }
     }
 }
