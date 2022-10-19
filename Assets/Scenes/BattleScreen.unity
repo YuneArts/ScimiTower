@@ -1793,7 +1793,7 @@ RectTransform:
   m_GameObject: {fileID: 500531642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 787681796}
@@ -1802,7 +1802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500531644
@@ -2867,7 +2867,7 @@ RectTransform:
   m_GameObject: {fileID: 748438636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2141378054}
@@ -4155,7 +4155,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -5020,7 +5020,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1116611429
 Transform:
   m_ObjectHideFlags: 0
@@ -6461,6 +6461,10 @@ MonoBehaviour:
   mapEnemySpawn: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   mapWeaponSpawn: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
+  newGameInventory: {fileID: 0}
+  startingEnemy: {fileID: 0}
+  startingWeapon: {fileID: 0}
+  steelSword: {fileID: 0}
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0
