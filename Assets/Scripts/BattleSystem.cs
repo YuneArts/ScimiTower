@@ -436,6 +436,11 @@ public class BattleSystem : MonoBehaviour
                     bpsMultiplier = neutralDamage;
                 }
                 break;
+            case WeaponType.Magic:
+                {
+                    bpsMultiplier = bpsSuperEffective;
+                }
+                break;
             default:
                 bpsMultiplier = neutralDamage;
                 return;
@@ -459,14 +464,14 @@ public class BattleSystem : MonoBehaviour
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
         }
-        if (DataHolder.Instance.currentIndex == 1 || DataHolder.Instance.currentIndex == 2)
+        if (DataHolder.Instance.currentIndex > 0 && DataHolder.Instance.currentIndex < 4)
         {
             bedroom.SetActive(false);
             hallway1.SetActive(true);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
         }
-        if (DataHolder.Instance.currentIndex == 3)
+        if (DataHolder.Instance.currentIndex > 3 && DataHolder.Instance.currentIndex < 5)
         {
             bedroom.SetActive(false);
             hallway1.SetActive(false);

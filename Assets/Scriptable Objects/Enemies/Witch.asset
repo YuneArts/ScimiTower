@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Witch
   uElement: 0
-  uAlignment: 0
+  uAlignment: 2
   uResistBPS: 0
   uWeakBPS: 0
-  uDamage: 15
-  uMaxHP: 150
-  uCurrentHP: 150
-  isBoss: 1
+  uDamage: 12
+  uMaxHP: 100
+  uCurrentHP: 100
+  isMidBoss: 0
+  isFinalBoss: 1
   uSprite: {fileID: 21300000, guid: d7bcbd8b48ce1e54e87230a67aca33bb, type: 3}

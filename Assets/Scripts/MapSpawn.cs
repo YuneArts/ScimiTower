@@ -52,6 +52,24 @@ public class MapSpawn : MonoBehaviour
             case 4:
                 DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[3];
                 break;
+            case 5:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[4];
+                break;
+            case 6:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[5];
+                break;
+            case 7:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[6];
+                break;
+            case 8:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[7];
+                break;
+            case 9:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[8];
+                break;
+            case 10:
+                DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[9];
+                break;
             default:
                 DataHolder.Instance.mapWeaponSpawn = weaponPool.Container[0];
                 break;
