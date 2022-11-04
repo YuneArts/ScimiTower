@@ -11,12 +11,18 @@ public class DataHolder : MonoBehaviour
     public WeaponData mapWeaponSpawn;
 
     public InventoryScript playerInventory;
+    public AscensionModeInventory ascInventory;
     [SerializeField]
-    private InventoryScript newGameInventory;
+    private InventoryScript newDescensionInventory;
+    [SerializeField]
+    private AscensionModeActions ascAttack, ascBlock, ascRest;
     [SerializeField]
     private UnitData startingEnemy;
     [SerializeField]
     private WeaponData startingWeapon, steelSword;
+
+    public bool descensionMode;
+    public bool ascensionMode;
 
     public UnitData playerHealthInfo;
 
@@ -37,15 +43,33 @@ public class DataHolder : MonoBehaviour
         }
     }
 
-    public void StartNewGame()
+    public void StartDescensionMode()
     {
         playerInventory.Container[0] = Instantiate(steelSword);
-        playerInventory.Container[1] = newGameInventory.Container[1];
-        playerInventory.Container[2] = newGameInventory.Container[2];
-        playerInventory.Container[3] = newGameInventory.Container[3];
+        playerInventory.Container[1] = newDescensionInventory.Container[1];
+        playerInventory.Container[2] = newDescensionInventory.Container[2];
+        playerInventory.Container[3] = newDescensionInventory.Container[3];
         playerHealthInfo.uCurrentHP = playerHealthInfo.uMaxHP;
         currentIndex = 0;
         mapEnemySpawn = startingEnemy;
         mapWeaponSpawn = startingWeapon;
+
+        ascensionMode = false;
+        descensionMode = true;
+    }
+
+    public void StartAscensionMode()
+    {
+        ascAttack.attackValue = ascAttack.defaultAttackValue;
+        ascAttack.durabilityValue = ascAttack.defaultDurabilityValue;
+        ascBlock.blockValue = ascBlock.defaultBlockValue;
+        ascRest.healValue = ascRest.defaultHealValue;
+
+        mapEnemySpawn = startingEnemy;
+        
+        playerHealthInfo.uCurrentHP = playerHealthInfo.uMaxHP;
+        currentIndex = 0;
+        ascensionMode = true;
+        descensionMode = false;
     }
 }

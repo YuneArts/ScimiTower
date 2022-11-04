@@ -9,8 +9,8 @@ public class MainMenu : MonoBehaviour
 
 
 {
-  [SerializeField] 
-  private GameObject mainMenu, settings, credits, startGameOptions;
+    [SerializeField] 
+    private GameObject mainMenu, settings, credits, startGameOptions, gameModeButtons;
   
     public int gameStart;
 
@@ -23,8 +23,8 @@ public class MainMenu : MonoBehaviour
 
      void quitButton()
     {
-        Application.Quit();
-        Debug.Log("Game Closed");
+      Application.Quit();
+      Debug.Log("Game Closed");
     }
 
     public void StartGame() 
@@ -45,7 +45,6 @@ public class MainMenu : MonoBehaviour
       credits.SetActive(false);
       settings.SetActive(false);
       startGameOptions.SetActive(false);
-
     }
     
     public void Settings()
@@ -57,9 +56,21 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame()
     {
+      gameModeButtons.SetActive(true);
+      startGameOptions.SetActive(false);
+    }
+
+    public void NewDescensionMode()
+    {
       SceneManager.LoadScene("BattleScreen");
       //Reference the blank slate/new run information that the player should be starting out with upon starting a new run.
-      DataHolder.Instance.StartNewGame();
+      DataHolder.Instance.StartDescensionMode();
+    }
+
+    public void NewAscensionMode()
+    {
+      SceneManager.LoadScene("AscensionBattle");
+      DataHolder.Instance.StartAscensionMode();
     }
 
     public void ContinueGame()
