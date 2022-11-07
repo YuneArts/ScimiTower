@@ -30,9 +30,7 @@ public enum WeaponElement
     None,
     Fire,
     Water,
-    Grass,
-    Light,
-    Dark
+    Grass
 }
 
 public enum WeaponType
@@ -40,7 +38,8 @@ public enum WeaponType
     None,
     Bludgeon,
     Pierce,
-    Slash
+    Slash,
+    Magic
 }
 
 public enum WeaponAlignment
