@@ -17,6 +17,8 @@ public class DataHolder : MonoBehaviour
     [SerializeField]
     private AscensionModeActions ascAttack, ascBlock, ascRest;
     [SerializeField]
+    private AscensionUpgrade startUp1, startUp2, startUp3;
+    [SerializeField]
     private UnitData startingEnemy;
     [SerializeField]
     private WeaponData startingWeapon, steelSword;
@@ -29,6 +31,8 @@ public class DataHolder : MonoBehaviour
     //Stats for the end game results screen.
     public int weaponCountStat;
     public int enemyCountStat;
+
+    public AscensionUpgrade mapUpgrade1, mapUpgrade2, mapUpgrade3;
     
     private void Awake()
     {
@@ -66,6 +70,9 @@ public class DataHolder : MonoBehaviour
         ascRest.healValue = ascRest.defaultHealValue;
 
         mapEnemySpawn = startingEnemy;
+        mapUpgrade1 = startUp1;
+        mapUpgrade2 = startUp2;
+        mapUpgrade3 = startUp3;
         
         playerHealthInfo.uCurrentHP = playerHealthInfo.uMaxHP;
         currentIndex = 0;

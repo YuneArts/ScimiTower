@@ -14,6 +14,7 @@ public class AscensionModeButtons : MonoBehaviour
     public int ascensionDurability;
     public int ascensionHealing;
     public int ascensionBlock;
+    public int ascensionBoost;
 
     public bool usedAttack, usedBlock, usedRest;
 
@@ -69,6 +70,7 @@ public class AscensionModeButtons : MonoBehaviour
             {
                 usedRest = true;
                 ascensionHealing = ascensionContainers.Container[3].healValue;
+                ascensionBoost = ascensionContainers.Container[3].damageBoost;
                 batSys.OnAttackButton();
                 batSys.canAttack = false;
             }

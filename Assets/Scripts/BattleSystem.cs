@@ -36,6 +36,7 @@ public class BattleSystem : MonoBehaviour
     public ButtonScript booton;
     public AscensionModeButtons ascensionBattle;
     public WeaponSelectImage weaponSelectArt;
+    public AscensionUpgradeImage upgradeArt;
 
     private int finalDamage;
     [SerializeField]
@@ -51,12 +52,19 @@ public class BattleSystem : MonoBehaviour
     private GameObject damageTextPrefab, healTextPrefab;
     [SerializeField]
     private ResultsScreen winloseScreen;
+    [SerializeField]
+    private GameObject ascUpgradeSelect;
+
+    public int blockDamageReduc;
+    public int tempRestBoost;
 
     void Start()
     {
         canAttack = false;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+        blockDamageReduc = 0;
+        tempRestBoost = 0;
     }
 
     private void Update()
@@ -202,11 +210,11 @@ public class BattleSystem : MonoBehaviour
             {
                 if (ascensionBattle.usedAttack == true)
                 {
-                    bool isDead = enemyUnit.TakeDamage(ascensionBattle.ascensionDamage);
+                    bool isDead = enemyUnit.TakeDamage(ascensionBattle.ascensionDamage + tempRestBoost);
 
                     enemyHUD.SetHP(enemyUnit.currentHP);
 
-                    DamageText.Create(damageTextPrefab, enemyDamageText, ascensionBattle.ascensionDamage);
+                    DamageText.Create(damageTextPrefab, enemyDamageText, ascensionBattle.ascensionDamage + tempRestBoost);
 
                     if (isDead)
                     {
@@ -235,7 +243,14 @@ public class BattleSystem : MonoBehaviour
                 }
                 else if (ascensionBattle.usedBlock == true)
                 {
+                    blockDamageReduc += ascensionBattle.ascensionBlock;
 
+                    ascensionBattle.usedBlock = false;
+
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+
+                    yield return new WaitForSeconds(2f);
                 }
                 else if(ascensionBattle.usedRest == true)
                 {
@@ -243,7 +258,12 @@ public class BattleSystem : MonoBehaviour
                     playerHUD.SetHP(playerUnit.currentHP);
                     HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
 
+                    tempRestBoost = ascensionBattle.ascensionBoost;
+
                     ascensionBattle.usedRest = false;
+
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
 
                     yield return new WaitForSeconds(2f);
                 }
@@ -258,7 +278,7 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        bool isDead = playerUnit.TakeDamage(enemyUnit.damage - blockDamageReduc);
         //Creates the damage numbers next to the player.
         DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
 
@@ -305,6 +325,9 @@ public class BattleSystem : MonoBehaviour
                 else if (DataHolder.Instance.ascensionMode == true)
                 {
                     //Select upgrade of choice.
+                    battleText.text = "Battle Won!";
+                    ascUpgradeSelect.SetActive(true);
+                    upgradeArt.ChangeUpgradeArt();
                 }
             }
             

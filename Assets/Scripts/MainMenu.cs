@@ -77,7 +77,14 @@ public class MainMenu : MonoBehaviour
     {
       if (DataHolder.Instance.currentIndex > 0)
       {
-        SceneManager.LoadScene("BattleScreen");
+        if (DataHolder.Instance.descensionMode == true)
+        {
+          SceneManager.LoadScene("BattleScreen");
+        }
+        else if (DataHolder.Instance.ascensionMode == true)
+        {
+          SceneManager.LoadScene("AscensionBattle");
+        }
       }
     }
 }

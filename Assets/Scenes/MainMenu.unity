@@ -994,6 +994,9 @@ MonoBehaviour:
   ascAttack: {fileID: 11400000, guid: 874649e6a1a453747ac8618eae8bf9ad, type: 2}
   ascBlock: {fileID: 11400000, guid: 284f5ee52d9167a4c903bfca4f60312a, type: 2}
   ascRest: {fileID: 11400000, guid: 7a76a5272714c504b896c002fe27f7ae, type: 2}
+  startUp1: {fileID: 11400000, guid: cb58b3319b28e1748961e87c17bc02ce, type: 2}
+  startUp2: {fileID: 11400000, guid: 93476b8d6146bb34fa0f3ec3a4107e2c, type: 2}
+  startUp3: {fileID: 11400000, guid: 12844e0d24a6f4949a364b73ebd5c5c8, type: 2}
   startingEnemy: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   startingWeapon: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
   steelSword: {fileID: 11400000, guid: 247a71bcf5f2ada4abe1958bab13272a, type: 2}
@@ -1002,6 +1005,9 @@ MonoBehaviour:
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0
+  mapUpgrade1: {fileID: 0}
+  mapUpgrade2: {fileID: 0}
+  mapUpgrade3: {fileID: 0}
 --- !u!4 &495408399
 Transform:
   m_ObjectHideFlags: 0
