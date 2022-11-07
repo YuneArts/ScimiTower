@@ -1881,8 +1881,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 004392452d609424cb04fba0a965cdaf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2957,8 +2957,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 004392452d609424cb04fba0a965cdaf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3037,15 +3037,15 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
+  m_sharedMaterial: {fileID: 7963051541601579280, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3062,8 +3062,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6921,13 +6921,25 @@ MonoBehaviour:
   mapEnemySpawn: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   mapWeaponSpawn: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
-  newGameInventory: {fileID: 0}
+  ascInventory: {fileID: 0}
+  newDescensionInventory: {fileID: 0}
+  ascAttack: {fileID: 0}
+  ascBlock: {fileID: 0}
+  ascRest: {fileID: 0}
+  startUp1: {fileID: 0}
+  startUp2: {fileID: 0}
+  startUp3: {fileID: 0}
   startingEnemy: {fileID: 0}
   startingWeapon: {fileID: 0}
   steelSword: {fileID: 0}
+  descensionMode: 0
+  ascensionMode: 0
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0
+  mapUpgrade1: {fileID: 0}
+  mapUpgrade2: {fileID: 0}
+  mapUpgrade3: {fileID: 0}
 --- !u!4 &1574359284
 Transform:
   m_ObjectHideFlags: 0
@@ -7247,15 +7259,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
+  m_sharedMaterial: {fileID: 7963051541601579280, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8355,8 +8367,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 004392452d609424cb04fba0a965cdaf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9167,7 +9179,9 @@ MonoBehaviour:
   - {fileID: 688988956}
   - {fileID: 1818904338}
   booton: {fileID: 399460805}
+  ascensionBattle: {fileID: 0}
   weaponSelectArt: {fileID: 916304126}
+  upgradeArt: {fileID: 0}
   elementSuperEffective: 1.5
   elementNotEffective: 0.5
   alignmentSuperEffective: 2
@@ -9183,6 +9197,9 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 1597934223317903658, guid: ce4b71d55b3f8604fa7c789dbecbd43d, type: 3}
   healTextPrefab: {fileID: 237005762171030480, guid: 1ee30ce8e4af1f747adac241607059a6, type: 3}
   winloseScreen: {fileID: 1483595338}
+  ascUpgradeSelect: {fileID: 0}
+  blockDamageReduc: 0
+  tempRestBoost: 0
 --- !u!4 &2070435593
 Transform:
   m_ObjectHideFlags: 0
@@ -9334,15 +9351,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
+  m_sharedMaterial: {fileID: 7963051541601579280, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9359,8 +9376,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
