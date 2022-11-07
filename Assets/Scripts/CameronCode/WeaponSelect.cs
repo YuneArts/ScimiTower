@@ -69,25 +69,25 @@ public class WeaponSelect : MonoBehaviour
 
     public void SlotOne()
     {
-        playerInventory.Container[0] = theWeapon;
+        playerInventory.Container[0] = Instantiate(theWeapon);
         sceneTransition.BattleToMapTransition();
         
     }
     public void SlotTwo()
     {
-        playerInventory.Container[1] = theWeapon;
+        playerInventory.Container[1] = Instantiate(theWeapon);
         sceneTransition.BattleToMapTransition();
 
     }
     public void SlotThree()
     {
-        playerInventory.Container[2] = theWeapon;
+        playerInventory.Container[2] = Instantiate(theWeapon);
         sceneTransition.BattleToMapTransition();
 
     }
     public void SlotFour()
     {
-        playerInventory.Container[3] = theWeapon;
+        playerInventory.Container[3] = Instantiate(theWeapon);
         sceneTransition.BattleToMapTransition();
 
     }

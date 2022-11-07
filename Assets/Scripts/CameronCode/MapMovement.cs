@@ -45,6 +45,7 @@ public class MapMovement : MonoBehaviour
 
         mapSpawnScript.PickEnemy();
         mapSpawnScript.PickWeapon();
+        mapSpawnScript.PickUpgrades();
     }
 
     public void playerMoveTo()

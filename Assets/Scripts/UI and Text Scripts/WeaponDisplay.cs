@@ -14,7 +14,7 @@ public class WeaponDisplay : MonoBehaviour
     public Image weaponArt;
     void Start()
     {
-        nameText.text = weapon.name;
+        nameText.text = weapon.weaponName;
         damageText.text = weapon.attack.ToString();
         durabilityText.text = weapon.durability.ToString();
         weaponArt.sprite = weapon.art;

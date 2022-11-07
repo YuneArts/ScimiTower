@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Wandering Eye
   m_EditorClassIdentifier: 
-  unitName: Wandering Eye
+  unitName: Dark Wandering Eye
   uElement: 0
   uAlignment: 2
   uResistBPS: 0
   uWeakBPS: 2
-  uDamage: 9
-  uMaxHP: 75
-  uCurrentHP: 75
-  isBoss: 0
+  uDamage: 4
+  uMaxHP: 50
+  uCurrentHP: 50
+  isMidBoss: 0
+  isFinalBoss: 0
   uSprite: {fileID: 21300000, guid: 142cab03d12741148a6a6542b94fe101, type: 3}
