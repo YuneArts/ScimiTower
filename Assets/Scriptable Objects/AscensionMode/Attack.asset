@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   actionName: Attack
-  attackValue: 9
+  attackValue: 5
   defaultAttackValue: 5
-  durabilityValue: 2
+  durabilityValue: 15
   defaultDurabilityValue: 15
-  blockValue: 0
+  blockValue: 2
   defaultBlockValue: 0
-  healValue: 2
+  healValue: 0
   defaultHealValue: 0
   damageBoost: 0
   defaultDamageBoost: 0
