@@ -4,7 +4,7 @@ using System.IO;
 
 public class CSVtoSOWeapons
 {
-    private static string weaponCSVPath = "/CSV Files/ScimiTower Maths - Weapon Export.csv";
+    private static string weaponCSVPath = "/Editor/CSV Files/ScimiTower Maths - Weapon Export.csv";
 
     [MenuItem("Utilities/GenerateWeapons")]
     public static void GenerateWeapons()

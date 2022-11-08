@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   actionName: Block
-  attackValue: 0
+  attackValue: 28
   defaultAttackValue: 0
   durabilityValue: 0
   defaultDurabilityValue: 0
-  blockValue: 3
-  defaultBlockValue: 3
+  blockValue: 2
+  defaultBlockValue: 2
   healValue: 2
   defaultHealValue: 0
   damageBoost: 0

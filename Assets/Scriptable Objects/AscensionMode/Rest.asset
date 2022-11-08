@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Rest
   m_EditorClassIdentifier: 
   actionName: Rest
-  attackValue: 0
+  attackValue: 28
   defaultAttackValue: 0
   durabilityValue: 0
   defaultDurabilityValue: 0
-  blockValue: 2
+  blockValue: 4
   defaultBlockValue: 0
   healValue: 5
   defaultHealValue: 5
