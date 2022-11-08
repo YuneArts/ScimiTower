@@ -22,7 +22,7 @@ public class UnitData : ScriptableObject
 
     void OnEnable()
     {
-        uCurrentHP = uMaxHP;
+        //uCurrentHP = uMaxHP;
     }
 }
 

@@ -34,9 +34,12 @@ public class BattleSystem : MonoBehaviour
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
     public ButtonScript booton;
+    public AscensionModeButtons ascensionBattle;
     public WeaponSelectImage weaponSelectArt;
+    public AscensionUpgradeImage upgradeArt;
 
     private int finalDamage;
+    private int enemyCalc;
     [SerializeField]
     private float elementSuperEffective, elementNotEffective, alignmentSuperEffective, alignmentNotEffective, bpsSuperEffective, bpsNotEffective;
     [SerializeField]
@@ -50,37 +53,47 @@ public class BattleSystem : MonoBehaviour
     private GameObject damageTextPrefab, healTextPrefab;
     [SerializeField]
     private ResultsScreen winloseScreen;
+    [SerializeField]
+    private GameObject ascUpgradeSelect;
+
+    public int blockDamageReduc;
+    public int tempRestBoost;
 
     void Start()
     {
         canAttack = false;
         state = BattleState.START;
         StartCoroutine(SetupBattle());
+        blockDamageReduc = 0;
+        tempRestBoost = 0;
     }
 
     private void Update()
     {
-        if (inventory.Container.Count == 1)
+        if (DataHolder.Instance.descensionMode == true)
         {
-            weaponDisplay[0].weapon = inventory.Container[0];
-        }
-        else if (inventory.Container.Count == 2)
-        {
-            weaponDisplay[0].weapon = inventory.Container[0];
-            weaponDisplay[1].weapon = inventory.Container[1];
-        }
-        else if (inventory.Container.Count == 3)
-        {
-            weaponDisplay[0].weapon = inventory.Container[0];
-            weaponDisplay[1].weapon = inventory.Container[1];
-            weaponDisplay[2].weapon = inventory.Container[2];
-        }
-        else if (inventory.Container.Count == 4)
-        {
-            weaponDisplay[0].weapon = inventory.Container[0];
-            weaponDisplay[1].weapon = inventory.Container[1];
-            weaponDisplay[2].weapon = inventory.Container[2];
-            weaponDisplay[3].weapon = inventory.Container[3];
+            if (inventory.Container.Count == 1)
+            {
+                weaponDisplay[0].weapon = inventory.Container[0];
+            }
+            else if (inventory.Container.Count == 2)
+            {
+                weaponDisplay[0].weapon = inventory.Container[0];
+                weaponDisplay[1].weapon = inventory.Container[1];
+            }
+            else if (inventory.Container.Count == 3)
+            {
+                weaponDisplay[0].weapon = inventory.Container[0];
+                weaponDisplay[1].weapon = inventory.Container[1];
+                weaponDisplay[2].weapon = inventory.Container[2];
+            }
+            else if (inventory.Container.Count == 4)
+            {
+                weaponDisplay[0].weapon = inventory.Container[0];
+                weaponDisplay[1].weapon = inventory.Container[1];
+                weaponDisplay[2].weapon = inventory.Container[2];
+                weaponDisplay[3].weapon = inventory.Container[3];
+            }
         }
     }
 
@@ -90,6 +103,10 @@ public class BattleSystem : MonoBehaviour
         playerUnit = playerPrefab.GetComponent<Unit>();
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<Unit>();
+
+        playerUnit.currentHP = DataHolder.Instance.playerHealthInfo.uCurrentHP;
+
+        playerHUD.SetHP(playerUnit.currentHP);
 
         //yield return new WaitForSeconds(0.01f);
 
@@ -134,55 +151,124 @@ public class BattleSystem : MonoBehaviour
     {
         if (state == BattleState.PLAYERTURN)
         {
-            //Calculate damage past resistances and weaknesses
-            StartCoroutine(CalculateDamage(booton.wDamage, booton.wElement, booton.wAlignment, booton.wType));
-            //Start healing if weapon action has healing
-            if (booton.wHealing > 0)
+            if (DataHolder.Instance.descensionMode == true)
             {
-                playerUnit.Heal(booton.wHealing);
-                HealText.Create(healTextPrefab, playerHealText, booton.wHealing);
-            }
-
-            yield return new WaitForSeconds(0.05f);
-
-            //Damage the Enemy
-            bool isDead = enemyUnit.TakeDamage(finalDamage);
-            playerHUD.SetHP(playerUnit.currentHP);
-            enemyHUD.SetHP(enemyUnit.currentHP);
-            //Creates the damage numbers next to the enemy.
-            DamageText.Create(damageTextPrefab, enemyDamageText, finalDamage);
-            //If elemental typing match up, enemy drains attack and gains a damage boost from it.
-            if (enemyAbsorb)
-            {
-                ElementBoost(elementAbsorbBuff);
-            }
-
-            yield return new WaitForSeconds(0.01f);
-
-            enemyAbsorb = false;
-
-            if (isDead)
-            {
-                yield return new WaitForSeconds(1f);
-
-                if (midBoss)
+                //Calculate damage past resistances and weaknesses
+                StartCoroutine(CalculateDamage(booton.wDamage, booton.wElement, booton.wAlignment, booton.wType));
+                //Start healing if weapon action has healing
+                if (booton.wHealing > 0)
                 {
-                    playerUnit.Heal(postBossHeal);
-                    playerHUD.SetHP(playerUnit.currentHP);
-                    HealText.Create(healTextPrefab, playerHealText, postBossHeal);
-                    yield return new WaitForSeconds(1f);
+                    playerUnit.Heal(booton.wHealing);
+                    HealText.Create(healTextPrefab, playerHealText, booton.wHealing);
                 }
-                
-                state = BattleState.WON;
-                EndBattle();
+
+                yield return new WaitForSeconds(0.05f);
+
+                //Damage the Enemy
+                bool isDead = enemyUnit.TakeDamage(finalDamage);
+                playerHUD.SetHP(playerUnit.currentHP);
+                enemyHUD.SetHP(enemyUnit.currentHP);
+                //Creates the damage numbers next to the enemy.
+                DamageText.Create(damageTextPrefab, enemyDamageText, finalDamage);
+                //If elemental typing match up, enemy drains attack and gains a damage boost from it.
+                if (enemyAbsorb)
+                {
+                    ElementBoost(elementAbsorbBuff);
+                }
+
+                yield return new WaitForSeconds(0.01f);
+
+                enemyAbsorb = false;
+
+                if (isDead)
+                {
+                    yield return new WaitForSeconds(1f);
+
+                    if (midBoss)
+                    {
+                        playerUnit.Heal(postBossHeal);
+                        playerHUD.SetHP(playerUnit.currentHP);
+                        HealText.Create(healTextPrefab, playerHealText, postBossHeal);
+                        yield return new WaitForSeconds(1f);
+                    }
+                    
+                    state = BattleState.WON;
+                    EndBattle();
+                }
+
+                else
+                {
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+                }
+
+                yield return new WaitForSeconds(2f);
             }
 
-            else
+
+
+            else if (DataHolder.Instance.ascensionMode == true)
             {
-                state = BattleState.ENEMYTURN;
-                StartCoroutine(EnemyTurn());
-            }
-            yield return new WaitForSeconds(2f);
+                if (ascensionBattle.usedAttack == true)
+                {
+                    bool isDead = enemyUnit.TakeDamage(ascensionBattle.ascensionDamage + tempRestBoost);
+
+                    enemyHUD.SetHP(enemyUnit.currentHP);
+
+                    DamageText.Create(damageTextPrefab, enemyDamageText, ascensionBattle.ascensionDamage + tempRestBoost);
+
+                    if (isDead)
+                    {
+                        yield return new WaitForSeconds(1f);
+
+                        if  (midBoss)
+                        {
+                            playerUnit.Heal(postBossHeal);
+                            playerHUD.SetHP(playerUnit.currentHP);
+                            HealText.Create(healTextPrefab, playerHealText, postBossHeal);
+                            yield return new WaitForSeconds(1f);
+                        }
+
+                        state = BattleState.WON;
+                        EndBattle();
+                    }
+                    else
+                    {
+                        state = BattleState.ENEMYTURN;
+                        StartCoroutine(EnemyTurn());
+                    }
+
+                    ascensionBattle.usedAttack = false;
+
+                    yield return new WaitForSeconds(2f);
+                }
+                else if (ascensionBattle.usedBlock == true)
+                {
+                    blockDamageReduc += ascensionBattle.ascensionBlock;
+
+                    ascensionBattle.usedBlock = false;
+
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+
+                    yield return new WaitForSeconds(2f);
+                }
+                else if(ascensionBattle.usedRest == true)
+                {
+                    playerUnit.Heal(ascensionBattle.ascensionHealing);
+                    playerHUD.SetHP(playerUnit.currentHP);
+                    HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
+
+                    tempRestBoost += ascensionBattle.ascensionBoost;
+
+                    ascensionBattle.usedRest = false;
+
+                    state = BattleState.ENEMYTURN;
+                    StartCoroutine(EnemyTurn());
+
+                    yield return new WaitForSeconds(2f);
+                }
+            }     
         }
     }
 
@@ -193,9 +279,11 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
+        StartCoroutine(CalculateEnemyAttack());
+
+        bool isDead = playerUnit.TakeDamage(enemyCalc);
         //Creates the damage numbers next to the player.
-        DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
+        DamageText.Create(damageTextPrefab, playerDamageText, enemyCalc);
 
         yield return new WaitForSeconds(0.01f);
 
@@ -227,13 +315,34 @@ public class BattleSystem : MonoBehaviour
             {
                 //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
                 winloseScreen.WinScreen();
+
+                DataHolder.Instance.currentIndex = 0;
+                
+                if (DataHolder.Instance.descensionMode == true)
+                {
+                    DataHolder.Instance.descensionMode = false;
+                }
+                else if (DataHolder.Instance.ascensionMode == true)
+                {
+                    DataHolder.Instance.ascensionMode = false;
+                }
             }
             else
             {
-                //Weapon selection screen
-                battleText.text = "Battle Won!";
-                weaponSelect.SetActive(true);
-                weaponSelectArt.ChangeWeaponSelectImage();
+                if (DataHolder.Instance.descensionMode == true)
+                {
+                    //Weapon selection screen
+                    battleText.text = "Battle Won!";
+                    weaponSelect.SetActive(true);
+                    weaponSelectArt.ChangeWeaponSelectImage();
+                }
+                else if (DataHolder.Instance.ascensionMode == true)
+                {
+                    //Select upgrade of choice.
+                    battleText.text = "Battle Won!";
+                    ascUpgradeSelect.SetActive(true);
+                    upgradeArt.ChangeUpgradeArt();
+                }
             }
             
 
@@ -241,8 +350,6 @@ public class BattleSystem : MonoBehaviour
         else if (state == BattleState.LOST)
         {
             //Lose screen/game over, menu that leads to main menu
-            battleText.text = "Battle Lost!";
-            SceneManager.LoadScene("MainMenu");
             //Pull up a hidden Game Over screen. Have stats of the run and button that leads to main menu.
             winloseScreen.LoseScreen();
         }
@@ -258,6 +365,18 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
         StartCoroutine(PlayerAttack());
+    }
+
+    IEnumerator CalculateEnemyAttack()
+    {
+        enemyCalc = enemyUnit.damage - blockDamageReduc;
+
+        if (enemyCalc < 0)
+        {
+            enemyCalc = 0;
+        }
+
+        yield return null;
     }
 
     IEnumerator CalculateDamage(int rawDmg, WeaponElement attackElement, WeaponAlignment attackAlignment, WeaponType attackBPS)
@@ -438,6 +557,11 @@ public class BattleSystem : MonoBehaviour
                     bpsMultiplier = neutralDamage;
                 }
                 break;
+            case WeaponType.Magic:
+                {
+                    bpsMultiplier = bpsSuperEffective;
+                }
+                break;
             default:
                 bpsMultiplier = neutralDamage;
                 return;
@@ -461,14 +585,14 @@ public class BattleSystem : MonoBehaviour
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
         }
-        if (DataHolder.Instance.currentIndex == 1 || DataHolder.Instance.currentIndex == 2)
+        if (DataHolder.Instance.currentIndex > 0 && DataHolder.Instance.currentIndex < 4)
         {
             bedroom.SetActive(false);
             hallway1.SetActive(true);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
         }
-        if (DataHolder.Instance.currentIndex == 3)
+        if (DataHolder.Instance.currentIndex > 3 && DataHolder.Instance.currentIndex < 5)
         {
             bedroom.SetActive(false);
             hallway1.SetActive(false);

@@ -37,6 +37,7 @@ public class ResultsScreen : MonoBehaviour
         pauseButton.SetActive(false);
         titleText.text = "Defeat...";
         titleSubText.text = "You failed the descent.";
+        DataHolder.Instance.currentIndex = 0;
     }
 
     public void UpdateResultsScreen()

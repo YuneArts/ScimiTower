@@ -38,6 +38,13 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene("BattleScreen");
+        if (DataHolder.Instance.ascensionMode == true)
+        {
+            SceneManager.LoadScene("AscensionBattle");
+        }
+        else if (DataHolder.Instance.descensionMode == true)
+        {
+            SceneManager.LoadScene("BattleScreen");
+        }
     }
 }
