@@ -4,7 +4,7 @@ using System.IO;
 
 public class CSVtoSOEnemies
 {
-    private static string enemyCSVPath = "/CSV Files/ScimiTower Maths - Enemy Export.csv";
+    private static string enemyCSVPath = "/Editor/CSV Files/ScimiTower Maths - Enemy Export.csv";
 
     [MenuItem("Utilities/Generate Enemies")]
     public static void GenerateEnemies()

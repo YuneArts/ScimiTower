@@ -17,9 +17,9 @@ MonoBehaviour:
   defaultAttackValue: 5
   durabilityValue: 15
   defaultDurabilityValue: 15
-  blockValue: 2
+  blockValue: 4
   defaultBlockValue: 0
-  healValue: 0
+  healValue: 2
   defaultHealValue: 0
   damageBoost: 0
   defaultDamageBoost: 0

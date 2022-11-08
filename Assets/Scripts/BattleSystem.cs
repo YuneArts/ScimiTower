@@ -259,7 +259,7 @@ public class BattleSystem : MonoBehaviour
                     playerHUD.SetHP(playerUnit.currentHP);
                     HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
 
-                    tempRestBoost = ascensionBattle.ascensionBoost;
+                    tempRestBoost += ascensionBattle.ascensionBoost;
 
                     ascensionBattle.usedRest = false;
 
@@ -283,7 +283,7 @@ public class BattleSystem : MonoBehaviour
 
         bool isDead = playerUnit.TakeDamage(enemyCalc);
         //Creates the damage numbers next to the player.
-        DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
+        DamageText.Create(damageTextPrefab, playerDamageText, enemyCalc);
 
         yield return new WaitForSeconds(0.01f);
 
@@ -315,6 +315,17 @@ public class BattleSystem : MonoBehaviour
             {
                 //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
                 winloseScreen.WinScreen();
+
+                DataHolder.Instance.currentIndex = 0;
+                
+                if (DataHolder.Instance.descensionMode == true)
+                {
+                    DataHolder.Instance.descensionMode = false;
+                }
+                else if (DataHolder.Instance.ascensionMode == true)
+                {
+                    DataHolder.Instance.ascensionMode = false;
+                }
             }
             else
             {

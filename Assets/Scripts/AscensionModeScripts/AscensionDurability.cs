@@ -18,7 +18,7 @@ public class AscensionDurability : MonoBehaviour
 
     private void SetAttackText()
     {
-        if (baseAttack.durabilityValue == 0 && baseAttack.attackValue > 0)
+        if (baseAttack.durabilityValue <= 0 && baseAttack.attackValue > 0)
         {
             currentAttackText.text = "Broken";
         }
@@ -30,9 +30,13 @@ public class AscensionDurability : MonoBehaviour
 
     private void SetDurabilityText()
     {
-        if (baseAttack.defaultDurabilityValue > 0)
+        if (baseAttack.durabilityValue > 0)
         {
             sharedDurabilityText.text = baseAttack.durabilityValue.ToString();
+        }
+        else if (baseAttack.durabilityValue <= 0)
+        {
+            sharedDurabilityText.text = "0";
         }
     }
 }

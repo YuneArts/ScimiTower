@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 4c7d932a987900a48b92248260e5b566, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &83058610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!1 &300187992
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,7 +998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: c0d6dc7034481b243984b24763e19f51, type: 2}
   weaponPool: {fileID: 11400000, guid: e008e82ee59ebfb45989bc6120b15b7e, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &660713533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: be56618595763234b8b1608e27566a96, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &890961161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1656,7 +1656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 5ee147ab9199c8041a0199e2728ad1d5, type: 2}
   weaponPool: {fileID: 11400000, guid: 51e42e8972ceb8048ad34576e2a951bf, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1009672864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,7 +2307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 896a3ef28d978004e85063079ebc2459, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1306409849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 03c34e05aca92614994a8fcf6518d615, type: 2}
   weaponPool: {fileID: 11400000, guid: 51e42e8972ceb8048ad34576e2a951bf, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1666612166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3509,7 +3509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 31af926ac857f1c4ba1a906409466ad4, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1818164239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4019,7 +4019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: a90ab02d98da64044be536702a70735e, type: 2}
   weaponPool: {fileID: 11400000, guid: 92fbc3047e1274145863e588f6c0aa45, type: 2}
-  upgradePool: {fileID: 0}
+  upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1968866035
 MonoBehaviour:
   m_ObjectHideFlags: 0
