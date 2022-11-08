@@ -1,0 +1,16 @@
+Ghost,30,0,None,None,None
+Slim,20,2,None,None,S
+Slime,40,5,None,None,S
+Fire Slime,40,5,Fire,None,P
+Puddle Slime,40,5,Water,None,B
+Sap Slime,40,5,Grass,None,S
+Light Fire Slime,40,5,Fire,Light,B
+Light Puddle Slime,40,5,Water,Light,S
+Light Sap Slime,40,5,Grass,Light,P
+Dark Fire Slime,40,5,Fire,Dark,P
+Dark Puddle Slime,40,5,Water,Dark,S
+Dark Sap Slime,40,5,Grass,Dark,B
+Boss Slime,80,10,None,None,S
+The Wandering Eye,50,4,None,Dark,P
+Witch,100,12,None,Dark,None but Magic
+Mini Mimic,5,0,None,None,None

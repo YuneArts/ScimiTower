@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdaebd674175ad449dac88305234b90, type: 3}
   m_Name: BlockUpgrade
   m_EditorClassIdentifier: 
-  upName: Block +2
+  upName: Block +1
   upDamage: 0
-  upBlock: 2
+  upBlock: 1
   upHeal: 0
   upDurability: 0
   upSprite: {fileID: 21300000, guid: bfec22a54b8ca0e46a39ea61336c13b0, type: 3}

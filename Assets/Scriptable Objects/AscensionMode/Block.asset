@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Block
   m_EditorClassIdentifier: 
   actionName: Block
-  attackValue: 0
+  attackValue: 28
   defaultAttackValue: 0
   durabilityValue: 0
   defaultDurabilityValue: 0
-  blockValue: 5
-  defaultBlockValue: 5
-  healValue: 0
+  blockValue: 2
+  defaultBlockValue: 2
+  healValue: 2
   defaultHealValue: 0
   damageBoost: 0
   defaultDamageBoost: 0
-  ascSprite: {fileID: 21300000, guid: 780ff8b15b4b30945b7a5f2322088f75, type: 3}
+  ascSprite: {fileID: 21300000, guid: 01a33eb92acf83242847aae541016521, type: 3}

@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e500d1180c915a14e93e38fc62eb60fc, type: 3}
   m_Name: Rest
   m_EditorClassIdentifier: 
-  actionName: 
-  attackValue: 0
+  actionName: Rest
+  attackValue: 28
   defaultAttackValue: 0
   durabilityValue: 0
   defaultDurabilityValue: 0
-  blockValue: 0
+  blockValue: 4
   defaultBlockValue: 0
   healValue: 5
   defaultHealValue: 5
   damageBoost: 1
   defaultDamageBoost: 1
-  ascSprite: {fileID: 21300000, guid: 576f1d85ce43dc543b26cefcb1c5e461, type: 3}
+  ascSprite: {fileID: 21300000, guid: e28f857793919664faa557d030ad9fee, type: 3}

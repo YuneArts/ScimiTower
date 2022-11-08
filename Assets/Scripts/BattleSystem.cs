@@ -39,6 +39,7 @@ public class BattleSystem : MonoBehaviour
     public AscensionUpgradeImage upgradeArt;
 
     private int finalDamage;
+    private int enemyCalc;
     [SerializeField]
     private float elementSuperEffective, elementNotEffective, alignmentSuperEffective, alignmentNotEffective, bpsSuperEffective, bpsNotEffective;
     [SerializeField]
@@ -258,7 +259,7 @@ public class BattleSystem : MonoBehaviour
                     playerHUD.SetHP(playerUnit.currentHP);
                     HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
 
-                    tempRestBoost = ascensionBattle.ascensionBoost;
+                    tempRestBoost += ascensionBattle.ascensionBoost;
 
                     ascensionBattle.usedRest = false;
 
@@ -278,9 +279,11 @@ public class BattleSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        bool isDead = playerUnit.TakeDamage(enemyUnit.damage - blockDamageReduc);
+        StartCoroutine(CalculateEnemyAttack());
+
+        bool isDead = playerUnit.TakeDamage(enemyCalc);
         //Creates the damage numbers next to the player.
-        DamageText.Create(damageTextPrefab, playerDamageText, enemyUnit.damage);
+        DamageText.Create(damageTextPrefab, playerDamageText, enemyCalc);
 
         yield return new WaitForSeconds(0.01f);
 
@@ -312,6 +315,17 @@ public class BattleSystem : MonoBehaviour
             {
                 //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
                 winloseScreen.WinScreen();
+
+                DataHolder.Instance.currentIndex = 0;
+                
+                if (DataHolder.Instance.descensionMode == true)
+                {
+                    DataHolder.Instance.descensionMode = false;
+                }
+                else if (DataHolder.Instance.ascensionMode == true)
+                {
+                    DataHolder.Instance.ascensionMode = false;
+                }
             }
             else
             {
@@ -351,6 +365,18 @@ public class BattleSystem : MonoBehaviour
         if (state != BattleState.PLAYERTURN)
             return;
         StartCoroutine(PlayerAttack());
+    }
+
+    IEnumerator CalculateEnemyAttack()
+    {
+        enemyCalc = enemyUnit.damage - blockDamageReduc;
+
+        if (enemyCalc < 0)
+        {
+            enemyCalc = 0;
+        }
+
+        yield return null;
     }
 
     IEnumerator CalculateDamage(int rawDmg, WeaponElement attackElement, WeaponAlignment attackAlignment, WeaponType attackBPS)
