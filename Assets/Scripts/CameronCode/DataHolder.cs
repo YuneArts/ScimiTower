@@ -6,6 +6,7 @@ public class DataHolder : MonoBehaviour
 {
     public static DataHolder Instance;
     public int currentIndex = 0;
+    public int tutorialIndex;
 
     public UnitData mapEnemySpawn;
     public WeaponData mapWeaponSpawn;
@@ -25,6 +26,7 @@ public class DataHolder : MonoBehaviour
 
     public bool descensionMode;
     public bool ascensionMode;
+    public bool tutorialEnabled;
 
     public UnitData playerHealthInfo;
 
@@ -60,6 +62,11 @@ public class DataHolder : MonoBehaviour
 
         ascensionMode = false;
         descensionMode = true;
+        
+        if(tutorialEnabled == true)
+        {
+            tutorialIndex = 0;
+        }
     }
 
     public void StartAscensionMode()

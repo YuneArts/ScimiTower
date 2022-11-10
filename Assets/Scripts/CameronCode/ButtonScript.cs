@@ -22,6 +22,8 @@ public class ButtonScript : MonoBehaviour
     public BattleSystem battleSystem;
     [SerializeField]
     private TransitionScript transitionScript;
+    [SerializeField]
+    private TutorialManager tutorial;
     
     public void ToMap()
     {
@@ -32,6 +34,15 @@ public class ButtonScript : MonoBehaviour
     {
         weaponSlots.SetActive(true);
         option.SetActive(false);
+
+        if(DataHolder.Instance.descensionMode == true)
+        {
+            if(tutorial.popUpIndex == 1)
+            {
+                DataHolder.Instance.tutorialIndex++;
+                tutorial.AdvanceTutorial();
+            }
+        }
     }
 
     /*SlotAttack functions access the weapon's damage for BattleSystem script to apply damage. Durability is reduced on click and WeaponBreak function will be
