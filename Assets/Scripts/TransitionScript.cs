@@ -29,7 +29,7 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2)
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2 || DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 6)
         {
             DataHolder.Instance.tutorialIndex++;
         }
@@ -43,7 +43,11 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
+        else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
         {
             DataHolder.Instance.tutorialIndex++;
         }
