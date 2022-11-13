@@ -206,6 +206,11 @@ public class BattleSystem : MonoBehaviour
                     StartCoroutine(EnemyTurn());
                 }
 
+                if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 7)
+                {
+                    DataHolder.Instance.tutorialIndex++;
+                }                
+
                 yield return new WaitForSeconds(2f);
             }
 
@@ -344,7 +349,11 @@ public class BattleSystem : MonoBehaviour
                     {
                         DataHolder.Instance.tutorialIndex++;
                     }
-                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 4)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 8)
                     {
                         DataHolder.Instance.tutorialIndex++;
                     }

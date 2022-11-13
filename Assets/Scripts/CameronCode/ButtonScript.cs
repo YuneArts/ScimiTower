@@ -41,7 +41,7 @@ public class ButtonScript : MonoBehaviour
             {
                 DataHolder.Instance.tutorialIndex++;
             }
-            else if(tutorial.popUpIndex == 4 && DataHolder.Instance.tutorialEnabled == true)
+            else if(tutorial.popUpIndex == 5 && DataHolder.Instance.tutorialEnabled == true)
             {
                 DataHolder.Instance.tutorialIndex++;
             }
