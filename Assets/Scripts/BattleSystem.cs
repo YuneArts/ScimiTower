@@ -122,6 +122,7 @@ public class BattleSystem : MonoBehaviour
         //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
+        playerUnit.UpdateEnemySprite();
 
         if (enemyUnit.finalBossUnit == true)
         {
@@ -339,10 +340,13 @@ public class BattleSystem : MonoBehaviour
                     weaponSelect.SetActive(true);
                     weaponSelectArt.ChangeWeaponSelectImage();
                     
-                    if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.descensionMode == true)
+                    if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 0)
                     {
                         DataHolder.Instance.tutorialIndex++;
-                        tutorialManager.AdvanceTutorial();
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
                     }
                 }
                 else if (DataHolder.Instance.ascensionMode == true)
