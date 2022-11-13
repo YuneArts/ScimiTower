@@ -865,6 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
+  tutorialIndex: 0
   mapEnemySpawn: {fileID: 11400000, guid: e06f67e792d43624ea8b7bb174c4d6a4, type: 2}
   mapWeaponSpawn: {fileID: 11400000, guid: 0eed119ff56e0f042a28f624c36dfad9, type: 2}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
@@ -881,6 +882,7 @@ MonoBehaviour:
   steelSword: {fileID: 0}
   descensionMode: 0
   ascensionMode: 0
+  tutorialEnabled: 0
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0
@@ -2907,6 +2909,7 @@ MonoBehaviour:
   wAlignment: 0
   battleSystem: {fileID: 0}
   transitionScript: {fileID: 1709373227}
+  tutorial: {fileID: 0}
 --- !u!114 &691890426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3361,6 +3364,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 754061571}
+    - target: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
@@ -3371,6 +3378,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
+--- !u!212 &754061571 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4533441993877274417, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
+  m_PrefabInstance: {fileID: 754061570}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &755540425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,6 +3449,7 @@ MonoBehaviour:
   wAlignment: 0
   battleSystem: {fileID: 2112466518}
   transitionScript: {fileID: 1709373227}
+  tutorial: {fileID: 0}
 --- !u!114 &755540428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7265,6 +7278,7 @@ MonoBehaviour:
   wAlignment: 0
   battleSystem: {fileID: 2112466518}
   transitionScript: {fileID: 1709373227}
+  tutorial: {fileID: 0}
 --- !u!114 &1612694805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10290,6 +10304,7 @@ MonoBehaviour:
   ascUpgradeSelect: {fileID: 2094913396}
   blockDamageReduc: 0
   tempRestBoost: 0
+  tutorialManager: {fileID: 0}
 --- !u!4 &2112466519
 Transform:
   m_ObjectHideFlags: 0

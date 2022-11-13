@@ -29,6 +29,11 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
+
         SceneManager.LoadScene("MapScene");
     }
 
@@ -37,6 +42,11 @@ public class TransitionScript : MonoBehaviour
         transitionAnim.SetTrigger("End");
 
         yield return new WaitForSeconds(transitionTime);
+
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
 
         if (DataHolder.Instance.ascensionMode == true)
         {

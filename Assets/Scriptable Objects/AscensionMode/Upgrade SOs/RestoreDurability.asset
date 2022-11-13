@@ -17,5 +17,5 @@ MonoBehaviour:
   upBlock: 0
   upHeal: 0
   upDurability: 4
-  upSprite: {fileID: 21300000, guid: 9b6c9fbf8a2e7984bbe1a6e5e878ac6e, type: 3}
+  upSprite: {fileID: 21300000, guid: a8c6a2a2b6d9f904eb2b801a151ed078, type: 3}
   description: Restore weapon's durability by 4.

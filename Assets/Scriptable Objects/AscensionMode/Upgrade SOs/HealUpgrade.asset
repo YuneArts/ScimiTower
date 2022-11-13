@@ -17,5 +17,5 @@ MonoBehaviour:
   upBlock: 0
   upHeal: 2
   upDurability: 0
-  upSprite: {fileID: 21300000, guid: 9e347cb9a1fd16f4baba0a1a0a966031, type: 3}
+  upSprite: {fileID: 21300000, guid: e28f857793919664faa557d030ad9fee, type: 3}
   description: Increase healing when using Rest.

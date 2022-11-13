@@ -986,6 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentIndex: 0
+  tutorialIndex: 0
   mapEnemySpawn: {fileID: 0}
   mapWeaponSpawn: {fileID: 0}
   playerInventory: {fileID: 11400000, guid: 5cdd8354da43579479cf00b947134035, type: 2}
@@ -1002,6 +1003,7 @@ MonoBehaviour:
   steelSword: {fileID: 11400000, guid: 247a71bcf5f2ada4abe1958bab13272a, type: 2}
   descensionMode: 0
   ascensionMode: 0
+  tutorialEnabled: 1
   playerHealthInfo: {fileID: 11400000, guid: de4f185d462bb5645b7db3d8fa412bb3, type: 2}
   weaponCountStat: 0
   enemyCountStat: 0

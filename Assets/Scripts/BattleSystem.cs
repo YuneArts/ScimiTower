@@ -59,6 +59,9 @@ public class BattleSystem : MonoBehaviour
     public int blockDamageReduc;
     public int tempRestBoost;
 
+    [SerializeField]
+    private TutorialManager tutorialManager;
+
     void Start()
     {
         canAttack = false;
@@ -119,6 +122,7 @@ public class BattleSystem : MonoBehaviour
         //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
+        playerUnit.UpdateEnemySprite();
 
         if (enemyUnit.finalBossUnit == true)
         {
@@ -335,6 +339,15 @@ public class BattleSystem : MonoBehaviour
                     battleText.text = "Battle Won!";
                     weaponSelect.SetActive(true);
                     weaponSelectArt.ChangeWeaponSelectImage();
+                    
+                    if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 0)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
+                    }
                 }
                 else if (DataHolder.Instance.ascensionMode == true)
                 {
