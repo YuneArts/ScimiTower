@@ -197,8 +197,8 @@ GameObject:
   - component: {fileID: 83058608}
   - component: {fileID: 83058612}
   - component: {fileID: 83058611}
-  - component: {fileID: 83058610}
   - component: {fileID: 83058609}
+  - component: {fileID: 83058613}
   m_Layer: 0
   m_Name: node 3 Grass
   m_TagString: Untagged
@@ -214,8 +214,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 83058607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.02, y: 9.16, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 7, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -236,35 +236,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 4c7d932a987900a48b92248260e5b566, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &83058610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83058607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 83058607}
-  - {fileID: 1009672861}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 83058609}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &83058611
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -333,6 +304,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &83058613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83058607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 83058609}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &93480764
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,8 +365,8 @@ GameObject:
   - component: {fileID: 219485226}
   - component: {fileID: 219485229}
   - component: {fileID: 219485228}
-  - component: {fileID: 219485227}
   - component: {fileID: 219485230}
+  - component: {fileID: 219485231}
   m_Layer: 0
   m_Name: node 2
   m_TagString: Untagged
@@ -393,42 +382,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219485225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 11.79, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: 11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &219485227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219485225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 219485230}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &219485228
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -512,6 +472,24 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
+--- !u!114 &219485231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219485225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 219485230}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &296953657
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300187992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.75, z: -10}
+  m_LocalPosition: {x: 2.88, y: -2.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1046,8 +1024,8 @@ GameObject:
   - component: {fileID: 660713531}
   - component: {fileID: 660713535}
   - component: {fileID: 660713534}
-  - component: {fileID: 660713533}
   - component: {fileID: 660713532}
+  - component: {fileID: 660713536}
   m_Layer: 0
   m_Name: Post Boss 1
   m_TagString: Untagged
@@ -1063,8 +1041,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660713530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.59, y: -1.2, z: 0}
-  m_LocalScale: {x: 0.70401996, y: 0.70401996, z: 0.35200998}
+  m_LocalPosition: {x: 3, y: -1, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -1085,35 +1063,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: c0d6dc7034481b243984b24763e19f51, type: 2}
   weaponPool: {fileID: 11400000, guid: e008e82ee59ebfb45989bc6120b15b7e, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &660713533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660713530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 660713532}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &660713534
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1182,6 +1131,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &660713536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660713530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 660713532}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!114 &697709214 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3409438711619390142, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
@@ -1306,7 +1273,6 @@ GameObject:
   - component: {fileID: 834816797}
   - component: {fileID: 834816798}
   - component: {fileID: 834816800}
-  - component: {fileID: 834816799}
   m_Layer: 0
   m_Name: Start/Tutorial
   m_TagString: Untagged
@@ -1322,8 +1288,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834816796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 16.82, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: 17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -1381,35 +1347,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &834816799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 834816796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 0}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &834816800
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1607,7 +1544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855430617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17320919, y: 12.49781, z: 0}
+  m_LocalPosition: {x: 2.846105, y: 12.49781, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1625,8 +1562,8 @@ GameObject:
   - component: {fileID: 890961159}
   - component: {fileID: 890961163}
   - component: {fileID: 890961162}
-  - component: {fileID: 890961161}
   - component: {fileID: 890961160}
+  - component: {fileID: 890961164}
   m_Layer: 0
   m_Name: node 3 Water
   m_TagString: Untagged
@@ -1642,8 +1579,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890961158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.01, y: 9.610001, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -1, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -1664,35 +1601,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: be56618595763234b8b1608e27566a96, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &890961161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890961158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 890961158}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 890961160}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &890961162
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1761,6 +1669,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &890961164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890961158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 890961160}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &900919782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,8 +1786,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969511276}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5719604, y: -1.7669983, z: -0.06854546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1890,8 +1816,8 @@ GameObject:
   - component: {fileID: 1009672862}
   - component: {fileID: 1009672866}
   - component: {fileID: 1009672865}
-  - component: {fileID: 1009672864}
   - component: {fileID: 1009672863}
+  - component: {fileID: 1009672867}
   m_Layer: 0
   m_Name: Post Boss Dark
   m_TagString: Untagged
@@ -1907,8 +1833,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009672861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.27, y: 5.4900002, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 5, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -1929,35 +1855,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 5ee147ab9199c8041a0199e2728ad1d5, type: 2}
   weaponPool: {fileID: 11400000, guid: 51e42e8972ceb8048ad34576e2a951bf, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &1009672864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009672861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1009672861}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1009672863}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1009672865
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2026,6 +1923,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1009672867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009672861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1009672863}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &1102311298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,7 +2094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102941011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21710408, y: 16.411432, z: 0}
+  m_LocalPosition: {x: 2.8899999, y: 16.411432, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2263,7 +2178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156968121}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.06, z: 0}
+  m_LocalPosition: {x: 3, y: 17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2415,7 +2330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164652082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.74, z: -10}
+  m_LocalPosition: {x: 2.88, y: 5.33, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2599,7 +2514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252948326}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.16, z: -10}
+  m_LocalPosition: {x: 2.88, y: 5.75, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2617,8 +2532,8 @@ GameObject:
   - component: {fileID: 1306409847}
   - component: {fileID: 1306409851}
   - component: {fileID: 1306409850}
-  - component: {fileID: 1306409849}
   - component: {fileID: 1306409848}
+  - component: {fileID: 1306409852}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2634,8 +2549,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306409846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.59, y: -4.23, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -2656,35 +2571,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 896a3ef28d978004e85063079ebc2459, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &1306409849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306409846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1306409848}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1306409850
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2743,7 +2629,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.9528302, g: 0.4269758, b: 0.8773313, a: 1}
+  m_Color: {r: 0.94509804, g: 0.4269758, b: 0.8773313, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2753,6 +2639,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1306409852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306409846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1306409848}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &1367783804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,13 +2690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 0}
-  - {fileID: 0}
   arrayIndex: 0
-  spaces: 2
   inTransition: 0
   mapSpawnScript: {fileID: 0}
   startingPoint: {fileID: 0}
@@ -3319,8 +3217,8 @@ GameObject:
   - component: {fileID: 1631031431}
   - component: {fileID: 1631031430}
   - component: {fileID: 1631031429}
-  - component: {fileID: 1631031428}
   - component: {fileID: 1631031432}
+  - component: {fileID: 1631031433}
   m_Layer: 0
   m_Name: node 1
   m_TagString: Untagged
@@ -3328,35 +3226,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1631031428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631031427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1631031432}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1631031429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3433,8 +3302,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631031427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 14.28, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: 14, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -3455,6 +3324,24 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 3305827cc3af97b42ad6ef1dba0abbf9, type: 2}
   weaponPool: {fileID: 11400000, guid: ca4824f683e4def489e0549bb92179f6, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
+--- !u!114 &1631031433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631031427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1631031432}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &1652009489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,7 +3419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652009489}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21710408, y: 5.79, z: 0}
+  m_LocalPosition: {x: 2.89, y: 5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3550,8 +3437,8 @@ GameObject:
   - component: {fileID: 1666612169}
   - component: {fileID: 1666612168}
   - component: {fileID: 1666612167}
-  - component: {fileID: 1666612166}
   - component: {fileID: 1666612165}
+  - component: {fileID: 1666612170}
   m_Layer: 0
   m_Name: Post Boss Light
   m_TagString: Untagged
@@ -3574,35 +3461,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 03c34e05aca92614994a8fcf6518d615, type: 2}
   weaponPool: {fileID: 11400000, guid: 51e42e8972ceb8048ad34576e2a951bf, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &1666612166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1666612164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1666612165}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1666612167
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3679,13 +3537,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666612164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.86, y: 4.85, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 1, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1666612170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666612164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1666612165}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &1762961683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3751,8 +3627,8 @@ GameObject:
   - component: {fileID: 1818164242}
   - component: {fileID: 1818164241}
   - component: {fileID: 1818164240}
-  - component: {fileID: 1818164239}
   - component: {fileID: 1818164238}
+  - component: {fileID: 1818164243}
   m_Layer: 0
   m_Name: node 3 Fire
   m_TagString: Untagged
@@ -3775,35 +3651,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: 31af926ac857f1c4ba1a906409466ad4, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &1818164239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818164237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1818164238}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1818164240
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3880,13 +3727,31 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818164237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 9.16, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1818164243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818164237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1818164238}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &1822053134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3964,7 +3829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822053134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21710408, y: -4.9, z: 0}
+  m_LocalPosition: {x: 2.8899999, y: -4.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4261,7 +4126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935915516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 11.21, z: -10}
+  m_LocalPosition: {x: 2.88, y: 12.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4279,8 +4144,8 @@ GameObject:
   - component: {fileID: 1968866033}
   - component: {fileID: 1968866037}
   - component: {fileID: 1968866036}
-  - component: {fileID: 1968866035}
   - component: {fileID: 1968866034}
+  - component: {fileID: 1968866038}
   m_Layer: 0
   m_Name: Mini Boss
   m_TagString: Untagged
@@ -4296,8 +4161,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968866032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.59, y: 1.84, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 3, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -4318,35 +4183,6 @@ MonoBehaviour:
   enemyPool: {fileID: 11400000, guid: a90ab02d98da64044be536702a70735e, type: 2}
   weaponPool: {fileID: 11400000, guid: 92fbc3047e1274145863e588f6c0aa45, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
---- !u!114 &1968866035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1968866032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72b92397d95afc40a0f10d9ad2abb98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1156968121}
-  mapLocation: {x: 0, y: 0}
-  locations:
-  - {fileID: 834816796}
-  - {fileID: 1631031427}
-  - {fileID: 219485225}
-  - {fileID: 1818164237}
-  - {fileID: 1666612164}
-  - {fileID: 1968866032}
-  - {fileID: 660713530}
-  - {fileID: 1306409846}
-  arrayIndex: 0
-  spaces: 6
-  inTransition: 0
-  mapSpawnScript: {fileID: 1968866034}
-  startingPoint: {fileID: 0}
-  sceneTransitionMap: {fileID: 697709214}
 --- !u!58 &1968866036
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4415,6 +4251,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1968866038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968866032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fdb3dc88e3cc247adbe66868d01245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1156968121}
+  inTransition: 0
+  ySpace: 0
+  arrayIndex: 0
+  mapSpawnScript: {fileID: 1968866034}
+  sceneTransitionMap: {fileID: 697709214}
 --- !u!1 &2038855031
 GameObject:
   m_ObjectHideFlags: 0
