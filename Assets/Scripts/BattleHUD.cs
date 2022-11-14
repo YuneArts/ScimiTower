@@ -12,7 +12,7 @@ public class BattleHUD : MonoBehaviour
 
     public void SetHUD(Unit unit)
     {
-        unit.currentHP = (int)Mathf.Clamp(unit.maxHP, 0, unit.maxHP);
+        //unit.currentHP = (int)Mathf.Clamp(unit.maxHP, 0, unit.maxHP);
         nameText.text = unit.cName;
         hpSlider.maxValue = unit.maxHP;
         hpSlider.value = unit.currentHP;

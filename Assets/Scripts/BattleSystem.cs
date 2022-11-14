@@ -58,6 +58,7 @@ public class BattleSystem : MonoBehaviour
 
     public int blockDamageReduc;
     public int tempRestBoost;
+    public int healUses;
 
     [SerializeField]
     private TutorialManager tutorialManager;
@@ -69,6 +70,7 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
         blockDamageReduc = 0;
         tempRestBoost = 0;
+        healUses = 2;
     }
 
     private void Update()
@@ -188,6 +190,7 @@ public class BattleSystem : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1f);
 
+                    /*
                     if (midBoss)
                     {
                         playerUnit.Heal(postBossHeal);
@@ -195,6 +198,7 @@ public class BattleSystem : MonoBehaviour
                         HealText.Create(healTextPrefab, playerHealText, postBossHeal);
                         yield return new WaitForSeconds(1f);
                     }
+                    */
                     
                     state = BattleState.WON;
                     EndBattle();
@@ -229,7 +233,7 @@ public class BattleSystem : MonoBehaviour
                     if (isDead)
                     {
                         yield return new WaitForSeconds(1f);
-
+                        /*
                         if  (midBoss)
                         {
                             playerUnit.Heal(postBossHeal);
@@ -237,6 +241,7 @@ public class BattleSystem : MonoBehaviour
                             HealText.Create(healTextPrefab, playerHealText, postBossHeal);
                             yield return new WaitForSeconds(1f);
                         }
+                        */
 
                         state = BattleState.WON;
                         EndBattle();
@@ -269,6 +274,7 @@ public class BattleSystem : MonoBehaviour
                     HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
 
                     tempRestBoost += ascensionBattle.ascensionBoost;
+                    healUses -= 1;
 
                     ascensionBattle.usedRest = false;
 
@@ -380,6 +386,11 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         battleText.text = "Player Turn";
+        if(blockDamageReduc > 0)
+        {
+            blockDamageReduc -= 1;
+        }
+        
     }
 
     public void OnAttackButton()

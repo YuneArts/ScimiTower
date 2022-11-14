@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdaebd674175ad449dac88305234b90, type: 3}
   m_Name: RestoreDurability
   m_EditorClassIdentifier: 
-  upName: Durability +4
+  upName: Durability +6
   upDamage: 0
   upBlock: 0
   upHeal: 0
-  upDurability: 4
+  upDurability: 6
   upSprite: {fileID: 21300000, guid: a8c6a2a2b6d9f904eb2b801a151ed078, type: 3}
-  description: Restore weapon's durability by 4.
+  description: Restore weapon's durability by 6.
