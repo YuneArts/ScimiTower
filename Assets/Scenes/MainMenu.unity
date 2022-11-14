@@ -855,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.052367, y: 459.51712}
+  m_AnchoredPosition: {x: -27, y: 522}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406847023
@@ -879,7 +879,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "CREDITS\n\nDesign\nBrooke Lamothe\nJacob Rolson\n                                                     
-    \nArt\nYusimari Romero\nAsia Owens\n\nProgramming \nCameron Howell\nMike Rodriguez               "
+    \nArt\nYusimari Romero\nBrooke Lamothe\nJacob Rolson\n\nProgramming \nCameron
+    Howell\nMike Rodriguez               "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
   m_sharedMaterial: {fileID: 7963051541601579280, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
