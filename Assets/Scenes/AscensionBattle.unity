@@ -6343,7 +6343,7 @@ GameObject:
   - component: {fileID: 1383624004}
   - component: {fileID: 1383624005}
   m_Layer: 0
-  m_Name: BG4
+  m_Name: Tower Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10357,6 +10357,7 @@ MonoBehaviour:
   hallway1: {fileID: 886923382}
   hallway2: {fileID: 1436678332}
   bottomFloor: {fileID: 1768398483}
+  towerTop: {fileID: 1383624003}
   canAttack: 0
   midBoss: 0
   finalBoss: 0
