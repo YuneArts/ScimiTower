@@ -7,13 +7,16 @@ using TMPro;
 public class AscensionDurability : MonoBehaviour
 {
     public AscensionModeActions baseAttack;
+    [SerializeField]
+    private BattleSystem batSys;
 
-    public TextMeshProUGUI currentAttackText, sharedDurabilityText;
+    public TextMeshProUGUI currentAttackText, sharedDurabilityText, healUsesText;
 
     void Update()
     {
         SetAttackText();
         SetDurabilityText();
+        SetHealingUses();
     }
 
     private void SetAttackText()
@@ -38,5 +41,10 @@ public class AscensionDurability : MonoBehaviour
         {
             sharedDurabilityText.text = "0";
         }
+    }
+
+    private void SetHealingUses()
+    {
+        healUsesText.text = batSys.healUses.ToString();
     }
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdaebd674175ad449dac88305234b90, type: 3}
   m_Name: AttackUpgrade
   m_EditorClassIdentifier: 
-  upName: Attack +2
-  upDamage: 2
+  upName: Attack +3
+  upDamage: 3
   upBlock: 0
   upHeal: 0
   upDurability: 0

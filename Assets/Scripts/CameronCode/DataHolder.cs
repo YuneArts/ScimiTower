@@ -35,6 +35,7 @@ public class DataHolder : MonoBehaviour
     public int enemyCountStat;
 
     public AscensionUpgrade mapUpgrade1, mapUpgrade2, mapUpgrade3;
+
     public GameObject positionManager;
     
     private void Awake()

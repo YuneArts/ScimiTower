@@ -40,7 +40,7 @@ public class AscensionModeButtons : MonoBehaviour
             if (ascensionContainers.Container[1].durabilityValue > 0 && batSys.canAttack == true)
             {
                 usedAttack = true;
-                ascensionDamage = ascensionContainers.Container[1].attackValue * 2;
+                ascensionDamage = (int)(ascensionContainers.Container[1].attackValue * 1.5);
                 ascensionContainers.Container[1].durabilityValue -= 2;
                 batSys.OnAttackButton();
                 batSys.canAttack = false;
@@ -66,7 +66,7 @@ public class AscensionModeButtons : MonoBehaviour
     {
         if (DataHolder.Instance.ascensionMode == true)
         {
-            if (batSys.canAttack == true)
+            if (batSys.canAttack == true && batSys.healUses > 0)
             {
                 usedRest = true;
                 ascensionHealing = ascensionContainers.Container[3].healValue;
