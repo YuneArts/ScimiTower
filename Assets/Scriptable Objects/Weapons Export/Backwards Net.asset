@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Backwards Net
   m_EditorClassIdentifier: 
   weaponName: Backwards Net
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: 460482bc2ed4abe44be29c3cbf27fc17, type: 3}
   weaponBPS: 1
   element: 0
   alignment: 0

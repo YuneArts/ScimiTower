@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 90 Water Lightbulb
   m_EditorClassIdentifier: 
   weaponName: 90 Water Lightbulb
-  attack: 0
+  attack: 9
   durability: 9
   maxDurability: 9
   healingValue: 0

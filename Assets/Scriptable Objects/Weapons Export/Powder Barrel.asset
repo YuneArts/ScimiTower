@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Powder Barrel
   m_EditorClassIdentifier: 
   weaponName: Powder Barrel
-  attack: 0
+  attack: 42
   durability: 2
   maxDurability: 2
   healingValue: 0

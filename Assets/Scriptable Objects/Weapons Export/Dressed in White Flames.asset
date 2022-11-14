@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dressed in White Flames
   m_EditorClassIdentifier: 
   weaponName: Dressed in White Flames
-  attack: 0
+  attack: 9
   durability: 9
   maxDurability: 9
   healingValue: 0

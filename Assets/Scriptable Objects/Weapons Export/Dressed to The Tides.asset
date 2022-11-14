@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dressed to The Tides
   m_EditorClassIdentifier: 
   weaponName: Dressed to The Tides
-  attack: 0
+  attack: 9
   durability: 9
   maxDurability: 9
   healingValue: 0

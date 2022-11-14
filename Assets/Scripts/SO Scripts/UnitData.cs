@@ -31,9 +31,7 @@ public enum UnitElement
     None,
     Fire,
     Water,
-    Grass,
-    Light,
-    Dark
+    Grass
 }
 
 public enum UnitAlignment

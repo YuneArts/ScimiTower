@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Fire Barrel
   m_EditorClassIdentifier: 
   weaponName: Light Fire Barrel
-  attack: 0
+  attack: 42
   durability: 2
   maxDurability: 2
   healingValue: 0

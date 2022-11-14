@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Quarterstaff
   m_EditorClassIdentifier: 
   weaponName: Quarterstaff
-  attack: 0
+  attack: 21
   durability: 4
   maxDurability: 4
   healingValue: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: 2c2915522ab006642bdb3031002dcc1d, type: 3}
   weaponBPS: 1
   element: 0
   alignment: 0

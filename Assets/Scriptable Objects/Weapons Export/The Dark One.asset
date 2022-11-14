@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The Dark One
   m_EditorClassIdentifier: 
   weaponName: The Dark One
-  attack: 0
+  attack: 84
   durability: 1
   maxDurability: 1
   healingValue: 0

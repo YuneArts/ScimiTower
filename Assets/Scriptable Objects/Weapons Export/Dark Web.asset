@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dark Web
   m_EditorClassIdentifier: 
   weaponName: Dark Web
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0

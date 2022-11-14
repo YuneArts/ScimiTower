@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fry-dent
   m_EditorClassIdentifier: 
   weaponName: Fry-dent
-  attack: 0
+  attack: 28
   durability: 3
   maxDurability: 3
   healingValue: 0
