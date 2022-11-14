@@ -1010,6 +1010,7 @@ MonoBehaviour:
   mapUpgrade1: {fileID: 0}
   mapUpgrade2: {fileID: 0}
   mapUpgrade3: {fileID: 0}
+  positionManager: {fileID: 352587360157054428, guid: 5082cd84e2f2b0a46a82c564184be525, type: 3}
 --- !u!4 &495408399
 Transform:
   m_ObjectHideFlags: 0

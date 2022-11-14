@@ -889,6 +889,7 @@ MonoBehaviour:
   mapUpgrade1: {fileID: 0}
   mapUpgrade2: {fileID: 0}
   mapUpgrade3: {fileID: 0}
+  positionManager: {fileID: 352587360157054428, guid: 5082cd84e2f2b0a46a82c564184be525, type: 3}
 --- !u!1 &174930263
 GameObject:
   m_ObjectHideFlags: 0
@@ -10356,6 +10357,7 @@ MonoBehaviour:
   hallway1: {fileID: 886923382}
   hallway2: {fileID: 1436678332}
   bottomFloor: {fileID: 1768398483}
+  towerTop: {fileID: 1383624003}
   canAttack: 0
   midBoss: 0
   finalBoss: 0

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class NewMapMover : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject Player, startingSpot;
     public bool inTransition;
     public int ySpace;
     public int arrayIndex = 0;
     public MapSpawn mapSpawnScript;
     [SerializeField]
     private TransitionScript sceneTransitionMap;
+    [SerializeField]
+    private SpriteRenderer node;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +21,18 @@ public class NewMapMover : MonoBehaviour
         inTransition = false;
         ySpace = 3;
         arrayIndex = DataHolder.Instance.currentIndex;   
+        if(DataHolder.Instance.currentIndex == 0)
+        {
+            DataHolder.Instance.positionManager.transform.position = startingSpot.transform.position;
+        }
+        
+        node = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Player.transform.position = DataHolder.Instance.positionManager.transform.position;
     }
 
     private void OnMouseDown()
@@ -33,6 +42,7 @@ public class NewMapMover : MonoBehaviour
             if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace)
             {
                 Player.transform.position = this.transform.position;
+                DataHolder.Instance.positionManager.transform.position = this.transform.position;
                 inTransition = true;
 
                 mapSpawnScript.PickEnemy();
@@ -56,5 +66,15 @@ public class NewMapMover : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         sceneTransitionMap.MapToBattleTransition();
         yield return null;
+    }
+
+    private void OnMouseOver()
+    {
+        node.color = new Color(0.75f, 0.75f, 0.75f, 1);
+    }
+
+    private void OnMouseExit()
+    {
+        node.color = new Color(1, 1, 1, 1);
     }
 }
