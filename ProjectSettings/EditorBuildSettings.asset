@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AscensionBattle.unity
     guid: 359d284de2921d94ca0af8365d546400
+  - enabled: 1
+    path: Assets/Scenes/AscensionMap.unity
+    guid: bde079f49e30f464ba6609c3efecaa62
   m_configObjects: {}

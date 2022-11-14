@@ -34,7 +34,15 @@ public class TransitionScript : MonoBehaviour
             DataHolder.Instance.tutorialIndex++;
         }
 
-        SceneManager.LoadScene("MapScene");
+        if(DataHolder.Instance.descensionMode == true)
+        {
+            SceneManager.LoadScene("MapScene");
+        }
+        else if(DataHolder.Instance.ascensionMode == true)
+        {
+            SceneManager.LoadScene("AscensionMap");
+        }
+        
     }
 
     IEnumerator EnterBattle()
