@@ -32,6 +32,6 @@ public class MapCamera : MonoBehaviour
             mapCamera.transform.position = camSpot1.transform.position;
         }
         */
-        transform.position = new Vector3(player.position.x, Mathf.Clamp(player.position.y, minCameraPos.y, maxCameraPos.y), transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(player.position.y, minCameraPos.y, maxCameraPos.y), transform.position.z);
     }
 }
