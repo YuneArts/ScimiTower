@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dark Glass Shark
   m_EditorClassIdentifier: 
   weaponName: Dark Glass Shark
-  attack: 0
+  attack: 84
   durability: 1
   maxDurability: 1
   healingValue: 0

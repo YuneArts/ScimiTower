@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Splash
   m_EditorClassIdentifier: 
   weaponName: Splash
-  attack: 0
+  attack: 14
   durability: 6
   maxDurability: 6
   healingValue: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Fire Net
   m_EditorClassIdentifier: 
   weaponName: Light Fire Net
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0

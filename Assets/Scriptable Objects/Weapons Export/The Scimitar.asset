@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: The Scimitar
   m_EditorClassIdentifier: 
   weaponName: The Scimitar
-  attack: 0
+  attack: 17
   durability: 5
   maxDurability: 5
   healingValue: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: 780ff8b15b4b30945b7a5f2322088f75, type: 3}
   weaponBPS: 3
   element: 0
   alignment: 0

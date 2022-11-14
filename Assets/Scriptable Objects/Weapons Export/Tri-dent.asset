@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tri-dent
   m_EditorClassIdentifier: 
   weaponName: Tri-dent
-  attack: 0
+  attack: 28
   durability: 3
   maxDurability: 3
   healingValue: 0

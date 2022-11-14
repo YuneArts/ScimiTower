@@ -21,7 +21,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private Transform playerBattleStation, enemyBattleStation;
     [SerializeField]
-    private GameObject bedroom, hallway1, hallway2, bottomFloor;
+    private GameObject bedroom, hallway1, hallway2, bottomFloor, towerTop;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -122,7 +122,7 @@ public class BattleSystem : MonoBehaviour
         //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
-        playerUnit.UpdateEnemySprite();
+        //playerUnit.UpdateEnemySprite();
 
         if (enemyUnit.finalBossUnit == true)
         {
@@ -205,6 +205,11 @@ public class BattleSystem : MonoBehaviour
                     state = BattleState.ENEMYTURN;
                     StartCoroutine(EnemyTurn());
                 }
+
+                if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 7)
+                {
+                    DataHolder.Instance.tutorialIndex++;
+                }                
 
                 yield return new WaitForSeconds(2f);
             }
@@ -344,7 +349,11 @@ public class BattleSystem : MonoBehaviour
                     {
                         DataHolder.Instance.tutorialIndex++;
                     }
-                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 4)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 8)
                     {
                         DataHolder.Instance.tutorialIndex++;
                     }
@@ -597,6 +606,7 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(false);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (DataHolder.Instance.currentIndex > 0 && DataHolder.Instance.currentIndex < 4)
         {
@@ -604,6 +614,7 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(true);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (DataHolder.Instance.currentIndex > 3 && DataHolder.Instance.currentIndex < 5)
         {
@@ -611,13 +622,26 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(false);
             hallway2.SetActive(true);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (finalBoss)
         {
-            bedroom.SetActive(false);
-            hallway1.SetActive(false);
-            hallway2.SetActive(false);
-            bottomFloor.SetActive(true);
+            if(DataHolder.Instance.descensionMode == true)
+            {
+                bedroom.SetActive(false);
+                hallway1.SetActive(false);
+                hallway2.SetActive(false);
+                bottomFloor.SetActive(true);
+                towerTop.SetActive(false);
+            }
+            else if(DataHolder.Instance.ascensionMode == true)
+            {
+                bedroom.SetActive(false);
+                hallway1.SetActive(false);
+                hallway2.SetActive(false);
+                bottomFloor.SetActive(false);
+                towerTop.SetActive(true);
+            }
         }
     }
 }

@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class MapMovement : MonoBehaviour
 {
     public GameObject player;
-    public Vector2 mapLocation;
-    public GameObject[] locations;
+    //public Vector2 mapLocation;
+    //public GameObject[] locations;
     public int arrayIndex = 0;
-    public int spaces = 3;
+    //public int spaces = 3;
     public bool inTransition = false;
     public MapSpawn mapSpawnScript;
 
@@ -24,7 +24,7 @@ public class MapMovement : MonoBehaviour
     {
         arrayIndex = DataHolder.Instance.currentIndex;        
     }
-
+    /*
     // Update is called once per frame
     void Update()
     {
@@ -34,6 +34,7 @@ public class MapMovement : MonoBehaviour
             Application.Quit();
         }
     }
+    */
 
     private void OnMouseDown()
     {
@@ -41,7 +42,7 @@ public class MapMovement : MonoBehaviour
         {
             StartCoroutine(SceneManagerAndMovement());
             inTransition = true;
-        }
+        }  
 
         mapSpawnScript.PickEnemy();
         mapSpawnScript.PickWeapon();
@@ -60,7 +61,7 @@ public class MapMovement : MonoBehaviour
     IEnumerator SceneManagerAndMovement()
     {
         arrayIndex++;
-        arrayIndex = Mathf.Clamp(arrayIndex, 0, spaces);
+        //arrayIndex = Mathf.Clamp(arrayIndex, 0, spaces);
         DataHolder.Instance.currentIndex = arrayIndex;
         yield return new WaitForSeconds(.5f);
         sceneTransitionMap.MapToBattleTransition();

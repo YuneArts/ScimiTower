@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hex
   m_EditorClassIdentifier: 
   weaponName: Hex
-  attack: 0
+  attack: 14
   durability: 6
   maxDurability: 6
   healingValue: 0
