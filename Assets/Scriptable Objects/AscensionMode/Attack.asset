@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   actionName: Attack
-  attackValue: 18
-  defaultAttackValue: 9
+  attackValue: 12
+  defaultAttackValue: 10
   durabilityValue: 20
   defaultDurabilityValue: 20
   blockValue: 4
