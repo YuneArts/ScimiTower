@@ -2946,7 +2946,6 @@ MonoBehaviour:
   hpSlider: {fileID: 632708609}
   cHP: {fileID: 303633945}
   mHP: {fileID: 764960720}
-  unitTemp: {fileID: 1652243060632430928, guid: f1a0a62ed6f1ecb4ebac98d4f47c1b68, type: 3}
 --- !u!1001 &660465364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3550,17 +3549,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4533441993877274417, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
   m_PrefabInstance: {fileID: 754061570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &754061572 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
-  m_PrefabInstance: {fileID: 754061570}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998261726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84d6423c7c314849838c356378cf89e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &755540425
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,7 +7763,6 @@ MonoBehaviour:
   hpSlider: {fileID: 1271972248}
   cHP: {fileID: 222270036}
   mHP: {fileID: 1751652351}
-  unitTemp: {fileID: 754061572}
 --- !u!114 &1656526544
 MonoBehaviour:
   m_ObjectHideFlags: 0

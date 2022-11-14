@@ -24,9 +24,5 @@ public class BattleHUD : MonoBehaviour
     {  
         hpSlider.value = hp;
         cHP.text = hp.ToString();
-        if (hp < 0)
-        {
-            hp = 0;
-        }
     }
 }
