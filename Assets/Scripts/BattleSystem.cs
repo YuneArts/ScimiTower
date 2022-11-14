@@ -122,7 +122,7 @@ public class BattleSystem : MonoBehaviour
         //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
-        playerUnit.UpdateEnemySprite();
+        //playerUnit.UpdateEnemySprite();
 
         if (enemyUnit.finalBossUnit == true)
         {
