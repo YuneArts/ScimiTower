@@ -11,6 +11,7 @@ public class NewMapMover : MonoBehaviour
     public MapSpawn mapSpawnScript;
     [SerializeField]
     private TransitionScript sceneTransitionMap;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class NewMapMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Player.transform.position = DataHolder.Instance.positionManager.transform.position;
     }
 
     private void OnMouseDown()
@@ -33,7 +34,9 @@ public class NewMapMover : MonoBehaviour
             if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace)
             {
                 Player.transform.position = this.transform.position;
+                DataHolder.Instance.positionManager.transform.position = this.transform.position;
                 inTransition = true;
+                
 
                 mapSpawnScript.PickEnemy();
                 mapSpawnScript.PickWeapon();
@@ -51,7 +54,6 @@ public class NewMapMover : MonoBehaviour
     IEnumerator SceneManagerAndMovement()
     {
         arrayIndex++;
-        //arrayIndex = Mathf.Clamp(arrayIndex, 0, spaces);
         DataHolder.Instance.currentIndex = arrayIndex;
         yield return new WaitForSeconds(.5f);
         sceneTransitionMap.MapToBattleTransition();
