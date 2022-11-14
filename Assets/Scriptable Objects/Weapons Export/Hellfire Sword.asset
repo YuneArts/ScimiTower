@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hellfire Sword
   m_EditorClassIdentifier: 
   weaponName: Hellfire Sword
-  attack: 0
+  attack: 10
   durability: 8
   maxDurability: 8
   healingValue: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Gr8club
   m_EditorClassIdentifier: 
   weaponName: Gr8club
-  attack: 0
+  attack: 10
   durability: 8
   maxDurability: 8
   healingValue: 0

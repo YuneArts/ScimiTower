@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dark Firestaff
   m_EditorClassIdentifier: 
   weaponName: Dark Firestaff
-  attack: 0
+  attack: 21
   durability: 4
   maxDurability: 4
   healingValue: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Sailfish Piercer
   m_EditorClassIdentifier: 
   weaponName: Light Sailfish Piercer
-  attack: 0
+  attack: 12
   durability: 7
   maxDurability: 7
   healingValue: 0

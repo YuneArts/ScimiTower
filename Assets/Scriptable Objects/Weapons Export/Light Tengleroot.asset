@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Tengleroot
   m_EditorClassIdentifier: 
   weaponName: Light Tengleroot
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0

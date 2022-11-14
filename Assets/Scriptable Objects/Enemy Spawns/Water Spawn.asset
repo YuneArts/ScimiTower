@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
-  m_Name: Water Slime Path
+  m_Name: Water Spawn
   m_EditorClassIdentifier: 
   Container:
   - {fileID: 11400000, guid: 869efd351df7c424f9727adbfd59e228, type: 2}
+  - {fileID: 11400000, guid: 1f944cad66f11cc439174b6491063cc8, type: 2}
+  - {fileID: 11400000, guid: 99b965a6dc495b14f9f0268f690a47cd, type: 2}

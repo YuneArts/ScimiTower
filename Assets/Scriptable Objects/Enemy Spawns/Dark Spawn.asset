@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
-  m_Name: Grass Slime Path
+  m_Name: Dark Spawn
   m_EditorClassIdentifier: 
   Container:
-  - {fileID: 11400000, guid: e737d146ae531c94ab2043134d673eb6, type: 2}
+  - {fileID: 11400000, guid: cb23511ad1b228549b8888494712f1fe, type: 2}
+  - {fileID: 11400000, guid: c370333c638bb5949898870b8671ac8a, type: 2}

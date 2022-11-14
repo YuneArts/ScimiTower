@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire Net
   m_EditorClassIdentifier: 
   weaponName: Fire Net
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0

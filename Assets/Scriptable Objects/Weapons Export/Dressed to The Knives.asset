@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Dressed to The Knives
   m_EditorClassIdentifier: 
   weaponName: Dressed to The Knives
-  attack: 0
+  attack: 9
   durability: 9
   maxDurability: 9
   healingValue: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: e43511c917ca1cd4cb5a3ad838932615, type: 3}
   weaponBPS: 3
   element: 0
   alignment: 0

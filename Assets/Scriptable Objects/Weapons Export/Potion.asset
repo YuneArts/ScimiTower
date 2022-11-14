@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potion
   m_EditorClassIdentifier: 
   weaponName: Potion
-  attack: 0
+  attack: 6
   durability: 1
   maxDurability: 1
   healingValue: 0

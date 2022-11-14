@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Poseidon's Trident
   m_EditorClassIdentifier: 
   weaponName: Light Poseidon's Trident
-  attack: 0
+  attack: 28
   durability: 3
   maxDurability: 3
   healingValue: 0

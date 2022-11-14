@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Fire Cannon
   m_EditorClassIdentifier: 
   weaponName: Light Fire Cannon
-  attack: 0
+  attack: 84
   durability: 1
   maxDurability: 1
   healingValue: 0

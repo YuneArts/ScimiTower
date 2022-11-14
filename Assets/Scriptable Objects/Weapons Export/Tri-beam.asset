@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tri-beam
   m_EditorClassIdentifier: 
   weaponName: Tri-beam
-  attack: 0
+  attack: 28
   durability: 3
   maxDurability: 3
   healingValue: 0

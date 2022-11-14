@@ -19,6 +19,7 @@ public class CSVtoSOWeapons
             weapon.weaponName = splitData[0];
             weapon.durability = int.Parse(splitData[1]);
             weapon.maxDurability = int.Parse(splitData[1]);
+            weapon.attack = int.Parse(splitData[2]);
             
             if (splitData[3] == "None")
             {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Splash
   m_EditorClassIdentifier: 
   weaponName: Light Splash
-  attack: 0
+  attack: 14
   durability: 6
   maxDurability: 6
   healingValue: 0
