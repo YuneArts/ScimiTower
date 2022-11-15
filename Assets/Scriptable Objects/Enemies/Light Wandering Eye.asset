@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Light Wandering Eye
   m_EditorClassIdentifier: 
-  unitName: Light Wandering Eye
+  unitName: Light Eye
   uElement: 0
   uAlignment: 1
   uResistBPS: 0

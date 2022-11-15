@@ -18,7 +18,7 @@ MonoBehaviour:
   uResistBPS: 0
   uWeakBPS: 0
   uDamage: 8
-  uMaxHP: 60
+  uMaxHP: 85
   uCurrentHP: 85
   isMidBoss: 1
   isFinalBoss: 0
