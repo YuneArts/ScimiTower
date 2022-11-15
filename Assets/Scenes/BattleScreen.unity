@@ -11788,6 +11788,7 @@ MonoBehaviour:
   tempRestBoost: 0
   healUses: 0
   tutorialManager: {fileID: 1919312472}
+  attacks: {fileID: 410690384}
 --- !u!4 &2070435593
 Transform:
   m_ObjectHideFlags: 0
