@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
   m_Name: Dark Gr8sword
   m_EditorClassIdentifier: 
-  weaponName: 
+  weaponName: Dark Gr8sword
   attack: 10
   durability: 9
   maxDurability: 9
