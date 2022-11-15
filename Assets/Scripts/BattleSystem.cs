@@ -170,6 +170,8 @@ public class BattleSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.05f);
 
+                playerUnit.unitAnimator.SetTrigger("Attack");
+
                 //Damage the Enemy
                 bool isDead = enemyUnit.TakeDamage(finalDamage);
                 playerHUD.SetHP(playerUnit.currentHP);
@@ -225,6 +227,8 @@ public class BattleSystem : MonoBehaviour
                 if (ascensionBattle.usedAttack == true)
                 {
                     bool isDead = enemyUnit.TakeDamage(ascensionBattle.ascensionDamage + tempRestBoost);
+
+                    playerUnit.unitAnimator.SetTrigger("Attack");
 
                     enemyHUD.SetHP(enemyUnit.currentHP);
 
@@ -296,6 +300,8 @@ public class BattleSystem : MonoBehaviour
 
         StartCoroutine(CalculateEnemyAttack());
 
+        playerUnit.unitAnimator.SetTrigger("Hit");
+
         bool isDead = playerUnit.TakeDamage(enemyCalc);
         //Creates the damage numbers next to the player.
         DamageText.Create(damageTextPrefab, playerDamageText, enemyCalc);
@@ -310,6 +316,7 @@ public class BattleSystem : MonoBehaviour
 
         if (isDead)
         {
+            playerUnit.unitAnimator.SetTrigger("Death");
             yield return new WaitForSeconds(1f);
             state = BattleState.LOST;
             EndBattle();

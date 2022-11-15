@@ -4386,17 +4386,26 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7626667351939884094, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
   m_PrefabInstance: {fileID: 1769907523}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &851317614 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
-  m_PrefabInstance: {fileID: 1769907523}
+--- !u!95 &851317615
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851317613}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a84d6423c7c314849838c356378cf89e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e613a3f6a3a6e484b8fbe29bf309cadf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &856637322
 GameObject:
   m_ObjectHideFlags: 0
@@ -8506,7 +8515,6 @@ MonoBehaviour:
   hpSlider: {fileID: 106159955}
   cHP: {fileID: 937390359}
   mHP: {fileID: 1181173404}
-  unitTemp: {fileID: 851317614}
 --- !u!1 &1447486216
 GameObject:
   m_ObjectHideFlags: 0
@@ -9432,7 +9440,6 @@ MonoBehaviour:
   hpSlider: {fileID: 25548175}
   cHP: {fileID: 667767534}
   mHP: {fileID: 1637905681}
-  unitTemp: {fileID: 1652243060632430928, guid: f1a0a62ed6f1ecb4ebac98d4f47c1b68, type: 3}
 --- !u!1 &1644336350
 GameObject:
   m_ObjectHideFlags: 0
@@ -10010,6 +10017,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
+      propertyPath: unitAnimator
+      value: 
+      objectReference: {fileID: 851317615}
     - target: {fileID: 4012360304860091759, guid: 44eb939c21efc01439ce9cc1d9c3f9ae, type: 3}
       propertyPath: characterSprite
       value: 
@@ -11659,6 +11670,7 @@ MonoBehaviour:
   ascUpgradeSelect: {fileID: 0}
   blockDamageReduc: 0
   tempRestBoost: 0
+  healUses: 0
   tutorialManager: {fileID: 1919312472}
 --- !u!4 &2070435593
 Transform:
