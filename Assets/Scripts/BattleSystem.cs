@@ -63,6 +63,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private TutorialManager tutorialManager;
 
+    public GameObject attacks;
+
     void Start()
     {
         canAttack = false;
@@ -303,6 +305,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
+        attacks.SetActive(false);
+        
         //Indication of attack, animation, text, w/e
         battleText.text = "Enemy Turn";
 
@@ -407,7 +411,8 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         battleText.text = "Player Turn";
-        if(blockDamageReduc > 0)
+        attacks.SetActive(true);
+        if (blockDamageReduc > 0)
         {
             blockDamageReduc -= 1;
         }
