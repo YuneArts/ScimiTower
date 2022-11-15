@@ -12177,6 +12177,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1575066913, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3409438711619390137, guid: 6d1a1d7bcfddc4741ad66d0742b2496a, type: 3}
       propertyPath: m_Name
       value: TransitionHandler
