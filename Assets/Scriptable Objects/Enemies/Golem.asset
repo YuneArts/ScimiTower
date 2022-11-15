@@ -17,9 +17,9 @@ MonoBehaviour:
   uAlignment: 0
   uResistBPS: 0
   uWeakBPS: 0
-  uDamage: 6
+  uDamage: 8
   uMaxHP: 60
-  uCurrentHP: 60
-  isMidBoss: 0
+  uCurrentHP: 85
+  isMidBoss: 1
   isFinalBoss: 0
   uSprite: {fileID: 21300000, guid: 61d51569c54643c4db4ebbade68186ce, type: 3}

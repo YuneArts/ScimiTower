@@ -983,7 +983,7 @@ Transform:
   m_GameObject: {fileID: 660713530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: -1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.3}
+  m_LocalScale: {x: 1, y: 1, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 969511277}
@@ -1017,9 +1017,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017011404, y: 0}
+  m_Offset: {x: -0.11734414, y: 0}
   serializedVersion: 2
-  m_Radius: 1.6398079
+  m_Radius: 1.0234787
 --- !u!212 &660713535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2737,7 +2737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: 896a3ef28d978004e85063079ebc2459, type: 2}
+  enemyPool: {fileID: 11400000, guid: 2a85e1b19db9c8b46bebd7d988eaa164, type: 2}
   weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1306409850

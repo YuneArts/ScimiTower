@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120512135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.6051273, y: -1.8820443, z: -0.34649152}
+  m_LocalPosition: {x: 459, y: -1.8820443, z: -0.34649152}
   m_LocalScale: {x: 1, y: 1, z: 0.41666663}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -528,7 +528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 752, y: -925}
+  m_AnchoredPosition: {x: 388, y: -790}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194635666
@@ -855,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.052367, y: 459.51712}
+  m_AnchoredPosition: {x: -83, y: 307}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &406847023
@@ -878,8 +878,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "CREDITS\n\nDesign\nBrooke Lamothe\nJacob Rolson\n                                                     
-    \nArt\nYusimari Romero\nAsia Owens\n\nProgramming \nCameron Howell\nMike Rodriguez               "
+  m_text: "CREDITS\nDesign\nBrooke Lamothe\nJacob Rolson                                                 
+    \nArt\nYusimari Romero\nAsia Owens\nProgramming \nCameron Howell\nMike Rodriguez               "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
   m_sharedMaterial: {fileID: 7963051541601579280, guid: 8896059845b381f46a6c364bda77cda4, type: 2}
