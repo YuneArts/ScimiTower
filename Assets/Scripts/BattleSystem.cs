@@ -106,8 +106,8 @@ public class BattleSystem : MonoBehaviour
     {
         //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerPrefab.GetComponent<Unit>();
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        //GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyUnit = enemyPrefab.GetComponent<Unit>();
 
         playerUnit.currentHP = DataHolder.Instance.playerHealthInfo.uCurrentHP;
 
@@ -172,6 +172,10 @@ public class BattleSystem : MonoBehaviour
 
                 playerUnit.unitAnimator.SetTrigger("Attack");
 
+                yield return new WaitForSeconds(0.1f);
+
+                enemyUnit.unitAnimator.SetTrigger("Hit");
+
                 //Damage the Enemy
                 bool isDead = enemyUnit.TakeDamage(finalDamage);
                 playerHUD.SetHP(playerUnit.currentHP);
@@ -190,6 +194,7 @@ public class BattleSystem : MonoBehaviour
 
                 if (isDead)
                 {
+                    enemyUnit.unitAnimator.SetTrigger("Death");
                     yield return new WaitForSeconds(1f);
 
                     /*
@@ -230,12 +235,17 @@ public class BattleSystem : MonoBehaviour
 
                     playerUnit.unitAnimator.SetTrigger("Attack");
 
+                    yield return new WaitForSeconds(0.1f);
+
+                    enemyUnit.unitAnimator.SetTrigger("Hit");
+
                     enemyHUD.SetHP(enemyUnit.currentHP);
 
                     DamageText.Create(damageTextPrefab, enemyDamageText, ascensionBattle.ascensionDamage + tempRestBoost);
 
                     if (isDead)
                     {
+                        enemyUnit.unitAnimator.SetTrigger("Death");
                         yield return new WaitForSeconds(1f);
                         /*
                         if  (midBoss)
@@ -299,6 +309,10 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         StartCoroutine(CalculateEnemyAttack());
+
+        enemyUnit.unitAnimator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(0.1f);
 
         playerUnit.unitAnimator.SetTrigger("Hit");
 
