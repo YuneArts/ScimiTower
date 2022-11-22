@@ -63,6 +63,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private TutorialManager tutorialManager;
 
+    public GameObject attacks;
+
     void Start()
     {
         canAttack = false;
@@ -106,8 +108,8 @@ public class BattleSystem : MonoBehaviour
     {
         //GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
         playerUnit = playerPrefab.GetComponent<Unit>();
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
-        enemyUnit = enemyGO.GetComponent<Unit>();
+        //GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        enemyUnit = enemyPrefab.GetComponent<Unit>();
 
         playerUnit.currentHP = DataHolder.Instance.playerHealthInfo.uCurrentHP;
 
@@ -170,6 +172,12 @@ public class BattleSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.05f);
 
+                playerUnit.unitAnimator.SetTrigger("Attack");
+
+                yield return new WaitForSeconds(0.1f);
+
+                enemyUnit.unitAnimator.SetTrigger("Hit");
+
                 //Damage the Enemy
                 bool isDead = enemyUnit.TakeDamage(finalDamage);
                 playerHUD.SetHP(playerUnit.currentHP);
@@ -188,6 +196,7 @@ public class BattleSystem : MonoBehaviour
 
                 if (isDead)
                 {
+                    enemyUnit.unitAnimator.SetTrigger("Death");
                     yield return new WaitForSeconds(1f);
 
                     /*
@@ -226,12 +235,19 @@ public class BattleSystem : MonoBehaviour
                 {
                     bool isDead = enemyUnit.TakeDamage(ascensionBattle.ascensionDamage + tempRestBoost);
 
+                    playerUnit.unitAnimator.SetTrigger("Attack");
+
+                    yield return new WaitForSeconds(0.1f);
+
+                    enemyUnit.unitAnimator.SetTrigger("Hit");
+
                     enemyHUD.SetHP(enemyUnit.currentHP);
 
                     DamageText.Create(damageTextPrefab, enemyDamageText, ascensionBattle.ascensionDamage + tempRestBoost);
 
                     if (isDead)
                     {
+                        enemyUnit.unitAnimator.SetTrigger("Death");
                         yield return new WaitForSeconds(1f);
                         /*
                         if  (midBoss)
@@ -289,33 +305,40 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        //Indication of attack, animation, text, w/e
+        attacks.SetActive(false);
         battleText.text = "Enemy Turn";
-
         yield return new WaitForSeconds(1f);
 
+        //Calculates enemy damage from UnitData & other modifiers like Block from Ascension Mode. Plays attack animation.
         StartCoroutine(CalculateEnemyAttack());
+        enemyUnit.unitAnimator.SetTrigger("Attack");
+        yield return new WaitForSeconds(0.1f);
 
+        //Player takes damage & plays hit animation.
+        playerUnit.unitAnimator.SetTrigger("Hit");
         bool isDead = playerUnit.TakeDamage(enemyCalc);
+
         //Creates the damage numbers next to the player.
         DamageText.Create(damageTextPrefab, playerDamageText, enemyCalc);
-
         yield return new WaitForSeconds(0.01f);
 
+        //Updates health bar.
         playerUnit.SetPlayerHP();
-
         playerHUD.SetHP(playerUnit.currentHP);
-
         yield return new WaitForSeconds(1f);
 
+        //Either ends battle if player reaches 0 health, or passes the turn back to the player if they live.
         if (isDead)
         {
+            //Plays death animation and moves to EndBattle function, which will bring defeat screen when BattleState is LOST.
+            playerUnit.unitAnimator.SetTrigger("Death");
             yield return new WaitForSeconds(1f);
             state = BattleState.LOST;
             EndBattle();
         }
         else
         {
+            //Returns to Player's turn and they get to choose their action again.
             state = BattleState.PLAYERTURN;
             canAttack = true;
             PlayerTurn();
@@ -386,7 +409,8 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         battleText.text = "Player Turn";
-        if(blockDamageReduc > 0)
+        attacks.SetActive(true);
+        if (blockDamageReduc > 0)
         {
             blockDamageReduc -= 1;
         }

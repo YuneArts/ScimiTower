@@ -24,7 +24,6 @@ public class ButtonScript : MonoBehaviour
     private TransitionScript transitionScript;
     [SerializeField]
     private TutorialManager tutorial;
-    
     public void ToMap()
     {
         transitionScript.BattleToMapTransition();

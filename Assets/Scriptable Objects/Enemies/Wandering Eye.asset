@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
   m_Name: Wandering Eye
   m_EditorClassIdentifier: 
-  unitName: Dark Wandering Eye
+  unitName: Dark Eye
   uElement: 0
   uAlignment: 2
   uResistBPS: 0

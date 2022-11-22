@@ -22,6 +22,8 @@ public class Unit : MonoBehaviour
     public Sprite cSprite;
     public SpriteRenderer characterSprite;
 
+    public Animator unitAnimator;
+
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;

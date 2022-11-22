@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Naga
   uElement: 0
-  uAlignment: 0
-  uResistBPS: 0
+  uAlignment: 2
+  uResistBPS: 1
   uWeakBPS: 2
   uDamage: 11
   uMaxHP: 90
