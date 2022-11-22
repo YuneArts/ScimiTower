@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Steel Sword
   m_EditorClassIdentifier: 
   weaponName: Steel Sword
-  attack: 0
+  attack: 5
   durability: 255
   maxDurability: 255
   healingValue: 0

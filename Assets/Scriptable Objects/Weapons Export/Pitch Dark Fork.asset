@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pitch Dark Fork
   m_EditorClassIdentifier: 
   weaponName: Pitch Dark Fork
-  attack: 0
+  attack: 28
   durability: 3
   maxDurability: 3
   healingValue: 0

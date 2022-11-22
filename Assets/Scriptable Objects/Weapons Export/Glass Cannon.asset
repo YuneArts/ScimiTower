@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Glass Cannon
   m_EditorClassIdentifier: 
   weaponName: Glass Cannon
-  attack: 0
+  attack: 84
   durability: 1
   maxDurability: 1
   healingValue: 0
-  art: {fileID: 0}
+  art: {fileID: 21300000, guid: a67caa2d62fc4c74a9254b55676692cc, type: 3}
   weaponBPS: 2
   element: 0
   alignment: 0

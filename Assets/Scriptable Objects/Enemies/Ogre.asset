@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db93b133dfd4f443b7af563cc75d248, type: 3}
+  m_Name: Ogre
+  m_EditorClassIdentifier: 
+  unitName: Ogre
+  uElement: 0
+  uAlignment: 0
+  uResistBPS: 0
+  uWeakBPS: 3
+  uDamage: 4
+  uMaxHP: 30
+  uCurrentHP: 30
+  isMidBoss: 0
+  isFinalBoss: 0
+  uSprite: {fileID: 21300000, guid: 9d4d492084831f945a7b5f7aadc55b7c, type: 3}

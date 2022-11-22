@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Double Blind
   m_EditorClassIdentifier: 
   weaponName: Double Blind
-  attack: 0
+  attack: 42
   durability: 2
   maxDurability: 2
   healingValue: 0

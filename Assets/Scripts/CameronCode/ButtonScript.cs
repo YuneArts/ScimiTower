@@ -37,10 +37,13 @@ public class ButtonScript : MonoBehaviour
 
         if(DataHolder.Instance.descensionMode == true)
         {
-            if(tutorial.popUpIndex == 1)
+            if(tutorial.popUpIndex == 1 && DataHolder.Instance.tutorialEnabled == true)
             {
                 DataHolder.Instance.tutorialIndex++;
-                tutorial.AdvanceTutorial();
+            }
+            else if(tutorial.popUpIndex == 5 && DataHolder.Instance.tutorialEnabled == true)
+            {
+                DataHolder.Instance.tutorialIndex++;
             }
         }
     }

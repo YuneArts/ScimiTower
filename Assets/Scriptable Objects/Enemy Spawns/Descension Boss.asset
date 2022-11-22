@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
-  m_Name: Fire Slime Path
+  m_Name: Descension Boss
   m_EditorClassIdentifier: 
   Container:
-  - {fileID: 11400000, guid: d0923f6b432ee3a42ba1d67129051da6, type: 2}
+  - {fileID: 11400000, guid: f0f699321edcc644d8c881ed48653ba6, type: 2}

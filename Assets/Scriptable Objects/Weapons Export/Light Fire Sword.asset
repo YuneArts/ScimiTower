@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Light Fire Sword
   m_EditorClassIdentifier: 
   weaponName: Light Fire Sword
-  attack: 0
+  attack: 10
   durability: 8
   maxDurability: 8
   healingValue: 0

@@ -256,6 +256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 662587987}
   inTransition: 0
+  ySpace: 0
+  node: {fileID: 670950912}
 --- !u!212 &670950912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -456,6 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 662587987}
   inTransition: 0
+  ySpace: 0
+  node: {fileID: 1607148271}
 --- !u!212 &1607148271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -556,6 +560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 662587987}
   inTransition: 0
+  ySpace: 0
+  node: {fileID: 1930080387}
 --- !u!212 &1930080387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -672,6 +678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 662587987}
   inTransition: 0
+  ySpace: 0
+  node: {fileID: 2126033963}
 --- !u!212 &2126033963
 SpriteRenderer:
   m_ObjectHideFlags: 0

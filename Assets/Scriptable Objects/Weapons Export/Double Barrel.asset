@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Double Barrel
   m_EditorClassIdentifier: 
   weaponName: Double Barrel
-  attack: 0
+  attack: 42
   durability: 2
   maxDurability: 2
   healingValue: 0

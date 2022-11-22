@@ -21,7 +21,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     private Transform playerBattleStation, enemyBattleStation;
     [SerializeField]
-    private GameObject bedroom, hallway1, hallway2, bottomFloor;
+    private GameObject bedroom, hallway1, hallway2, bottomFloor, towerTop;
 
     Unit playerUnit;
     Unit enemyUnit;
@@ -58,6 +58,7 @@ public class BattleSystem : MonoBehaviour
 
     public int blockDamageReduc;
     public int tempRestBoost;
+    public int healUses;
 
     [SerializeField]
     private TutorialManager tutorialManager;
@@ -69,6 +70,7 @@ public class BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
         blockDamageReduc = 0;
         tempRestBoost = 0;
+        healUses = 2;
     }
 
     private void Update()
@@ -122,6 +124,7 @@ public class BattleSystem : MonoBehaviour
         //yield return new WaitForSeconds(0.01f);
 
         enemyUnit.UpdateEnemySprite();
+        //playerUnit.UpdateEnemySprite();
 
         if (enemyUnit.finalBossUnit == true)
         {
@@ -187,6 +190,7 @@ public class BattleSystem : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1f);
 
+                    /*
                     if (midBoss)
                     {
                         playerUnit.Heal(postBossHeal);
@@ -194,6 +198,7 @@ public class BattleSystem : MonoBehaviour
                         HealText.Create(healTextPrefab, playerHealText, postBossHeal);
                         yield return new WaitForSeconds(1f);
                     }
+                    */
                     
                     state = BattleState.WON;
                     EndBattle();
@@ -204,6 +209,11 @@ public class BattleSystem : MonoBehaviour
                     state = BattleState.ENEMYTURN;
                     StartCoroutine(EnemyTurn());
                 }
+
+                if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 7)
+                {
+                    DataHolder.Instance.tutorialIndex++;
+                }                
 
                 yield return new WaitForSeconds(2f);
             }
@@ -223,7 +233,7 @@ public class BattleSystem : MonoBehaviour
                     if (isDead)
                     {
                         yield return new WaitForSeconds(1f);
-
+                        /*
                         if  (midBoss)
                         {
                             playerUnit.Heal(postBossHeal);
@@ -231,6 +241,7 @@ public class BattleSystem : MonoBehaviour
                             HealText.Create(healTextPrefab, playerHealText, postBossHeal);
                             yield return new WaitForSeconds(1f);
                         }
+                        */
 
                         state = BattleState.WON;
                         EndBattle();
@@ -263,6 +274,7 @@ public class BattleSystem : MonoBehaviour
                     HealText.Create(healTextPrefab, playerHealText, ascensionBattle.ascensionHealing);
 
                     tempRestBoost += ascensionBattle.ascensionBoost;
+                    healUses -= 1;
 
                     ascensionBattle.usedRest = false;
 
@@ -339,10 +351,17 @@ public class BattleSystem : MonoBehaviour
                     weaponSelect.SetActive(true);
                     weaponSelectArt.ChangeWeaponSelectImage();
                     
-                    if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.descensionMode == true)
+                    if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 0)
                     {
                         DataHolder.Instance.tutorialIndex++;
-                        tutorialManager.AdvanceTutorial();
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 4)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
+                    }
+                    else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 8)
+                    {
+                        DataHolder.Instance.tutorialIndex++;
                     }
                 }
                 else if (DataHolder.Instance.ascensionMode == true)
@@ -367,6 +386,11 @@ public class BattleSystem : MonoBehaviour
     void PlayerTurn()
     {
         battleText.text = "Player Turn";
+        if(blockDamageReduc > 0)
+        {
+            blockDamageReduc -= 1;
+        }
+        
     }
 
     public void OnAttackButton()
@@ -593,6 +617,7 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(false);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (DataHolder.Instance.currentIndex > 0 && DataHolder.Instance.currentIndex < 4)
         {
@@ -600,6 +625,7 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(true);
             hallway2.SetActive(false);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (DataHolder.Instance.currentIndex > 3 && DataHolder.Instance.currentIndex < 5)
         {
@@ -607,13 +633,26 @@ public class BattleSystem : MonoBehaviour
             hallway1.SetActive(false);
             hallway2.SetActive(true);
             bottomFloor.SetActive(false);
+            towerTop.SetActive(false);
         }
         if (finalBoss)
         {
-            bedroom.SetActive(false);
-            hallway1.SetActive(false);
-            hallway2.SetActive(false);
-            bottomFloor.SetActive(true);
+            if(DataHolder.Instance.descensionMode == true)
+            {
+                bedroom.SetActive(false);
+                hallway1.SetActive(false);
+                hallway2.SetActive(false);
+                bottomFloor.SetActive(true);
+                towerTop.SetActive(false);
+            }
+            else if(DataHolder.Instance.ascensionMode == true)
+            {
+                bedroom.SetActive(false);
+                hallway1.SetActive(false);
+                hallway2.SetActive(false);
+                bottomFloor.SetActive(false);
+                towerTop.SetActive(true);
+            }
         }
     }
 }

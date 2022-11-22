@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dark Fire Scimitar
   m_EditorClassIdentifier: 
   weaponName: Dark Fire Scimitar
-  attack: 0
+  attack: 17
   durability: 5
   maxDurability: 5
   healingValue: 0

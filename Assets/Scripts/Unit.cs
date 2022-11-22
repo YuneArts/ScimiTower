@@ -28,9 +28,14 @@ public class Unit : MonoBehaviour
         //unitInfo.uCurrentHP -= dmg;
 
         if (currentHP <= 0)
+        {
+            currentHP = 0;
             return true;
+        }
         else
+        {
             return false;
+        }
     }
 
     public void Heal(int healAmount)

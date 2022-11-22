@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dark Fire Net
   m_EditorClassIdentifier: 
   weaponName: Dark Fire Net
-  attack: 0
+  attack: 8
   durability: 10
   maxDurability: 10
   healingValue: 0

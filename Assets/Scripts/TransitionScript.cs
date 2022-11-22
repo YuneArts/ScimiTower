@@ -29,7 +29,20 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene("MapScene");
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2 || DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 6)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
+
+        if(DataHolder.Instance.descensionMode == true)
+        {
+            SceneManager.LoadScene("MapScene");
+        }
+        else if(DataHolder.Instance.ascensionMode == true)
+        {
+            SceneManager.LoadScene("AscensionMap");
+        }
+        
     }
 
     IEnumerator EnterBattle()
@@ -37,6 +50,15 @@ public class TransitionScript : MonoBehaviour
         transitionAnim.SetTrigger("End");
 
         yield return new WaitForSeconds(transitionTime);
+
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
+        else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
 
         if (DataHolder.Instance.ascensionMode == true)
         {

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fdaebd674175ad449dac88305234b90, type: 3}
   m_Name: HealUpgrade
   m_EditorClassIdentifier: 
-  upName: Heal +2
+  upName: Heal +3
   upDamage: 0
   upBlock: 0
-  upHeal: 2
+  upHeal: 3
   upDurability: 0
   upSprite: {fileID: 21300000, guid: e28f857793919664faa557d030ad9fee, type: 3}
   description: Increase healing when using Rest.
