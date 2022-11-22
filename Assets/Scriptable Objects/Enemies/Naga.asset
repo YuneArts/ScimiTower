@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Naga
   m_EditorClassIdentifier: 
   unitName: Naga
-  uElement: 1
+  uElement: 0
   uAlignment: 2
   uResistBPS: 1
   uWeakBPS: 2
