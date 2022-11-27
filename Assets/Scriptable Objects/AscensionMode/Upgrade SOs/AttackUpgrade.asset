@@ -17,5 +17,5 @@ MonoBehaviour:
   upBlock: 0
   upHeal: 0
   upDurability: 0
-  upSprite: {fileID: 21300000, guid: bd25d12d4b0124f4abb4ee00676df3f5, type: 3}
+  upSprite: {fileID: 21300000, guid: 426873fd78ac8cf40bc00de22975189c, type: 3}
   description: Increase your weapon's base damage.

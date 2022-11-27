@@ -10,7 +10,7 @@ public class AscensionDurability : MonoBehaviour
     [SerializeField]
     private BattleSystem batSys;
 
-    public TextMeshProUGUI currentAttackText, sharedDurabilityText, healUsesText;
+    public TextMeshProUGUI currentAttackText, strongAttackText, sharedDurabilityText, healUsesText;
 
     void Update()
     {
@@ -28,6 +28,16 @@ public class AscensionDurability : MonoBehaviour
         else if (baseAttack.durabilityValue > 0 && baseAttack.attackValue > 0)
         {
             currentAttackText.text = baseAttack.attackValue.ToString();
+        }
+
+        if (baseAttack.durabilityValue <= 0 && baseAttack.attackValue > 0)
+        {
+            currentAttackText.text = "Broken";
+        }
+        else if (baseAttack.durabilityValue > 0 && baseAttack.attackValue > 0)
+        {
+            int bigSwing = (int)(baseAttack.attackValue * 1.5);
+            strongAttackText.text = bigSwing.ToString();
         }
     }
 
