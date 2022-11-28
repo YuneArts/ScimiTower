@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     
     void Start()
     {
+      //Maybe get SettimgsMenu reference here.
         StartCoroutine(GrabSoundSettings());
     }
 
