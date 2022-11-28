@@ -8,7 +8,7 @@ public class SFX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sfx.volume = SettimgsMenu.SFXVOLUME;
     }
 
     // Update is called once per frame
