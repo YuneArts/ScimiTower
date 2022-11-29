@@ -17,7 +17,7 @@ MonoBehaviour:
   durability: 9
   maxDurability: 9
   healingValue: 0
-  art: {fileID: 21300000, guid: 97ec1baac40d96f47a0e5a0af481dee6, type: 3}
+  art: {fileID: 21300000, guid: 8401a158a961b2a4a8a02b2e9a38a837, type: 3}
   weaponBPS: 3
   element: 0
   alignment: 2
