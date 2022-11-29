@@ -22,15 +22,22 @@ public class Unit : MonoBehaviour
     public Sprite cSprite;
     public SpriteRenderer characterSprite;
 
+    public Animator unitAnimator;
+
     public bool TakeDamage(int dmg)
     {
         currentHP -= dmg;
         //unitInfo.uCurrentHP -= dmg;
 
         if (currentHP <= 0)
+        {
+            currentHP = 0;
             return true;
+        }
         else
+        {
             return false;
+        }
     }
 
     public void Heal(int healAmount)

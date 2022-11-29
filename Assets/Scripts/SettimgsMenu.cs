@@ -7,6 +7,10 @@ public class SettimgsMenu : MonoBehaviour
 
 {
     [SerializeField] Slider volumeSlider;
+     [SerializeField] Slider sfxSlider;
+     public static float SFXVOLUME;
+    
+
 
     /*
     // Start is called before the first frame update
@@ -27,16 +31,19 @@ public class SettimgsMenu : MonoBehaviour
    public void ChangeVolume()
    {
      AudioListener.volume = volumeSlider.value;
+     SFXVOLUME=sfxSlider.value;
      Save();
    }
 
    public void Load()
    {
      volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
+     sfxSlider.value = PlayerPrefs.GetFloat("sfxVolume");
    }
 
    public void Save()
    {
     PlayerPrefs.SetFloat("musicVolume" , volumeSlider.value);
+    PlayerPrefs.SetFloat("sfxVolume" , volumeSlider.value);
    }
 }

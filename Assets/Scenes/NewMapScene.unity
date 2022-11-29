@@ -180,7 +180,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   Player: {fileID: 662587987}
   inTransition: 0
   ySpace: 0
+  node: {fileID: 670950912}
 --- !u!212 &670950912
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -458,6 +459,7 @@ MonoBehaviour:
   Player: {fileID: 662587987}
   inTransition: 0
   ySpace: 0
+  node: {fileID: 1607148271}
 --- !u!212 &1607148271
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -559,6 +561,7 @@ MonoBehaviour:
   Player: {fileID: 662587987}
   inTransition: 0
   ySpace: 0
+  node: {fileID: 1930080387}
 --- !u!212 &1930080387
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -676,6 +679,7 @@ MonoBehaviour:
   Player: {fileID: 662587987}
   inTransition: 0
   ySpace: 0
+  node: {fileID: 2126033963}
 --- !u!212 &2126033963
 SpriteRenderer:
   m_ObjectHideFlags: 0

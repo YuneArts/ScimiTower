@@ -7,13 +7,16 @@ using TMPro;
 public class AscensionDurability : MonoBehaviour
 {
     public AscensionModeActions baseAttack;
+    [SerializeField]
+    private BattleSystem batSys;
 
-    public TextMeshProUGUI currentAttackText, sharedDurabilityText;
+    public TextMeshProUGUI currentAttackText, strongAttackText, sharedDurabilityText, healUsesText;
 
     void Update()
     {
         SetAttackText();
         SetDurabilityText();
+        SetHealingUses();
     }
 
     private void SetAttackText()
@@ -25,6 +28,16 @@ public class AscensionDurability : MonoBehaviour
         else if (baseAttack.durabilityValue > 0 && baseAttack.attackValue > 0)
         {
             currentAttackText.text = baseAttack.attackValue.ToString();
+        }
+
+        if (baseAttack.durabilityValue <= 0 && baseAttack.attackValue > 0)
+        {
+            currentAttackText.text = "Broken";
+        }
+        else if (baseAttack.durabilityValue > 0 && baseAttack.attackValue > 0)
+        {
+            int bigSwing = (int)(baseAttack.attackValue * 1.5);
+            strongAttackText.text = bigSwing.ToString();
         }
     }
 
@@ -38,5 +51,10 @@ public class AscensionDurability : MonoBehaviour
         {
             sharedDurabilityText.text = "0";
         }
+    }
+
+    private void SetHealingUses()
+    {
+        healUsesText.text = batSys.healUses.ToString();
     }
 }

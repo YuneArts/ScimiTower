@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 
@@ -11,6 +12,8 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] 
     private GameObject mainMenu, settings, credits, startGameOptions, gameModeButtons;
+    [SerializeField]
+    private TextMeshProUGUI tutorialToggleText;
   
     public int gameStart;
 
@@ -25,6 +28,30 @@ public class MainMenu : MonoBehaviour
     {
       Application.Quit();
       Debug.Log("Game Closed");
+    }
+
+    public void ToggleTutorial()
+    {
+      if(DataHolder.Instance.tutorialEnabled == true)
+      {
+        DataHolder.Instance.tutorialEnabled = false;
+      }
+      else if(DataHolder.Instance.tutorialEnabled == false)
+      {
+        DataHolder.Instance.tutorialEnabled = true;
+      }
+    }
+
+    void Update()
+    {
+      if(DataHolder.Instance.tutorialEnabled == true)
+      {
+        tutorialToggleText.text = "Tutorial: On";
+      }
+      else if(DataHolder.Instance.tutorialEnabled == false)
+      {
+        tutorialToggleText.text = "Tutorial: Off";
+      }
     }
 
     public void StartGame() 
