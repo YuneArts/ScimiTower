@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Tutorial Stage 3
   m_EditorClassIdentifier: 
   Container:
-  - {fileID: 11400000, guid: e737d146ae531c94ab2043134d673eb6, type: 2}
+  - {fileID: 11400000, guid: d0442d95e75023849bdd5636cef23cd0, type: 2}
+  - {fileID: 11400000, guid: 3e5ead4af1fb59044aa3cf6dd4bcbc41, type: 2}
+  - {fileID: 11400000, guid: 9975fb605aee0d4489d413a1c359b0ba, type: 2}
