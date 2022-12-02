@@ -9,8 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9119f3f8613f6e841866cb0659e13a0c, type: 3}
-  m_Name: Tutorial Stage 3
+  m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
+  m_Name: Quart-staff
   m_EditorClassIdentifier: 
-  Container:
-  - {fileID: 11400000, guid: e737d146ae531c94ab2043134d673eb6, type: 2}
+  weaponName: Quart-staff
+  attack: 21
+  durability: 4
+  maxDurability: 4
+  healingValue: 0
+  art: {fileID: 0}
+  weaponBPS: 1
+  element: 2
+  alignment: 0
