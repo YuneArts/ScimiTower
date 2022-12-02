@@ -911,7 +911,7 @@ MonoBehaviour:
   Player: {fileID: 1156968121}
   startingSpot: {fileID: 1427375709}
   inTransition: 0
-  mapEvent: 1
+  mapEvent: 0
   ySpace: 0
   arrayIndex: 0
   mapSpawnScript: {fileID: 581111741}
