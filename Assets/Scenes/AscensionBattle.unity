@@ -4889,7 +4889,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: d34836eb5bcaf094a9615e7c6f68b574, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b9973c866f72324a9269d4aea17cec9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5407,7 +5407,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 094b34c9b5b8ef04b938e1ed0fcea5a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15883b8fbec4b4245bc24dedaf50cd44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7750,7 +7750,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: fd23a4a9162983245951b694c2a218c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21b15a2a0fbff574a98627ee5ebd0f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9525,7 +9525,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 94c5effbe3ba3cd40910e1c19a3288db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a0740141208f3d047bd036f7c8f4572e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10412,6 +10412,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelectImage: {fileID: 1910504798}
+  weaponSelectElement: {fileID: 0}
+  weaponSelectAlignment: {fileID: 0}
+  fire: {fileID: 0}
+  water: {fileID: 0}
+  grass: {fileID: 0}
+  lightAli: {fileID: 0}
+  dark: {fileID: 0}
 --- !u!114 &1910504798
 MonoBehaviour:
   m_ObjectHideFlags: 0
