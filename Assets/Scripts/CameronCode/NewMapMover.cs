@@ -41,6 +41,7 @@ public class NewMapMover : MonoBehaviour
             {
                 if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == false)
                 {
+                    Cursor.lockState = CursorLockMode.Locked;
                     Player.transform.position = this.transform.position;
                     DataHolder.Instance.positionManager.transform.position = this.transform.position;
                     inTransition = true;
@@ -53,6 +54,7 @@ public class NewMapMover : MonoBehaviour
                 }
                 else if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == true)
                 {
+                    Cursor.lockState = CursorLockMode.Locked;
                     Player.transform.position = this.transform.position;
                     DataHolder.Instance.positionManager.transform.position = this.transform.position;
                     inTransition = true;
@@ -64,6 +66,7 @@ public class NewMapMover : MonoBehaviour
             {
                 if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == false)
                 {
+                    Cursor.lockState = CursorLockMode.Locked;
                     Player.transform.position = this.transform.position;
                     DataHolder.Instance.positionManager.transform.position = this.transform.position;
                     inTransition = true;
@@ -76,6 +79,7 @@ public class NewMapMover : MonoBehaviour
                 }   
                 else if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == true)
                 {
+                    Cursor.lockState = CursorLockMode.Locked;
                     Player.transform.position = this.transform.position;
                     DataHolder.Instance.positionManager.transform.position = this.transform.position;
                     inTransition = true;
