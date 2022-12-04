@@ -39,53 +39,58 @@ public class NewMapMover : MonoBehaviour
         {
             if(DataHolder.Instance.descensionMode == true)
             {
-                if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == false)
+                if (Mathf.Abs(Player.transform.position.x - this.transform.position.x) <= 3 && Mathf.Abs(Player.transform.position.x - this.transform.position.x) >= 0)
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Player.transform.position = this.transform.position;
-                    DataHolder.Instance.positionManager.transform.position = this.transform.position;
-                    inTransition = true;
+                    if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == false)
+                    {
+                        Cursor.lockState = CursorLockMode.Locked;
+                        Player.transform.position = this.transform.position;
+                        DataHolder.Instance.positionManager.transform.position = this.transform.position;
+                        inTransition = true;
 
-                    mapSpawnScript.PickEnemy();
-                    mapSpawnScript.PickWeapon();
-                    mapSpawnScript.PickUpgrades();
+                        mapSpawnScript.PickEnemy();
+                        mapSpawnScript.PickWeapon();
+                        mapSpawnScript.PickUpgrades();
 
-                    StartCoroutine(SceneManagerAndMovement());
+                        StartCoroutine(SceneManagerAndMovement());
+                    }
+                    else if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == true)
+                    {
+                        Player.transform.position = this.transform.position;
+                        DataHolder.Instance.positionManager.transform.position = this.transform.position;
+                        inTransition = true;
+
+                        StartCoroutine(HealEvent());
+                    }   
                 }
-                else if (Player.transform.position.y >= this.transform.position.y && this.transform.position.y == Player.transform.position.y - ySpace && mapEvent == true)
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Player.transform.position = this.transform.position;
-                    DataHolder.Instance.positionManager.transform.position = this.transform.position;
-                    inTransition = true;
-
-                    StartCoroutine(HealEvent());
-                }   
+                
             }
             else if(DataHolder.Instance.ascensionMode == true)
             {
-                if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == false)
+                if(Mathf.Abs(Player.transform.position.x - this.transform.position.x) <= 3 && Mathf.Abs(Player.transform.position.x - this.transform.position.x) >= 0)
                 {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Player.transform.position = this.transform.position;
-                    DataHolder.Instance.positionManager.transform.position = this.transform.position;
-                    inTransition = true;
+                    if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == false)
+                    {
+                        Cursor.lockState = CursorLockMode.Locked;
+                        Player.transform.position = this.transform.position;
+                        DataHolder.Instance.positionManager.transform.position = this.transform.position;
+                        inTransition = true;
 
-                    mapSpawnScript.PickEnemy();
-                    mapSpawnScript.PickWeapon();
-                    mapSpawnScript.PickUpgrades();
+                        mapSpawnScript.PickEnemy();
+                        mapSpawnScript.PickWeapon();
+                        mapSpawnScript.PickUpgrades();
 
-                    StartCoroutine(SceneManagerAndMovement());
-                }   
-                else if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == true)
-                {
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Player.transform.position = this.transform.position;
-                    DataHolder.Instance.positionManager.transform.position = this.transform.position;
-                    inTransition = true;
+                        StartCoroutine(SceneManagerAndMovement());
+                    }   
+                    else if (Player.transform.position.y <= this.transform.position.y && this.transform.position.y == Player.transform.position.y + ySpace && mapEvent == true)
+                    {
+                        Player.transform.position = this.transform.position;
+                        DataHolder.Instance.positionManager.transform.position = this.transform.position;
+                        inTransition = true;
 
-                    StartCoroutine(HealEvent());
-                }   
+                        StartCoroutine(HealEvent());
+                    } 
+                }  
             }
             else
             {

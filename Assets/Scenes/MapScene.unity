@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: 2b973133084ad314eaefd8a4faa88801, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &485073850
 CircleCollider2D:
@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: 2b973133084ad314eaefd8a4faa88801, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &937242163
 CircleCollider2D:
@@ -5233,7 +5233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: 2f0f039e78ecb3547a040ec39177ac1e, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1245459562
 CircleCollider2D:
@@ -6267,7 +6267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: 2b973133084ad314eaefd8a4faa88801, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1472435700
 CircleCollider2D:
@@ -6897,7 +6897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 3305827cc3af97b42ad6ef1dba0abbf9, type: 2}
-  weaponPool: {fileID: 11400000, guid: ca4824f683e4def489e0549bb92179f6, type: 2}
+  weaponPool: {fileID: 11400000, guid: 5781872470339c14dab398e98a434ac3, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &1631031433
 MonoBehaviour:
@@ -8225,7 +8225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 0e7462c2ece02b246a94d4862b676201, type: 2}
-  weaponPool: {fileID: 11400000, guid: 5781872470339c14dab398e98a434ac3, type: 2}
+  weaponPool: {fileID: 11400000, guid: 30986bccca0a2504c981b39254924d80, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1961967629
 CircleCollider2D:
