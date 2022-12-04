@@ -33,6 +33,7 @@ public class BattleSystem : MonoBehaviour
     public GameObject weaponSelect;
     public InventoryScript inventory;
     public List<WeaponDisplay> weaponDisplay;
+    public List<WeaponDisplay> weaponSelectSlots;
     public ButtonScript booton;
     public AscensionModeButtons ascensionBattle;
     public WeaponSelectImage weaponSelectArt;
@@ -82,17 +83,23 @@ public class BattleSystem : MonoBehaviour
             if (inventory.Container.Count == 1)
             {
                 weaponDisplay[0].weapon = inventory.Container[0];
+                weaponSelectSlots[0].weapon = inventory.Container[0];
             }
             else if (inventory.Container.Count == 2)
             {
                 weaponDisplay[0].weapon = inventory.Container[0];
                 weaponDisplay[1].weapon = inventory.Container[1];
+                weaponSelectSlots[0].weapon = inventory.Container[0];
+                weaponSelectSlots[1].weapon = inventory.Container[1];
             }
             else if (inventory.Container.Count == 3)
             {
                 weaponDisplay[0].weapon = inventory.Container[0];
                 weaponDisplay[1].weapon = inventory.Container[1];
                 weaponDisplay[2].weapon = inventory.Container[2];
+                weaponSelectSlots[0].weapon = inventory.Container[0];
+                weaponSelectSlots[1].weapon = inventory.Container[1];
+                weaponSelectSlots[2].weapon = inventory.Container[2];
             }
             else if (inventory.Container.Count == 4)
             {
@@ -100,6 +107,10 @@ public class BattleSystem : MonoBehaviour
                 weaponDisplay[1].weapon = inventory.Container[1];
                 weaponDisplay[2].weapon = inventory.Container[2];
                 weaponDisplay[3].weapon = inventory.Container[3];
+                weaponSelectSlots[0].weapon = inventory.Container[0];
+                weaponSelectSlots[1].weapon = inventory.Container[1];
+                weaponSelectSlots[2].weapon = inventory.Container[2];
+                weaponSelectSlots[3].weapon = inventory.Container[3];
             }
         }
     }
@@ -219,10 +230,15 @@ public class BattleSystem : MonoBehaviour
                     StartCoroutine(EnemyTurn());
                 }
 
-                if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 7)
+                //Advances tutorial.
+                if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 6)
                 {
                     DataHolder.Instance.tutorialIndex++;
-                }                
+                } 
+                else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 7)
+                {
+                    DataHolder.Instance.tutorialIndex++;
+                }              
 
                 yield return new WaitForSeconds(2f);
             }

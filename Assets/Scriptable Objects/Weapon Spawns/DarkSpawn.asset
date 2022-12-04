@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7f5cab94879d349be3552bba888e3b, type: 3}
+  m_Name: DarkSpawn
+  m_EditorClassIdentifier: 
+  Container:
+  - {fileID: 11400000, guid: 7ebb019f8b3c41648a14d66d2b078bf0, type: 2}
+  - {fileID: 11400000, guid: 74e1d7a17d2999347979a4fa2078d8fa, type: 2}
+  - {fileID: 11400000, guid: c8088110d26d9134f9a8d9cd6ae71a9f, type: 2}
+  - {fileID: 11400000, guid: 8f93dbe73d4237e449b01835fd3fed4d, type: 2}
+  - {fileID: 11400000, guid: 6afd410457553cc41aadeb8796c68f8b, type: 2}
+  - {fileID: 11400000, guid: 4533f57103ce94c4cb989c4da60154a1, type: 2}
+  - {fileID: 11400000, guid: f3e9ef963b9b5e14daa0236fd9371653, type: 2}
+  - {fileID: 11400000, guid: 97ead835f694b0545b184b6a259c9bbf, type: 2}
+  - {fileID: 11400000, guid: bced1bcdc2c96a6458fe3f7ce79b56e3, type: 2}
+  - {fileID: 11400000, guid: 765f3d17163d5bd49ad857bf7f2c95f4, type: 2}

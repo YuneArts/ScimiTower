@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7f5cab94879d349be3552bba888e3b, type: 3}
+  m_Name: LightSpawn
+  m_EditorClassIdentifier: 
+  Container:
+  - {fileID: 11400000, guid: a65b86c99f314954e915b9166454536c, type: 2}
+  - {fileID: 11400000, guid: e5576ba6ab926ef408a253b57b167275, type: 2}
+  - {fileID: 11400000, guid: cd2b284a9212b9945a517385a2bd4522, type: 2}
+  - {fileID: 11400000, guid: ea4d0c369988b7640815d1e184b8ab2e, type: 2}
+  - {fileID: 11400000, guid: fff80ce347347b3428c6b84999f6d053, type: 2}
+  - {fileID: 11400000, guid: 5b80966a4cd430344a311aaa8b801b7a, type: 2}
+  - {fileID: 11400000, guid: 3b5c54ecf8dc637498f99954d87f19ad, type: 2}
+  - {fileID: 11400000, guid: 05567d2a4deb22e4eb81f69e0e59f92f, type: 2}
+  - {fileID: 11400000, guid: d77ba9670b73ce243bd592ebb8f98fcc, type: 2}
+  - {fileID: 11400000, guid: 2133d103bdf50c148973740065adae93, type: 2}

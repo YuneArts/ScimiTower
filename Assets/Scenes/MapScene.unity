@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 4c7d932a987900a48b92248260e5b566, type: 2}
-  weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
+  weaponPool: {fileID: 11400000, guid: 8e356ad1d34934e43adac91bf9d916d3, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &83058611
 CircleCollider2D:
@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: f37a681f0f881084baeef1698bcfd348, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!114 &219485231
 MonoBehaviour:
@@ -936,7 +936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 16bd9b4ded67a074b8396bab55a2f3e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1419,7 +1419,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 699f98375d839f14e839c72b8656d4d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1808,7 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
+  enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &485073850
@@ -1949,7 +1949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: 0e7462c2ece02b246a94d4862b676201, type: 2}
-  weaponPool: {fileID: 11400000, guid: e008e82ee59ebfb45989bc6120b15b7e, type: 2}
+  weaponPool: {fileID: 11400000, guid: 5781872470339c14dab398e98a434ac3, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &581111742
 CircleCollider2D:
@@ -3508,7 +3508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: be56618595763234b8b1608e27566a96, type: 2}
-  weaponPool: {fileID: 11400000, guid: 735cdd5a2aab16847b3ff5d65ec06755, type: 2}
+  weaponPool: {fileID: 11400000, guid: 950e5e93138779b40bfc7e5339f52b0e, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &890961162
 CircleCollider2D:
@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
+  enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &937242163
@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: 03c34e05aca92614994a8fcf6518d615, type: 2}
+  enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1245459562
@@ -5520,7 +5520,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a5f4a04a7680e43449b7e053f4e9fe3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6266,7 +6266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
+  enemyPool: {fileID: 11400000, guid: 6f91d2f2709b8d44f8aefc3d4e30dd9d, type: 2}
   weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1472435700
@@ -6991,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPool: {fileID: 11400000, guid: fe0ecfe173f100341bb28cd6e3deddc3, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  weaponPool: {fileID: 11400000, guid: 3d9bb9ed876251749bd5e213f1d16a52, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1644413807
 CircleCollider2D:
@@ -7317,8 +7317,8 @@ MonoBehaviour:
   popUps:
   - {fileID: 2125853533}
   - {fileID: 296953657}
-  - {fileID: 1577600907}
   - {fileID: 1876167817}
+  - {fileID: 1577600907}
   popUpIndex: 0
 --- !u!4 &1762961685
 Transform:
@@ -8224,8 +8224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 486888690c63da2478386a6aa77df75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPool: {fileID: 11400000, guid: 03c34e05aca92614994a8fcf6518d615, type: 2}
-  weaponPool: {fileID: 11400000, guid: f8b9114e0c1c01b4d937ed1b7f5781e9, type: 2}
+  enemyPool: {fileID: 11400000, guid: 0e7462c2ece02b246a94d4862b676201, type: 2}
+  weaponPool: {fileID: 11400000, guid: 5781872470339c14dab398e98a434ac3, type: 2}
   upgradePool: {fileID: 11400000, guid: 47f62c6f48ff48e4eb9f2c027df47e38, type: 2}
 --- !u!58 &1961967629
 CircleCollider2D:

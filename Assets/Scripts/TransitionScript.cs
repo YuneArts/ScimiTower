@@ -29,7 +29,11 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2 || DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 6)
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 1 || DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }
+        else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 8)
         {
             DataHolder.Instance.tutorialIndex++;
         }
@@ -51,14 +55,18 @@ public class TransitionScript : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 3)
+        if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 2)
         {
             DataHolder.Instance.tutorialIndex++;
         }
-        else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 5)
+        else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.currentIndex == 2)
+        {
+            DataHolder.Instance.tutorialIndex++;
+        }else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.currentIndex == 9)
         {
             DataHolder.Instance.tutorialIndex++;
         }
+
 
         if (DataHolder.Instance.ascensionMode == true)
         {

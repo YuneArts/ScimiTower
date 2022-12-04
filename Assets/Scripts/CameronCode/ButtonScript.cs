@@ -27,6 +27,13 @@ public class ButtonScript : MonoBehaviour
     public void ToMap()
     {
         transitionScript.BattleToMapTransition();
+        if(DataHolder.Instance.descensionMode == true)
+        {
+            if(tutorial.popUpIndex == 1 && DataHolder.Instance.tutorialEnabled == true)
+            {
+                DataHolder.Instance.tutorialIndex++;
+            }
+        }
     }
 
     public void SlotSelect()

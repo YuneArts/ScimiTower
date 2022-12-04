@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef9658ceef6a22943a69e2e63c2c516c, type: 3}
-  m_Name: Darksword
+  m_Name: Fire Gr8sword
   m_EditorClassIdentifier: 
-  weaponName: Darksword
+  weaponName: Fire Gr8sword
   attack: 10
   durability: 8
   maxDurability: 8
   healingValue: 0
   art: {fileID: 21300000, guid: 8401a158a961b2a4a8a02b2e9a38a837, type: 3}
   weaponBPS: 3
-  element: 0
-  alignment: 2
+  element: 1
+  alignment: 0
