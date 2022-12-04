@@ -10,7 +10,7 @@ public class AscensionDurability : MonoBehaviour
     [SerializeField]
     private BattleSystem batSys;
 
-    public TextMeshProUGUI currentAttackText, strongAttackText, sharedDurabilityText, healUsesText;
+    public TextMeshProUGUI currentAttackText, strongAttackText, sharedDurabilityText, sharedDurabilityText2, healUsesText;
 
     void Update()
     {
@@ -46,10 +46,12 @@ public class AscensionDurability : MonoBehaviour
         if (baseAttack.durabilityValue > 0)
         {
             sharedDurabilityText.text = baseAttack.durabilityValue.ToString();
+            sharedDurabilityText2.text = baseAttack.durabilityValue.ToString();
         }
         else if (baseAttack.durabilityValue <= 0)
         {
             sharedDurabilityText.text = "0";
+            sharedDurabilityText2.text = "0";
         }
     }
 
