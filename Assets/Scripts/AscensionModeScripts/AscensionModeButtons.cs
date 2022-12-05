@@ -17,6 +17,8 @@ public class AscensionModeButtons : MonoBehaviour
     public int ascensionBoost;
 
     public bool usedAttack, usedBlock, usedRest;
+    [SerializeField]
+    private SFX sfxScript;
 
     public void WeakAttack()
     {
@@ -29,6 +31,7 @@ public class AscensionModeButtons : MonoBehaviour
                 ascensionContainers.Container[0].durabilityValue -= 1;
                 batSys.OnAttackButton();
                 batSys.canAttack = false;
+                sfxScript.PlaySfx();
             }
         }
     }
@@ -44,6 +47,7 @@ public class AscensionModeButtons : MonoBehaviour
                 ascensionContainers.Container[1].durabilityValue -= 2;
                 batSys.OnAttackButton();
                 batSys.canAttack = false;
+                sfxScript.PlaySfx();
             }
         }
     }

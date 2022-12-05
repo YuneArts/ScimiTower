@@ -24,6 +24,8 @@ public class ButtonScript : MonoBehaviour
     private TransitionScript transitionScript;
     [SerializeField]
     private TutorialManager tutorial;
+    [SerializeField]
+    private SFX sfxScript;
     public void ToMap()
     {
         transitionScript.BattleToMapTransition();
@@ -68,6 +70,7 @@ public class ButtonScript : MonoBehaviour
             inventory.Container[0].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
+            sfxScript.PlaySfx();
         }
     }
 
@@ -83,6 +86,7 @@ public class ButtonScript : MonoBehaviour
             inventory.Container[1].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
+            sfxScript.PlaySfx();
         }
     }
 
@@ -98,6 +102,7 @@ public class ButtonScript : MonoBehaviour
             inventory.Container[2].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
+            sfxScript.PlaySfx();
         }
     }
 
@@ -113,6 +118,7 @@ public class ButtonScript : MonoBehaviour
             inventory.Container[3].durability -= 1;
             bSystem.OnAttackButton();
             battleSystem.canAttack = false;
+            sfxScript.PlaySfx();
         }
     }
 

@@ -65,6 +65,8 @@ public class BattleSystem : MonoBehaviour
     private TutorialManager tutorialManager;
 
     public GameObject attacks;
+    [SerializeField]
+    private BGM bgmScript;
 
     void Start()
     {
@@ -369,6 +371,8 @@ public class BattleSystem : MonoBehaviour
             {
                 //Set up a bool that is set for boss battles, and call a win screen when boss is defeated. Have stats of the run and buttons.
                 winloseScreen.WinScreen();
+
+                bgmScript.VictoryMusic();
 
                 DataHolder.Instance.currentIndex = 0;
                 

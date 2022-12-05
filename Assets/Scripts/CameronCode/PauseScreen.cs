@@ -15,6 +15,7 @@ public class PauseScreen : MonoBehaviour
     void Start()
     {
         isPaused = false;
+        volSettings.Load();
         StartCoroutine(GetSoundSettings());
     }
 
@@ -23,11 +24,17 @@ public class PauseScreen : MonoBehaviour
       if(!PlayerPrefs.HasKey("musicVolume"))
       {
         PlayerPrefs.SetFloat("musicVolume" , 0.5f);
-        volSettings.Load();
+        volSettings.Save();
       }
-      else
+      if(!PlayerPrefs.HasKey("sfxVolume"))
       {
-        volSettings.Load();
+        PlayerPrefs.SetFloat("sfxVolume" , 0.5f);
+        volSettings.Save();
+      }
+      if(!PlayerPrefs.HasKey("bgmVolume"))
+      {
+        PlayerPrefs.SetFloat("bgmVolume" , 0.5f);
+        volSettings.Save();
       }
       yield return null;
     }

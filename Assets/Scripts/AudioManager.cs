@@ -19,11 +19,36 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(GrabSoundSettings());
     }
 
+    void Update()
+    {
+      backgroundAudio.volume = SettimgsMenu.bgmVolume;
+    }
+
     IEnumerator GrabSoundSettings()
     {
       if(!PlayerPrefs.HasKey("musicVolume"))
       {
         PlayerPrefs.SetFloat("musicVolume" , 0.5f);
+        settingsVol.Load();
+      }
+      else
+      {
+        settingsVol.Load();
+      }
+
+      if(!PlayerPrefs.HasKey("sfxVolume"))
+      {
+        PlayerPrefs.SetFloat("sfxVolume" , 0.5f);
+        settingsVol.Load();
+      }
+      else
+      {
+        settingsVol.Load();
+      }
+
+      if(!PlayerPrefs.HasKey("bgmVolume"))
+      {
+        PlayerPrefs.SetFloat("bgmVolume" , 0.5f);
         settingsVol.Load();
       }
       else

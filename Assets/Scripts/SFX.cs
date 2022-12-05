@@ -14,7 +14,7 @@ public class SFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        sfx.volume = SettimgsMenu.SFXVOLUME;
     }
 
     public void PlaySfx()
