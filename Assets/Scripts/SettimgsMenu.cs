@@ -9,24 +9,6 @@ public class SettimgsMenu : MonoBehaviour
     [SerializeField] Slider volumeSlider;
      [SerializeField] Slider sfxSlider;
      public static float SFXVOLUME;
-    
-
-
-    /*
-    // Start is called before the first frame update
-    void Start()
-    {
-      if(!PlayerPrefs.HasKey("musicVolume"))
-      {
-        PlayerPrefs.SetFloat("musicVolume" , 0.5f);
-        Load();
-      }
-      else
-      {
-        Load();
-      }
-    }
-    */
 
    public void ChangeVolume()
    {
