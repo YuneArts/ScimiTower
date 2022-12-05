@@ -62,7 +62,7 @@ public class TransitionScript : MonoBehaviour
         else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.currentIndex == 2)
         {
             DataHolder.Instance.tutorialIndex++;
-        }else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.currentIndex == 9)
+        }else if(DataHolder.Instance.tutorialEnabled == true && DataHolder.Instance.tutorialIndex == 9)
         {
             DataHolder.Instance.tutorialIndex++;
         }

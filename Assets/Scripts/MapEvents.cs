@@ -14,6 +14,12 @@ public class MapEvents : MonoBehaviour
     public void HealEvent()
     {
         player.uCurrentHP += 30;
+
+        if(player.uCurrentHP >= 80)
+        {
+            player.uCurrentHP = 80;
+        }
+        
         HealText.Create(healPrefab, healTextSpot, 30);
     }
 }

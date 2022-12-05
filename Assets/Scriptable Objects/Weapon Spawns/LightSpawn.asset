@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LightSpawn
   m_EditorClassIdentifier: 
   Container:
-  - {fileID: 11400000, guid: a65b86c99f314954e915b9166454536c, type: 2}
+  - {fileID: 11400000, guid: 7cc86ee4af6c9684898e2ae8e3e39247, type: 2}
   - {fileID: 11400000, guid: e5576ba6ab926ef408a253b57b167275, type: 2}
   - {fileID: 11400000, guid: cd2b284a9212b9945a517385a2bd4522, type: 2}
   - {fileID: 11400000, guid: ea4d0c369988b7640815d1e184b8ab2e, type: 2}
